@@ -1,0 +1,306 @@
+////////////////////////////////////////
+//                                    //
+//              HOME                  //
+//                                    //
+////////////////////////////////////////
+
+
+.swiper-container
+	width: 100%
+	// height: 450px
+	padding-bottom: 40px
+	z-index: -1
+.swiper-slide
+	text-align: center
+	font-size: 18px
+	background: #fff
+	/* Center slide text vertically */
+	display: -webkit-box
+	display: -ms-flexbox
+	display: -webkit-flex
+	display: flex
+	-webkit-box-pack: center
+	-ms-flex-pack: center
+	-webkit-justify-content: center
+	justify-content: center
+	-webkit-box-align: center
+	-ms-flex-align: center
+	-webkit-align-items: center
+	align-items: center
+	position: relative
+	.inner
+		position: absolute
+		span.title
+			font-size: 6rem
+			font-weight: 400
+			line-height: 6rem
+			color: $dark-blue
+		p
+			color: #000
+			font-size: 1.4rem
+			font-weight: 400
+	
+@media (max-width: 970px)
+	.swiper-slide
+		.inner
+			span.title
+				font-size: 4rem
+				line-height: 4rem
+
+
+@media (max-width: 970px)
+	.swiper-slide		
+		.banner-img-mobile
+			display: block
+		.banner-img-desktop
+			display: none
+
+@media (min-width: 970px)
+	.swiper-slide		
+		.banner-img-mobile
+			display: none
+		.banner-img-desktop
+			display: block
+			
+.centered-logo
+	text-align: center
+	margin-top: -70px
+	z-index: 2
+	img
+		width: 150px
+
+.accesorios-img-link
+	background: url(../webimages/home/accesorioslink.jpg) no-repeat center center
+	-webkit-background-size: cover
+	-moz-background-size: cover
+	-o-background-size: cover
+	background-size: cover
+
+.blue-back-link
+	background-color: $dark-blue
+
+.maderas-img-link
+	background: url(../webimages/home/regaloslink.jpg) no-repeat center center
+	-webkit-background-size: cover
+	-moz-background-size: cover
+	-o-background-size: cover
+	background-size: cover
+
+.huerta-img-link
+	background: url(../webimages/home/huertalink.jpg) no-repeat center center
+	-webkit-background-size: cover
+	-moz-background-size: cover
+	-o-background-size: cover
+	background-size: cover
+
+.urbana-img-link
+	background: url(../webimages/home/urbanalink.jpg) no-repeat center center
+	-webkit-background-size: cover
+	-moz-background-size: cover
+	-o-background-size: cover
+	background-size: cover
+
+.blog-img-link
+	background: url(../webimages/home/bloglink.jpg) no-repeat center center
+	-webkit-background-size: cover
+	-moz-background-size: cover
+	-o-background-size: cover
+	background-size: cover
+
+.bg-zoom-home
+	@include transition(0.5s)
+	background-size: 100% 100%
+	-webkit-filter: brightness(1)
+	filter: brightness(1)
+	&:hover
+		cursor: pointer
+		background-size: 110% 110%
+		-webkit-filter: brightness(1.2)
+	    filter: brightness(1.2)
+
+
+.shop-preview
+	padding: 20px 10px 45px
+	.action
+		margin-top: 35px 
+
+
+// Social Banner
+.social-banner
+	background: url(../webimages/home/banner-redes.jpg) no-repeat center center
+	-webkit-background-size: cover
+	-moz-background-size: cover
+	-o-background-size: cover
+	background-size: cover
+	text-align: center
+	padding: 40px 10px
+	h1
+		color: #fff
+		margin-bottom: 40px
+	.inner
+		img
+			width: 100px
+			@include transition(0.5s)
+			&:hover
+				cursor: pointer
+				-webkit-transform: rotate(-10deg)
+          		transform: rotate(-10deg)
+
+.newsletter-banner
+	padding: 20px 10px
+	background-color: rgb(193, 221, 158)
+	.inner1
+		.image
+			float: left
+			width: 80px
+			margin-right: 15px
+		.text
+			span.title
+				font-size: 1.8rem
+			p
+				font-size: 1.2rem
+	.inner2
+		padding-top: 22px
+		.form-inline
+			input
+				width: 50%
+				max-width: 100%
+				height: 40px
+			.newsbutton
+				border: 0
+				background-color: $dark-blue
+				color: #fff
+				padding: 7px
+				margin: 0
+
+@media (max-width: 991px)
+	.newsletter-banner 
+		.inner2,.inner1
+			@include flex-center
+		.inner2
+			.form-inline
+				min-width: 100%
+				text-align: center
+		
+
+		
+@media (max-width: 647px)
+	.shop-preview
+		@include flex-column
+
+
+
+
+////////////////////////////////////////
+//                                    //
+//              CONTACT               //
+//                                    //
+////////////////////////////////////////
+
+
+.contact-section
+	padding: 45px 10px
+	.inner
+		.form
+			input,textarea
+				border-radius: 0
+				font-size: 1.5rem
+			input
+				height: 50px
+			.title
+				font-size: 1.8rem
+				font-family: $font1
+				font-weight: 600
+				margin-bottom: 10px
+				display: none
+		.address-data
+			font-family: $font2
+			.title
+				font-size: 1.8rem
+				font-family: $font1
+				font-weight: 600
+				margin-bottom: 10px
+			.subtitle
+				font-size: 1.4rem
+				margin-bottom: 10px
+			.text
+				font-size: 1.2rem
+				line-height: 18px
+				margin-bottom: 15px
+			.data-container
+				margin-bottom: 20px
+				margin-top: 15px
+				min-width: 180px
+				.data-title
+					color: $dark-blue
+				.data
+					font-size: 1.2rem
+@media (max-width: 991px)
+	.contact-section
+		.inner
+			.address-data
+				margin-top: 25px
+				.title
+					display: none
+			.form
+				.title
+					display: block
+	
+
+
+.form-response
+	padding-top: 45px
+	text-align: center		
+	.icon
+		font-size: 3rem
+		color: $main-green
+		margin-bottom: 10px
+	.big-text
+		font-size: 1.8rem
+		font-weight: 600
+		color: #777
+		margin-bottom: 10px
+	.small-text
+		font-size: 1.4rem
+		color: #777
+		margin-bottom: 10px
+	
+
+footer
+	background-color: #ccc
+	padding-left: 0 !important
+	padding-right: 0 !important
+	.footer
+		padding: 20px 10px 40px
+		h2
+			color: #fff
+		.contact-data
+			span
+				font-size: 1.3rem
+				font-family: $font2
+				font-weight: $f2w1
+				color: #fff
+				text-align: center
+			i
+				color: #E7E7E7
+				font-size: 2.5rem
+			span.icon
+				margin-right: 10px
+				width: 50px
+		.social
+			span
+				color: #fff
+			#u_0_3
+				display: none
+
+
+	.copyright
+		background-color: #2E2E36
+		padding: 10px 5px
+		text-align: center
+		color: #fff
+		font-family: $font2
+		font-weight: $f2w1
+		font-size: 1.2rem
+
+

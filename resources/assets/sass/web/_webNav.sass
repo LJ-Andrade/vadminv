@@ -1,0 +1,53 @@
+.navbar
+    margin-bottom: 0
+.navbar-default
+    height: 80px
+    border: 0
+    background-color: #fff
+    border-radius: 0
+    .navbar-brand
+        padding: 0
+        padding-top: 10px
+        height: 80px
+        @include transition(0.3s)
+        img
+            max-height: 100%
+        &:hover
+            transform: scale(1.2) 
+            cursor: pointer
+
+    .navbar-nav>li>a
+        height: 80px
+        line-height: 50px
+        font-family: $font1
+        font-weight: $f1w1
+        font-style: italic
+        font-size: 1.6rem
+        @include transition(0.2s)
+        &:hover
+            border-bottom: 5px solid $main-green
+
+@media (max-width: 765px)
+    .navbar-nav
+        background-color: #fff
+    .navbar-nav>li>a
+        height: 45px
+    .navbar-brand
+        margin-left: 20px
+
+.nav-icon
+    background-color: $main-green
+    padding-left: 10px
+    padding-right: 10px
+    @include transition(0.2s)
+    i
+        color: #fff
+        font-size: 3rem
+    &:hover
+        background-color: #8da271
+
+// Padding in large Screens
+@media (min-width: 1200px)
+  .navbar-default
+    padding-left: 50px
+    padding-right: 50px

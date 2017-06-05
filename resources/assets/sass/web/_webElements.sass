@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400i,700i,900i|Raleway:200,400,600|family=Lato')
+$font1: 'Playfair Display', serif
+$f1w1: 400
+$f1w2: 700
+$f1w3: 900
+$font2: 'Raleway', sans-serif
+$f2w1: 200
+$f2w2: 400
+$f2w3: 600
+$fnumber: 'Lato', sans-serif
+
+//////////////////////////////////////
+//                                  //
+//              COLORS              //
+//                                  //
+//////////////////////////////////////
+
+$main-green: rgb(166, 206, 116)
+$dark-blue: rgb(37, 68, 96)
+$grey: rgb(237, 241, 243)
+
+.blue-txt
+	color: $dark-blue
+.white-txt
+	color: #fff
+
+.grey-back
+	background-color: $grey
+
+
+//////////////////////////////////////
+//                                  //
+//              BUTTONS             //
+//                                  //
+//////////////////////////////////////
+
+
+.btn
+	border: 0
+	border-radius: 50px
+	padding: 7px 20px
+	font-size: 1.2rem
+	white-space: nowrap
+	vertical-align: middle
+	-webkit-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+	background-image: none
+	line-height: 1.42857143
+	margin: 4px
+	@include transition(0.2s)
+	&:hover
+		cursor: pointer
+
+
+.btnBig
+	border: 0
+	border-radius: 0
+	padding: 7px 20px
+	font-size: 1.2rem
+	white-space: nowrap
+	vertical-align: middle
+	-webkit-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+	background-image: none
+	line-height: 1.42857143
+	margin: 4px
+	@include transition(0.2s)
+	&:hover
+		cursor: pointer
+
+
+.btnHollow
+	background-color: transparent
+	padding: 10px 20px
+	border: 1px solid #383838
+	font-family: $font2
+	@include transition(0.2s)
+	&:hover
+		background-color: #fff
+
+//////////////////////////////////////
+//                                  //
+//              DECO                //
+//                                  //
+//////////////////////////////////////
+
+.blue-hr
+	border-top: 2px solid $dark-blue
+
+
+.bg-zoom
+	@include transition(1s)
+	background-size: 100% 100%
+	&:hover
+		cursor: pointer
+		background-size: 110% 110%
+
+.left-divider-sm
+	height: 2px
+	border-bottom: 1px solid $dark-blue
+	max-width: 250px
+	margin-bottom: 5px
+	margin-top: 5px
+
+.left-divider-xs
+	height: 2px
+	border-bottom: 1px solid $dark-blue
+	max-width: 150px
+	margin-bottom: 5px
+	margin-top: 5px
+
+//////////////////////////////////////
+//                                  //
+//              LISTS               //
+//                                  //
+//////////////////////////////////////
+///// Vertical List ///
+.vertical-list
+	ul
+		padding-left: 0
+		padding: 0
+		margin: 0
+		list-style: none
+		li
+			list-style: none
+			display: block
+			// float: left
+			// width: 100px
+			// line-height: 80px
+			// vertical-align: middle
+
+//// Grid View /////
+.horizontal-list
+	ul
+		padding-left: 0
+		padding: 0
+		margin: 0
+		li
+			display: inline-block
+			list-style: none
+
+
+//////////////////////////////////////
+//                                  //
+//           CONTAINERS             //
+//                                  //
+//////////////////////////////////////
+
+
+.centered-info
+	padding: 20px 10px
+	text-align: center
+
+@media (max-width: 765px)
+	.centered-info
+		padding: 20px 40px
+		p
+			font-size: 1rem
+
+
+
+//////////////////////////////////////
+//                                  //
+//              ITEMS               //
+//                                  //
+//////////////////////////////////////
+
+.bgimg-link
+	height: 250px
+	padding: 2px
+	// @include transition(0.2s)
+	.inner
+		// @include transition(0.2s)
+		border-radius: 15px
+		height: 100%
+		@include flex-column
+		h1
+			margin: 0
+			font-weight: 600
+		
+@media (max-width: 768px)
+	.bgimg-link
+		max-width: 400px
+		.inner
+			p
+				font-size: 1.2rem
+
+
+.shop-item-preview
+	padding: 5px
+	.inner
+		border: 1px solid #ccc
+		.image
+			margin-bottom: 15px
+			@include transition(0.4s)
+		.description
+			padding: 10px		
+			.title
+				font-family: $font2
+			.text
+				font-family: $font2
+				margin-bottom: 5px
+				font-size: 1.2rem
+			.price
+				font-family: $fnumber
+				font-weight: 600
+				font-size: 2rem
+		&:hover
+			.image
+				filter: opacity(0.7)
+				cursor: pointer
+
+@media (max-width: 768px)
+	.shop-item-preview
+		max-width: 300px
+
+
+
+//////////////////////////////////////
+//                                  //
+//              ALERTS              //
+//                                  //
+//////////////////////////////////////
+
+//////////////////////////////////////
+//                                  //
+//             FLEXBOX              //
+//                                  //
+//////////////////////////////////////
+
+@media (max-width: 768px)
+	.mobile-flex-column
+		display: -webkit-box
+		display: -ms-flexbox
+		// display: flex
+		-webkit-box-align: center
+		-ms-flex-align: center
+		-ms-grid-row-align: center
+		justify-content: center
+		-webkit-box-orient: vertical
+		-webkit-box-direction: normal
+		-ms-flex-direction: column
+		flex-direction: column
