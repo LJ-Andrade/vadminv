@@ -7,7 +7,7 @@
 	@section('header_subtitle', ' ')
 	@section('options')
 		<div class="actions">
-			<a href="{{ route('portfolio.index') }}"><button type="button" class="animated fadeIn btnSm buttonOther">Volver</button></a>
+			<a href="{{ route('blog.index') }}"><button type="button" class="animated fadeIn btnSm buttonOther">Volver</button></a>
 		</div>	
 	@endsection
 @endsection
@@ -17,8 +17,8 @@
 @section('styles')
 	{!! Html::style('plugins/texteditor/trumbowyg.min.css') !!}
 	{!! Html::style('plugins/jqueryFileUploader/jquery.fileuploader.css') !!}
-	{{-- {!! Html::style('plugins/jqueryfiler/themes/jquery.filer-dragdropbox-theme.css') !!} --}}
-	{{-- {!! Html::style('plugins/jqueryfiler/jquery.filer.css') !!} --}}
+	{!! Html::style('plugins/jqueryfiler/themes/jquery.filer-dragdropbox-theme.css') !!}
+	{!! Html::style('plugins/jqueryfiler/jquery.filer.css') !!}
 	{!! Html::style('plugins/colorpicker/spectrum.css') !!}
 @endsection
 
@@ -26,7 +26,7 @@
 
 	<div class="container">
 	    <div class="row">
-	        {!! Form::open(['route' => 'portfolio.store', 'method' => 'POST', 'files' => true, 'id' => 'NewItemForm', 'class' => 'big-form', 'data-parsley-validate' => '']) !!}	
+	        {!! Form::open(['route' => 'blog.store', 'method' => 'POST', 'files' => true, 'id' => 'NewItemForm', 'class' => 'big-form', 'data-parsley-validate' => '']) !!}	
 				<div class="row">
 					{{-- Title --}}
 					<div class="col-md-6">
@@ -98,10 +98,11 @@
 
 @section('scripts')
 	<script type="text/javascript" src="{{ asset('plugins/texteditor/trumbowyg.min.js')}} "></script>
-	{{-- <script type="text/javascript" src="{{ asset('plugins/jqueryfiler/jquery.filer.min.js')}} "></script> --}}
+	<script type="text/javascript" src="{{ asset('plugins/jqueryfiler/jquery.filer.min.js')}} "></script>
 	<script type="text/javascript" src="{{ asset('plugins/jqueryFileUploader/jquery.fileuploader.min.js')}} "></script>
 	<script type="text/javascript" src="{{ asset('plugins/colorpicker/spectrum.js')}} "></script>
 	<script type="text/javascript" src="{{ asset('plugins/colorpicker/jquery.spectrum-es.js')}} "></script>
+	<script type="text/javascript" src="{{ asset('plugins/jqueryFileUploader/jquery.fileuploader.min.js')}} "></script>
 	<script type="text/javascript" src="{{ asset('js/jslocal/forms.js') }}" ></script>
 @endsection
 

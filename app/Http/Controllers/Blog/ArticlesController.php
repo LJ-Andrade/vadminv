@@ -18,18 +18,47 @@ class ArticlesController extends Controller
     //                   LIST                      //
     /////////////////////////////////////////////////
 
+    // public function index(Request $request)
+    // {
+    //     $articles = Article::search($request->title)->orderBy('id', 'DESC')->paginate(12);
+    //     $articles->each(function($articles){
+    //         $articles->category;
+    //         $articles->user;
+    //         $articles->images;
+    //     });
+
+    //     return view('vadmin.blog.index')->with('articles', $articles);
+
+    // }
+
     public function index(Request $request)
     {
-        $articles = Article::search($request->title)->orderBy('id', 'DESC')->paginate(12);
-        $articles->each(function($articles){
-            $articles->category;
-            $articles->user;
-            $articles->images;
-        });
+        $title = $request->get('title');
+        $perPage = 25;
+
+        if ($title != ''){
+                // Search User AND Role
+                $articles = Article::where('title', 'LIKE', "%$title%")->paginate($perPage);
+                $articles->each(function($articles){
+                    $articles->category;
+                    $articles->user;
+                    $articles->images;
+                });
+            
+            } else {
+                // Search All
+                $articles = Article::paginate($perPage);
+                $articles->each(function($articles){
+                    $articles->category;
+                    $articles->user;
+                    $articles->images;
+                });
+                
+        }
 
         return view('vadmin.blog.index')->with('articles', $articles);
-
     }
+
 
 
     // ----------- List --------------- //
@@ -204,7 +233,7 @@ class ArticlesController extends Controller
             }
         } 
 
-        return redirect()->route('blog.index')->with('message', 'Se ha editado el artículo con éxito');
+        return redirect()->route('blog.index')->with('message', 'El artículo con éxito se ha editado');
         
     }
 

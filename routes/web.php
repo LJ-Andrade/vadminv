@@ -117,10 +117,12 @@ Route::get('tag/{name}', [
 Route::group(['prefix' => 'vadmin', 'middleware' => ['auth','admin']], function(){
 
 	// ------ Article ------- //
+	Route::resource('blog', 'Blog\ArticlesController');
 	Route::post('updateStatus/{id}', 'Blog\ArticlesController@updateStatus');
 	Route::post('ajax_delete_article/{id}', 'Blog\ArticlesController@ajax_delete');
 	Route::post('ajax_batch_delete_articles/{id}', 'Blog\ArticlesController@ajax_batch_delete');
 	Route::post('deleteArticleImg/{id}', 'Blog\ArticlesController@deleteArticleImg');
+	
 
 
 	// ------ Categories ------- //
@@ -154,7 +156,6 @@ Route::group(['prefix' => 'vadmin', 'middleware' => ['auth','admin']], function(
 	
 	
 
-	Route::resource('blog', 'Blog\ArticlesController');
 	Route::get('ajax_list_articles/{page?}', 'Blog\ArticlesController@ajax_list');
 
 	

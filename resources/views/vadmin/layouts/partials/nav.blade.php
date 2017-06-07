@@ -52,18 +52,9 @@
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Catálogo
 						<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="{{ url('vadmin/catalogo') }}"><i class="ion-ios-list-outline"></i> Artículos</a></li>
+							<li><a href="{{ url('vadmin/blog') }}"><i class="ion-ios-list-outline"></i> Artículos</a></li>
 							<li><a href="{{ url('vadmin/categories') }}"><i class="ion-bookmark"></i> Categorías</a></li>
 							<li><a href="{{ url('vadmin/tags') }}"><i class="ion-ios-pricetags"></i> Tags</a></li>
-						</ul>
-					</li>
-					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu
-						<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="{{ url('vadmin/portfolio') }}"><i class="ion-ios-people"></i> Artículos</a></li>
-							<li><a href="{{ url('vadmin/categories') }}"><i class="ion-ios-people"></i> Categorías</a></li>
-							<li><a href="{{ url('vadmin/tags') }}"><i class="ion-ios-people"></i> Tags</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">

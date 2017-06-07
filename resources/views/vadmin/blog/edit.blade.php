@@ -7,8 +7,8 @@
  
 @section('styles')
 	{!! Html::style('plugins/texteditor/trumbowyg.min.css') !!}
-	{{-- {!! Html::style('plugins/jqueryfiler/themes/jquery.filer-dragdropbox-theme.css') !!} --}}
-	{{-- {!! Html::style('plugins/jqueryfiler/jquery.filer.css') !!} --}}
+    {!! Html::style('plugins/jqueryfiler/themes/jquery.filer-dragdropbox-theme.css') !!}
+	{!! Html::style('plugins/jqueryfiler/jquery.filer.css') !!}
 	{!! Html::style('plugins/jqueryFileUploader/jquery.fileuploader.css') !!}
 	{!! Html::style('plugins/colorpicker/spectrum.css') !!}
 @endsection
@@ -17,7 +17,7 @@
 
 	<div class="container">
 	    <div class="row">
-	        {!! Form::open(['route' => ['portfolio.update', $article], 'class' => 'big-form', 'method' => 'PUT', 'files' => true]) !!}
+	        {!! Form::open(['route' => ['blog.update', $article], 'class' => 'big-form', 'method' => 'PUT', 'files' => true]) !!}
 	        	<div class="row">
 					{{-- Title --}}
 					<div class="col-md-6">
@@ -99,7 +99,7 @@
 
 @section('scripts')
 	<script type="text/javascript" src="{{ asset('plugins/texteditor/trumbowyg.min.js')}} "></script>
-	{{-- <script type="text/javascript" src="{{ asset('plugins/jqueryfiler/jquery.filer.min.js')}} "></script> --}}
+	<script type="text/javascript" src="{{ asset('plugins/jqueryfiler/jquery.filer.min.js')}} "></script>
 	<script type="text/javascript" src="{{ asset('plugins/jqueryFileUploader/jquery.fileuploader.min.js')}} "></script>
 	<script type="text/javascript" src="{{ asset('plugins/colorpicker/spectrum.js')}} "></script>
 	<script type="text/javascript" src="{{ asset('plugins/colorpicker/jquery.spectrum-es.js')}} "></script>

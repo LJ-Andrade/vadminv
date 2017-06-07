@@ -1,6 +1,7 @@
 
 <div class="col-md-12 animated fadeIn main-list">
 
+
 	@foreach($articles as $item)
 	<div id="Id{{ $item->id }}" class="Select-Row-Trigger Item-Row row item-row {{ $item->status }}">
 		{{-- Column --}}
@@ -22,6 +23,7 @@
 			</div>
 			{{-- Column --}}
 			<div class="col-xs-6 col-sm-3 col-md-4 mobile-hide inner-tags">
+				<span class="small-text">Tags:</span>
 				@foreach ($item->tags as $tag)
 					<span class="badge">{{ $tag->name }}</span>
 				@endforeach
