@@ -91,7 +91,7 @@ Route::group(['prefix' => 'vadmin', 'middleware' => ['auth','admin']], function(
 
 
 
-Route::get('catalogo', [
+Route::get('blog', [
 	'as'   => 'web.catalogo',
 	'uses' => 'WebController@catalogo',
 ]);
@@ -100,7 +100,7 @@ Route::get('catalogo', [
 // Show Article / Catalogue
 Route::get('article/{slug}', [
 	'uses' => 'WebController@showWithSlug',
-	'as'   => 'web.catalogo.article'
+	'as'   => 'web.blog.article'
 ])->where('slug', '[\w\d\-\_]+');
 
 // Article Searcher
@@ -117,26 +117,26 @@ Route::get('tag/{name}', [
 Route::group(['prefix' => 'vadmin', 'middleware' => ['auth','admin']], function(){
 
 	// ------ Article ------- //
-	Route::post('updateStatus/{id}', 'Catalogo\ArticlesController@updateStatus');
-	Route::post('ajax_delete_article/{id}', 'Catalogo\ArticlesController@ajax_delete');
-	Route::post('ajax_batch_delete_articles/{id}', 'Catalogo\ArticlesController@ajax_batch_delete');
-	Route::post('deleteArticleImg/{id}', 'Catalogo\ArticlesController@deleteArticleImg');
+	Route::post('updateStatus/{id}', 'Blog\ArticlesController@updateStatus');
+	Route::post('ajax_delete_article/{id}', 'Blog\ArticlesController@ajax_delete');
+	Route::post('ajax_batch_delete_articles/{id}', 'Blog\ArticlesController@ajax_batch_delete');
+	Route::post('deleteArticleImg/{id}', 'Blog\ArticlesController@deleteArticleImg');
 
 
 	// ------ Categories ------- //
-	Route::resource('categories', 'Catalogo\CategoriesController');
-	Route::post('ajax_delete_category/{id}', 'Catalogo\CategoriesController@destroy');
-	Route::post('ajax_batch_delete_categories/{id}', 'Catalogo\CategoriesController@ajax_batch_delete');
-	Route::post('ajax_update_category/{id}', 'Catalogo\CategoriesController@update');
+	Route::resource('categories', 'Blog\CategoriesController');
+	Route::post('ajax_delete_category/{id}', 'Blog\CategoriesController@destroy');
+	Route::post('ajax_batch_delete_categories/{id}', 'Blog\CategoriesController@ajax_batch_delete');
+	Route::post('ajax_update_category/{id}', 'Blog\CategoriesController@update');
 
 
 	// ------ Tags / Sizes ------- //
-	Route::resource('tags', 'Catalogo\TagsController');
-	Route::post('ajax_delete_tag/{id}', 'Catalogo\TagsController@destroy');
-	Route::post('ajax_batch_delete_tags/{id}', 'Catalogo\TagsController@ajax_batch_delete');
-	Route::post('ajax_update_tag/{id}', 'Catalogo\TagsController@update');
+	Route::resource('tags', 'Blog\TagsController');
+	Route::post('ajax_delete_tag/{id}', 'Blog\TagsController@destroy');
+	Route::post('ajax_batch_delete_tags/{id}', 'Blog\TagsController@ajax_batch_delete');
+	Route::post('ajax_update_tag/{id}', 'Blog\TagsController@update');
 	
-	Route::get('ajax_list_tags/{page?}', 'Catalogo\TagsController@ajax_list');
+	Route::get('ajax_list_tags/{page?}', 'Blog\TagsController@ajax_list');
 
 
 
@@ -154,8 +154,8 @@ Route::group(['prefix' => 'vadmin', 'middleware' => ['auth','admin']], function(
 	
 	
 
-	Route::resource('catalogo', 'Catalogo\ArticlesController');
-	Route::get('ajax_list_articles/{page?}', 'Catalogo\ArticlesController@ajax_list');
+	Route::resource('blog', 'Blog\ArticlesController');
+	Route::get('ajax_list_articles/{page?}', 'Blog\ArticlesController@ajax_list');
 
 	
 

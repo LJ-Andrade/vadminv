@@ -25,7 +25,7 @@
         </div>
 	    <div class="row">
 	    	{!! Form::open(['route' => 'categories.store', 'method' => 'POST', 'files' => true, 'id' => 'NewItemForm', 'class' => 'big-form', 'data-parsley-validate' => '']) !!}	
-            	@include ('vadmin.catalogo.categories.form')
+            	@include ('vadmin.blog.categories.form')
 				<div class="text-center">
 					{!! Form::submit('Aceptar', ['class' => 'button btnGreen', 'id' => 'InsertItemBtn']) !!}
 				</div>

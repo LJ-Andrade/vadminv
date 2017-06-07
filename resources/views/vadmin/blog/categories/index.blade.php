@@ -23,7 +23,7 @@
 
 {{-- CONTENT --}}
 @section('content')
-	@include('vadmin.catalogo.categories.searcher')
+	@include('vadmin.blog.categories.searcher')
     <div class="container">
 		<div class="row">		
             <div class="col-md-12 animated fadeIn main-list">
@@ -103,8 +103,8 @@
 		var id    = $(this).data('id');
 		var route = "{{ url('vadmin/ajax_delete_category') }}/"+id+"";
 		
-		singleDelete(id, route, 'Cuidado!','Está seguro?');
 
+		singleDelete(id, route, 'Cuidado!','Si borra esta categoría se eliminarán todos los post relacionados con la misma. \n Se recomienda editar la categoría. Proceder igualmente?');
 	});
 
 

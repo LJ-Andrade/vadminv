@@ -1,6 +1,6 @@
 @extends('vadmin.layouts.main')
 
-@section('title', 'Vadmin | Catálogo')
+@section('title', 'Vadmin | Blog')
 
 @section('header')
 
@@ -8,7 +8,7 @@
 	@section('header_subtitle', '')
 	@section('options')
 		<div class="actions">
-			<a href="{{ route('catalogo.create') }}"><button type="button" class=" animated fadeIn btnSm buttonOther">Nuevo Producto</button></a>
+			<a href="{{ route('blog.create') }}"><button type="button" class=" animated fadeIn btnSm buttonOther">Nuevo Artículo</button></a>
 			<button class="OpenFilters btnSm buttonOther pull-right"><i class="ion-ios-search"></i></button>
 		</div>	
 	@endsection
@@ -26,12 +26,12 @@
 @section('content')
 
 	<div class="container">
-		@include('vadmin.catalogo.searcher')
+		@include('vadmin.blog.searcher')
 	</div>
     <div class="container">
 		<div class="row">	
-			@include('vadmin.catalogo.forms')
-			@include('vadmin.catalogo.list')
+			@include('vadmin.blog.forms')
+			@include('vadmin.blog.list')
 			<br>
 		</div>
 		<button id="BatchDeleteBtn" class="button buttonCancel batchDeleteBtn Hidden"><i class="ion-ios-trash-outline"></i> Eliminar seleccionados</button>
@@ -51,38 +51,49 @@
     /////////////////////////////////////////////////
 
 	// -------------- Single Delete -------------- //
+
 	$(document).on('click', '.Delete', function(e){
 		e.preventDefault();
-		var id = $(this).data('id');
-		confirm_delete(id, 'Cuidado!','Está seguro?');
+		var id    = $(this).data('id');
+		var route = "{{ url('vadmin/ajax_delete_article') }}/"+id+"";
+		
+		singleDelete(id, route, 'Cuidado!','Está seguro?');
+
 	});
 
-	function delete_item(id) {	
 
-		var route = "{{ url('vadmin/ajax_delete_article') }}/"+id+"";
+	// $(document).on('click', '.Delete', function(e){
+	// 	e.preventDefault();
+	// 	var id = $(this).data('id');
+	// 	confirm_delete(id, 'Cuidado!','Está seguro?');
+	// });
 
-		$.ajax({
-			url: route,
-			method: 'post',             
-			dataType: "json",
-			data: {id: id},
-			success: function(data){
+	// function delete_item(id) {	
+
+	// 	var route = "{{ url('vadmin/ajax_delete_article') }}/"+id+"";
+
+	// 	$.ajax({
+	// 		url: route,
+	// 		method: 'post',             
+	// 		dataType: "json",
+	// 		data: {id: id},
+	// 		success: function(data){
 			
-				console.log(data);
-				if (data == 1) {
-					$('#Id'+id).hide(200);
-					alert_ok('Ok!','Eliminación completa');
-				} else {
-					alert_error('Ups!','Ha ocurrido un error');
-				}
-			},
-			error: function(data)
-			{
-				$('#Error').html(data.responseText);
-				console.log(data);	
-			},
-		});
-	}
+	// 			console.log(data);
+	// 			if (data == 1) {
+	// 				$('#Id'+id).hide(200);
+	// 				alert_ok('Ok!','Eliminación completa');
+	// 			} else {
+	// 				alert_error('Ups!','Ha ocurrido un error');
+	// 			}
+	// 		},
+	// 		error: function(data)
+	// 		{
+	// 			$('#Error').html(data.responseText);
+	// 			console.log(data);	
+	// 		},
+	// 	});
+	// }
 
 	// -------------- Batch Deletex -------------- //
 

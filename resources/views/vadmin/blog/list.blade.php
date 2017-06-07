@@ -7,7 +7,7 @@
 		<div class="img">
 			
 			@if(count($item->images))
-			<img class="thumb" src="{{ asset('webimages/catalogo/'. $item->images->first()->name ) }}">
+			<img class="thumb" src="{{ asset('webimages/blog/'. $item->images->first()->name ) }}">
 			@else
 			<img class="thumb" src="{{ asset('webimages/gen/genlogo.jpg') }}">
 			@endif
@@ -36,11 +36,11 @@
 		{{-- Actions --}}
 		<div class="List-Actions lists-actions Hidden">
 			{{-- Edit --}}
-			<a href="{{ route('catalogo.edit', $item->id) }}" class="btnSmall buttonOk">
+			<a href="{{ route('blog.edit', $item->id) }}" class="btnSmall buttonOk">
 				<i class="ion-ios-compose-outline"></i>
 			</a>
 			{{-- Show --}}
-			<a href="{!! route('web.catalogo.article',$item->slug ) !!}" target="_blank" class="btnSmall buttonOther">
+			<a href="{!! route('web.blog.article',$item->slug ) !!}" target="_blank" class="btnSmall buttonOther">
 				<i class="ion-ios-search"></i>
 			</a>
 			{{-- Update Status --}}

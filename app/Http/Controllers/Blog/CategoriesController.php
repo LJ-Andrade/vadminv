@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Catalogo;
+namespace App\Http\Controllers\Blog;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -16,7 +16,7 @@ class CategoriesController extends Controller
     {
         $categories = Category::orderBy('id', 'ASC')->paginate(12);
 
-        return view('vadmin.catalogo.categories.index')->with('categories', $categories);
+        return view('vadmin.blog.categories.index')->with('categories', $categories);
     }
 
 
@@ -30,7 +30,7 @@ class CategoriesController extends Controller
 
     public function create()
     {
-        return view('vadmin.catalogo.categories.create');
+        return view('vadmin.blog.categories.create');
     }
 
 
@@ -54,7 +54,7 @@ class CategoriesController extends Controller
     public function edit($id)
     {
         $category = Category::find($id);
-        return view('vadmin.catalogo.categories.edit')->with('category', $category);
+        return view('vadmin.blog.categories.edit')->with('category', $category);
 
     }
 

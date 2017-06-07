@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Catalogo;
+namespace App\Http\Controllers\Blog;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -9,20 +9,14 @@ use App\Tag;
 class TagsController extends Controller
 {
 
-    // ---------- List -------------- //
+    //---------------------------  Display ----------------------------------- //
+
     public function index(Request $request)
     {
-        $tags = Tag::search($request->name)->orderBy('id', 'ASC')->paginate(12);
-        return view('vadmin.catalogo.tags.index')->with('tags', $tags);
+        $tags = Tag::orderBy('id', 'ASC')->paginate(12);
+        
+        return view('vadmin.blog.categories.index')->with('tags', $tags);
     }
-
-    public function ajax_list()
-    {
-        $tags = Tag::orderBy('id', 'DESC')->paginate(12);
-        return view('vadmin/catalogo/tags/list')->with('tags', $tags);
-    }
-
-
 
     // ---------- Store --------------- //
 
@@ -34,16 +28,10 @@ class TagsController extends Controller
             'name.unique'         => 'El talle ya existe'
         ]);
 
-        if ($request->ajax())
-        {            
-            $result = Tag::create($request->all());
-            if ($result)
-            {
-                return response()->json(['success'=>'true', 'message'=>'Talle creado']);
-            } else {
-                return response()->json(['success'=>'false', 'error'=>'Error']);        
-            }
-        }
+        $item = new Tag($request->all());
+        $item->save();
+
+        return redirect('vadmin/tags')->with('message', 'El Tag '. $item->name.' ha sido creado');
     }
 
 
@@ -58,7 +46,7 @@ class TagsController extends Controller
     public function edit($id)
     {
         $tag = Tag::find($id);
-        return view('vadmin.catalogo.tags.edit')->with('tag', $tag);
+        return view('vadmin.blog.tags.edit')->with('tag', $tag);
     }
 
 

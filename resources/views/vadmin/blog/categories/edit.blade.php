@@ -21,7 +21,7 @@
 			'class' => 'big-form'
 		]) !!}
 
-		@include ('vadmin.catalogo.categories.form', ['submitButtonText' => 'Update'])
+		@include ('vadmin.blog.categories.form', ['submitButtonText' => 'Update'])
 		{!! Form::submit('Editar Categoría', ['class' => 'button btnGreen']) !!}
 		{!! Form::close() !!}
 		

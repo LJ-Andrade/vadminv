@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Catalogo;
+namespace App\Http\Controllers\Blog;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -27,7 +27,7 @@ class ArticlesController extends Controller
             $articles->images;
         });
 
-        return view('vadmin.catalogo.index')->with('articles', $articles);
+        return view('vadmin.blog.index')->with('articles', $articles);
 
     }
 
@@ -43,7 +43,7 @@ class ArticlesController extends Controller
             $articles->images;
         });
 
-        return view('vadmin/catalogo/list')->with('articles', $articles);
+        return view('vadmin/blog/list')->with('articles', $articles);
         
     }
 
@@ -56,7 +56,7 @@ class ArticlesController extends Controller
         $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
         $tags       = Tag::orderBy('name', 'ASC')->pluck('name', 'id');
         $status     = Article::search($request->status)->get();
-        return view('vadmin.catalogo.create')
+        return view('vadmin.blog.create')
             ->with('categories', $categories)
             ->with('tags', $tags)
             ->with('status', $status);
@@ -90,7 +90,7 @@ class ArticlesController extends Controller
             'image'                => 'El archivo adjuntado no es soportado',
         ]);
 
-        $path             = public_path("webimages/catalogo/"); 
+        $path             = public_path("webimages/blog/"); 
         $article          = new Article($request->all());
 
         $article->user_id = \Auth::user()->id;
@@ -117,7 +117,7 @@ class ArticlesController extends Controller
             }
         } 
 
-        return redirect()->route('catalogo.index')->with('message','Artículo creado');
+        return redirect()->route('blog.index')->with('message','Artículo creado');
 
     }
 
@@ -158,7 +158,7 @@ class ArticlesController extends Controller
         $actual_tags = $article->tags->pluck('id')->ToArray();
         $status      = $article->status;
 
-        return view('vadmin.catalogo.edit')
+        return view('vadmin.blog.edit')
             ->with('categories', $categories)
             ->with('article', $article)
             ->with('tags', $tags)
@@ -177,7 +177,7 @@ class ArticlesController extends Controller
     public function update(Request $request, $id)
     {
 
-        $path      = public_path("webimages/catalogo/"); 
+        $path      = public_path("webimages/blog/"); 
 
         $article   = Article::find($id);
         $article->fill($request->all());
@@ -204,7 +204,7 @@ class ArticlesController extends Controller
             }
         } 
 
-        return redirect()->route('catalogo.index')->with('message', 'Se ha editado el artículo con éxito');
+        return redirect()->route('blog.index')->with('message', 'Se ha editado el artículo con éxito');
         
     }
 
@@ -230,7 +230,7 @@ class ArticlesController extends Controller
     public function deleteArticleImg(Request $request, $id)
     {
         $image  = Image::find($id);
-        $path   = 'webimages/catalogo/';
+        $path   = 'webimages/blog/';
         File::Delete(public_path($path . $image->name));
         $image->delete();
         echo 1;
@@ -242,7 +242,7 @@ class ArticlesController extends Controller
     {
         $article  = Article::find($id);
 
-        $path     = 'webimages/catalogo/';
+        $path     = 'webimages/blog/';
         $article->image;
         $lastpath = Image::where('article_id', '=', $id);
         $article->each(function($articles){
@@ -270,7 +270,7 @@ class ArticlesController extends Controller
             foreach ($request->id as $id) {
             
                 $article  = Article::find($id);
-                $path  = 'webimages/catalogo/';
+                $path  = 'webimages/blog/';
 
                 $article_image = $article->images;
                 foreach ($article_image as $phisic_image) {
