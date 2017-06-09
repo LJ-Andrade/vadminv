@@ -18,18 +18,6 @@ class ArticlesController extends Controller
     //                   LIST                      //
     /////////////////////////////////////////////////
 
-    // public function index(Request $request)
-    // {
-    //     $articles = Article::search($request->title)->orderBy('id', 'DESC')->paginate(12);
-    //     $articles->each(function($articles){
-    //         $articles->category;
-    //         $articles->user;
-    //         $articles->images;
-    //     });
-
-    //     return view('vadmin.blog.index')->with('articles', $articles);
-
-    // }
 
     public function index(Request $request)
     {
@@ -62,19 +50,19 @@ class ArticlesController extends Controller
 
 
     // ----------- List --------------- //
-    public function ajax_list(Request $request)
-    {
+    // public function ajax_list(Request $request)
+    // {
         
-        $articles = Article::search($request->title)->orderBy('id', 'DESC')->paginate(12);
-        $articles->each(function($articles){
-            $articles->category;
-            $articles->user;
-            $articles->images;
-        });
+    //     $articles = Article::search($request->title)->orderBy('id', 'DESC')->paginate(12);
+    //     $articles->each(function($articles){
+    //         $articles->category;
+    //         $articles->user;
+    //         $articles->images;
+    //     });
 
-        return view('vadmin/blog/list')->with('articles', $articles);
+    //     return view('vadmin/blog/list')->with('articles', $articles);
         
-    }
+    // }
 
     /////////////////////////////////////////////////
     //                  CREATE                     //
@@ -119,7 +107,7 @@ class ArticlesController extends Controller
             'image'                => 'El archivo adjuntado no es soportado',
         ]);
 
-        $path             = public_path("webimages/blog/"); 
+        $path             = public_path("webimages/blog/articles/"); 
         $article          = new Article($request->all());
 
         $article->user_id = \Auth::user()->id;
@@ -154,24 +142,6 @@ class ArticlesController extends Controller
     //                   UPDATE                    //
     /////////////////////////////////////////////////
 
-    // /**
-    //  * Display the specified resource.
-    //  *
-    //  * @param  int  $id
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function show($id)
-    // {
-    //     $article = Article::find($id);
-    //     return view('vadmin.articles.show')->with('article', $article);
-    // }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {   
 
@@ -196,17 +166,10 @@ class ArticlesController extends Controller
 
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
 
-        $path      = public_path("webimages/blog/"); 
+        $path      = public_path("webimages/blog/articles/"); 
 
         $article   = Article::find($id);
         $article->fill($request->all());
@@ -259,7 +222,7 @@ class ArticlesController extends Controller
     public function deleteArticleImg(Request $request, $id)
     {
         $image  = Image::find($id);
-        $path   = 'webimages/blog/';
+        $path   = 'webimages/blog/articles/';
         File::Delete(public_path($path . $image->name));
         $image->delete();
         echo 1;
@@ -271,7 +234,7 @@ class ArticlesController extends Controller
     {
         $article  = Article::find($id);
 
-        $path     = 'webimages/blog/';
+        $path     = 'webimages/blog/articles/';
         $article->image;
         $lastpath = Image::where('article_id', '=', $id);
         $article->each(function($articles){
@@ -299,7 +262,7 @@ class ArticlesController extends Controller
             foreach ($request->id as $id) {
             
                 $article  = Article::find($id);
-                $path  = 'webimages/blog/';
+                $path  = 'webimages/blog/articles';
 
                 $article_image = $article->images;
                 foreach ($article_image as $phisic_image) {

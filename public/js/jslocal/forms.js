@@ -102,11 +102,10 @@
 
 	$('#Multi_Images').fileuploader({
 
-		
-
 		extensions: ['jpg', 'jpeg', 'png', 'gif'],
 		limit: null,
 		addMore: true,
+		maxSize: 2,
 		captions: {
 			button: function(options) { return 'Seleccionar ' + (options.limit == 1 ? 'File' : 'Imágen'); },
 			feedback: function(options) { return 'Agregar imágenes...'; },
@@ -126,7 +125,7 @@
 	
 				// alert dialog
 				alert: function(text) {
-					return alert_confirm(text);
+					console.log('Error');
 				},
 				
 				// confirm dialog

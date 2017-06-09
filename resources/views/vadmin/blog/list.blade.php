@@ -8,7 +8,7 @@
 		<div class="img">
 			
 			@if(count($item->images))
-			<img class="thumb" src="{{ asset('webimages/blog/'. $item->images->first()->name ) }}">
+			<img class="thumb" src="{{ asset('webimages/blog/articles/'. $item->images->first()->name ) }}">
 			@else
 			<img class="thumb" src="{{ asset('webimages/gen/genlogo.jpg') }}">
 			@endif
@@ -42,7 +42,7 @@
 				<i class="ion-ios-compose-outline"></i>
 			</a>
 			{{-- Show --}}
-			<a href="{!! route('web.blog.article',$item->slug ) !!}" target="_blank" class="btnSmall buttonOther">
+			<a href="{!! route('web.blog.article', $item->slug ) !!}" target="_blank" class="btnSmall buttonOther">
 				<i class="ion-ios-search"></i>
 			</a>
 			{{-- Update Status --}}

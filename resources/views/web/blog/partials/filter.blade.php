@@ -1,19 +1,14 @@
-<div class="portfolio-filters">
-	<div class="inner-main">
-		<span class="title">Portfolio</span>
-		<button class="Show-Mobile-Filter btn openFilterBtn"> <b><i class="ion-android-search"></i></b></button>
-	</div>
-	<div class="Fiter-Inner filter-inner animated fadeIn Hidden">
-		<hr>
-		<h2>Buscador</h2>
-		<div class="search-input">
-			{!! Form::open(['route' => 'web.blog', 'method' => 'GET', 'class' => '']) !!}
-				<div class="form-group form-inline">
-					{!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Buscar por título', 'aria-describedby' => 'search']) !!}
-					<button type="submit" class="btn search-btn"><i class="ion-ios-search"></i></button>
-				</div>
-			{!! Form::close() !!}
+<div class="mobile-filters-actions">
+	{!! Form::open(['route' => 'web.blog', 'method' => 'GET', 'class' => '']) !!}
+		<div class="form-group form-inline">
+			{!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Buscar artículo', 'aria-describedby' => 'search']) !!}
+			<button type="submit" class="btn search-btn"><i class="ion-ios-search"></i></button>
+		<button class="Show-Mobile-Filter btn openFilterBtn"> <b> Filtros</b></button>
 		</div>
+	{!! Form::close() !!}
+</div>
+<div class="mobile-filters">
+	<div class="Fiter-Inner filter-inner animated fadeIn Hidden">
 		<div class="search-buttons">
 		<hr>
 			<div class="title">Categoría</div>

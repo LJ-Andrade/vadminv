@@ -17,16 +17,47 @@ $fnumber: 'Lato', sans-serif
 
 $main-green: rgb(166, 206, 116)
 $dark-blue: rgb(37, 68, 96)
+$main-blue: #254460
 $grey: rgb(237, 241, 243)
+
+$orange:  #dc9f1d
+$orangeH: #ceaa5f
+$greenD:  #8DBB61
+$greenL:  #9FD56B
+$green:   #8DBB61
+$greenH:  #9FD56B
+$blue:    #5D76C9
+$blueH:   #7689C8
+$red:     #D05C5C
+$redH:    #C47777
+$grey:    #f9f9f9
 
 .blue-txt
 	color: $dark-blue
+
 .white-txt
 	color: #fff
 
 .grey-back
 	background-color: $grey
 
+//////////////////////////////////////
+//                                  //
+//           BACKGROUNDS            //
+//                                  //
+//////////////////////////////////////
+
+.blue-back
+	background-color: $dark-blue
+
+.green-back
+	background-color: $green
+
+.red-back
+	background-color: $red
+
+.grey-back
+	background-color: $grey
 
 //////////////////////////////////////
 //                                  //
@@ -82,6 +113,8 @@ $grey: rgb(237, 241, 243)
 	&:hover
 		background-color: #fff
 
+
+
 //////////////////////////////////////
 //                                  //
 //              DECO                //
@@ -91,6 +124,19 @@ $grey: rgb(237, 241, 243)
 .blue-hr
 	border-top: 2px solid $dark-blue
 
+.custom-badge
+	display: inline-block
+	min-width: 10px
+	padding: 3px 7px
+	font-size: 12px
+	font-weight: 700
+	line-height: 1
+	color: #fff
+	text-align: center
+	white-space: nowrap
+	vertical-align: middle
+	border-radius: 10px
+	margin-bottom: 5px
 
 .bg-zoom
 	@include transition(1s)
@@ -246,177 +292,14 @@ $grey: rgb(237, 241, 243)
 		-ms-flex-direction: column
 		flex-direction: column
 
-//////////////////////////////////////
-//                                  //
-//              BLOG                //
-//                                  //
-//////////////////////////////////////
-
-
-
-
-////////////////////////////////////////
-//                                    //
-//              PORTFOLIO             //
-//                                    //
-////////////////////////////////////////
-
-.dark-container-top
-	padding: 0
-	padding-top: 60px
-	margin-bottom: 50px
-	background-color: #2D2D36
-	color: #fff
-	h2
-		text-align: center
-
-.container-top
-	padding: 0
-	margin-top: 80px
-	padding-bottom: 50px
-
-.filters
-	.searcher
-		input
-			color: #000
-
-.blog-container
-	margin-top: 25px
-	padding: 10px
-	.blog-item
-		@include flex-column
-		margin-bottom: 25px
-		border: 1px solid #777
-		.inner
-			// width: auto
-			img
-				max-width: 100%
-				@include transition(0.2s)
-				&:hover
-					filter: brightness(50%)
-					cursor: pointer
-			.info	
-				padding: 15px
-				background-color: #fff
-				position: relative
-				hr
-					margin-top: 10px
-					margin-bottom: 10px
-				.text
-					font-family: $font2
-					font-size: 1rem
-					color: #000
-					font-weight: 400
-				.title
-					font-size: 1.3rem
-					font-weight: 700
-					margin-top: 10px
-					margin-bottom: 5px
-					margin-left: 5px
-				.cat-title
-					margin-left: 5px
-				.cat-text
-					a
-						color: #9D9D9D
-						&:hover
-							color: #383838
-				.tags
-					margin-top: 5px
-				.date
-					margin-left: 5px
-					margin-top: 5px
-					span.text
-						color: #ABABAB
-
-
-
-.portfolio-filters
-	position: relative
-	padding: 0
-	.inner-main
-		height: 40px
-		padding-left: 15px
-	.title
-		font-size: 1.5rem
-		color: #fff
-	.openFilterBtn
-		background-color: transparent
-		position: absolute
-		right: 0
-		top: -5px
-		border-radius: 0
-		padding: 5px 15px
-		margin-right: 20px
-		margin-bottom: 10px
-		color: #000
-		font-family: $font2
-		font-weight: 400
-		font-size: 2rem
-		&:hover
-			color: rgb(229, 231, 252)
-	// Filters
-	.filter-inner
-		text-align: center
-		background-color: #464657
-		padding: 10px
-		hr
-			margin-top: 10px
-			margin-bottom: 20px
-			border: 0
-			border-top: 1px solid rgb(84, 87, 116)
-		.search-input
-			hr
-				margin-top: 20px
-			input
-				width: 70%
-				float: left
-				margin-right: 5px
-				border-radius: 0
-			button
-				color: #000
-				border-radius: 0
-		.search-buttons
-			.title
-				font-size: 1.2rem
-				margin-bottom: 10px
-			.filter-button
-				border-radius: 0
-				padding: 5px
-				margin-right: 5px
-				margin-bottom: 5px
-				color: #000
-				font-size: 1.2rem
-
-
-
-
-
-.single-item
-	background-color: #fff
-	padding: 25px
-	position: relative
-	@include box-shadow-center
-	border-radius: 6px
-	margin-bottom: 15px
-	p
-		font-size: 1.4rem
-	a
-		color: blue
-	h1
-		text-align: center
-		margin-bottom: 25px
-	// .image
-	// .content
-	.info
-		width: 100%
-	.date
-		position: absolute
-		right: 12px
-		top: 5px
-	
-@media (max-width: 430px)
-	.single-item
-		padding: 10px
-		h1
-			font-size: 2rem
-
+.flex-center
+	display: -webkit-box
+	display: -ms-flexbox
+	display: flex
+	-webkit-box-align: center
+	-ms-flex-align: center
+	-ms-grid-row-align: center
+	align-items: center
+	-webkit-box-pack: center
+	-ms-flex-pack: center
+	justify-content: center
