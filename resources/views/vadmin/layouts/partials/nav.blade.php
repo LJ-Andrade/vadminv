@@ -58,7 +58,7 @@
 						</ul>
 					</li>
 					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Varios
 						<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="{{ url('/') }}"><i class="ion-ios-monitor-outline"></i> Ver Web</a></li>

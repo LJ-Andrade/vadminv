@@ -24,16 +24,11 @@
 @endsection
 
 @section('content')
+	@include('vadmin.blog.searcher')
 
-	<div class="container">
-		@include('vadmin.blog.searcher')
-	</div>
     <div class="container">
-		<div class="row">	
-			@include('vadmin.blog.forms')
-			@include('vadmin.blog.list')
-			<br>
-		</div>
+		@include('vadmin.blog.list')
+		<br>
 		<button id="BatchDeleteBtn" class="button buttonCancel batchDeleteBtn Hidden"><i class="ion-ios-trash-outline"></i> Eliminar seleccionados</button>
 	</div>  
 	<div id="Error"></div>

@@ -3,7 +3,7 @@
 @section('title', 'Vadmin | Tag')
 
 @section('header')
-	@section('header_title', 'Edición de Tag') 
+	@section('header_title', 'Creación de Tag') 
 	@section('options')
 		<div class="actions">
 			<a href="{{ url('vadmin/tags') }}"><button type="button" class="animated fadeIn btnSm buttonOther">Volver</button></a>
@@ -24,16 +24,12 @@
 			<div id="Error"></div>
         </div>
 	    <div class="row">
-	    	{!! Form::model($tag, [
-			'method' => 'PATCH',
-			'url' => ['/vadmin/tags', $tag->id],
-			'files' => true,
-			'class' => 'big-form'
-			]) !!}
-
-			@include ('vadmin.blog.tags.form', ['submitButtonText' => 'Update'])
-			{!! Form::submit('Editar Tag', ['class' => 'button btnGreen']) !!}
-			{!! Form::close() !!}
+	    	{!! Form::open(['route' => 'tags.store', 'method' => 'POST', 'files' => true, 'id' => 'NewItemForm', 'class' => 'big-form', 'data-parsley-validate' => '']) !!}	
+            	@include ('vadmin.blog.tags.form')
+				<div class="text-center">
+					{!! Form::submit('Aceptar', ['class' => 'button btnGreen', 'id' => 'InsertItemBtn']) !!}
+				</div>
+            {!! Form::close() !!}
         </div>
     </div>  
 @endsection

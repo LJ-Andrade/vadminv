@@ -92,8 +92,8 @@ Route::group(['prefix' => 'vadmin', 'middleware' => ['auth','admin']], function(
 
 
 Route::get('blog', [
-	'as'   => 'web.catalogo',
-	'uses' => 'WebController@catalogo',
+	'as'   => 'web.blog',
+	'uses' => 'WebController@blog',
 ]);
 
 

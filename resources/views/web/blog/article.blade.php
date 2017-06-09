@@ -24,7 +24,7 @@
 							<div class="swiper-slide"><img src="{{ asset('webimages/gen/article-gen.jpg') }}" class="slider-image"></div>
 						@else 
 							@foreach($article->images as $image)
-							<div class="swiper-slide"><img src="{{ asset('webimages/portfolio/'.$image->name ) }}" class="slider-image"></div>
+							<div class="swiper-slide"><img src="{{ asset('webimages/blog/'.$image->name ) }}" class="slider-image"></div>
 							@endforeach
 						@endif
 					</div>
@@ -70,7 +70,7 @@
 @endsection
 
 @section('scripts')
-	{{ Html::script('plugins/swiper-slider/swiper.jquery.min.js') }}
+	<script type="text/javascript" src="{{ asset('plugins/swiper-slider/swiper.jquery.min.js') }}" ></script>
 @endsection
 
 @section('custom_js')

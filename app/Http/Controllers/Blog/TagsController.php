@@ -12,64 +12,68 @@ class TagsController extends Controller
     //---------------------------  Display ----------------------------------- //
 
     public function index(Request $request)
-    {
-        $tags = Tag::orderBy('id', 'ASC')->paginate(12);
+    {   
+        $title = $request->get('name');
+        $perPage = 25;
+
+        if ($title != ''){
+            $tags = Tag::where('name', 'LIKE', "%$title%")->paginate($perPage);
+        } else {
+            $tags = Tag::orderBy('id', 'ASC')->paginate($perPage);
+        }
         
-        return view('vadmin.blog.categories.index')->with('tags', $tags);
+        return view('vadmin.blog.tags.index')->with('tags', $tags);
     }
 
-    // ---------- Store --------------- //
+
+    //---------------------------  Create ---------------------------------- //
+
+    public function create()
+    {
+        return view('vadmin.blog.tags.create');
+    }
+
 
     public function store(Request $request)
     {
         $this->validate($request,[
             'name' => 'max:120|required|unique:tags'
         ],[
-            'name.unique'         => 'El talle ya existe'
+            'name.unique'         => 'El tag ya existe'
         ]);
 
         $item = new Tag($request->all());
         $item->save();
 
-        return redirect('vadmin/tags')->with('message', 'El Tag '. $item->name.' ha sido creado');
+        return redirect('vadmin/tags')->with('message', 'El tag '. $item->name.' ha sido creado');
+
     }
 
 
-    // ---------- Edit --------------- //
-    public function ajax_edit($id)
-    {
-        $tag = Tag::find($id);
-        return response()->json($tag);
-    }
+     //-----------------------  Edit / Update ---------------------------- //
 
-    
     public function edit($id)
     {
         $tag = Tag::find($id);
         return view('vadmin.blog.tags.edit')->with('tag', $tag);
+
     }
 
-
-    
-
-    // ---------- Update -------------- //
     public function update(Request $request, $id)
     {
+        $tag = Tag::find($id);
+        
         $this->validate($request,[
-            'name'     => 'max:120|required|unique:tags'
+            'name' =>  'max:120|required|unique:tags,name,'.$tag->id
         ],[
             'name.unique'         => 'El tag ya existe'
         ]);
         
-        $tag = Tag::find($id);
         $tag->fill($request->all());
+        $tag = $tag->save();
 
-        $result = $tag->save();
-        if ($result) {
-            return response()->json(['success'=>'true']);
-        } else {
-            return response()->json(['success'=>'false']);
-        }
+        return redirect('vadmin/tags')->with('message', 'El tag fue editado correctamente');;
+
     }
 
 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
-use App\Producto;
+use App\Article;
 use App\Category;
 use App\Tag;
 
@@ -109,60 +109,78 @@ class WebController extends Controller
 
         }
 
-	public function portfolio(Request $request)
+	public function blog(Request $request)
 	{
 
-        $productos = Producto::search($request->title)->orderBy('id', 'DESCC')->where('status', 'active')->paginate(12);
-        $productos->each(function($articles){
-            $productos->category;
-            $productos->images;
-        }); 
+        $articles = Article::search($request->title)->orderBy('id', 'DESC')->where('status', 'active')->paginate(12);
+        // $articles->each(function($articles){
+        //     $articles->category;
+        //     $articles->images;
+        // }); 
 
-    	return view('web.producto.producto')
-    	->with('productos', $productos);
+        $categories = Category::all();
+        $tags       = Tag::all();
+
+    	return view('web.blog.blog')
+    	    ->with('articles', $articles)
+            ->with('categories', $categories)
+            ->with('tags', $tags);
     }
-
 
     public function searchCategory($name)
     {
         $category = Category::SearchCategory($name)->first();
-        $articles=$category->article()->paginate(12);
+        $articles = $category->article()->paginate(12);
         $articles->each(function($articles){
                 $articles->category;
                 $articles->images;
         });
-        return view('web.portfolio.portfolio')->with('articles', $articles);
+
+        $categories = Category::all();
+        $tags       = Tag::all();
+
+        return view('web.blog.blog')
+            ->with('articles', $articles)
+            ->with('categories', $categories)
+            ->with('tags', $tags);
     }
 
     public function searchTag($name)
     {
         $tag = Tag::SearchTag($name)->first();
-        $productos = $tag->article()->paginate(12);
-        $productos->each(function($articles){
-                $productos->category;
-                $productos->images;
+        $articles = $tag->article()->paginate(12);
+        $articles->each(function($articles){
+                $articles->category;
+                $articles->images;
         });
-        return view('web.producto.producto')->with('productos', $productos);
+        
+        $categories = Category::all();
+        $tags       = Tag::all();
+
+        return view('web.blog.blog')
+            ->with('articles', $articles)
+            ->with('categories', $categories)
+            ->with('tags', $tags);
     }
 
     public function viewArticle($id)
     {
-        $producto = Producto::find($id);
-        $producto->each(function($article){
-                $producto->category;
-                $producto->images;
-                $producto->tags;
-                $producto->colors;
+        $article = Article::find($id);
+        $article->each(function($article){
+                $article->category;
+                $article->images;
+                $article->tags;
+                $article->colors;
         });
 
-        return view('web.portfolio.producto')->with('producto', $producto);
+        return view('web.blog.article')->with('article', $article);
     }
 
     public function showWithSlug($slug) {
 
-        $producto = Producto::where('slug', '=', $slug)->first();
-        // dd($article);
-        return view('web.portfolio.producto')->with('producto', $producto);
+        $article = Article::where('slug', '=', $slug)->first();
+        
+        return view('web.blog.article')->with('article', $article);
     }
 
 

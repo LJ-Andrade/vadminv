@@ -477,6 +477,29 @@ hr {
   margin-bottom: 5px;
 }
 
+.vertical-list ul {
+  padding-left: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.vertical-list ul li {
+  list-style: none;
+  display: block;
+}
+
+.horizontal-list ul {
+  padding-left: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.horizontal-list ul li {
+  display: inline-block;
+  list-style: none;
+}
+
 .big-form {
   padding: 10px;
   border: 1px solid #ccc;

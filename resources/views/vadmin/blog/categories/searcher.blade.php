@@ -8,7 +8,7 @@
             <div class="inner-column">
                 <div class="input-group">
                     <span class="input-group-btn">
-                    <input type="text" class="form-control" name="search" placeholder="Buscar...">
+                    <input type="text" class="form-control" name="name" placeholder="Buscar...">
                         <button class="btn btn-default" type="submit">
                             <i class="ion-ios-search"></i>
                         </button>

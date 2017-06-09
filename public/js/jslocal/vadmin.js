@@ -241,15 +241,6 @@ function formatNum(num, fixed) {
     return num.toString().match(re)[0];
 }
 
-
-function calcPtje(preciocosto, pjegremio){
-	var calc   = parseFloat(preciocosto) * parseFloat(pjegremio) / 100;
-	var result = parseFloat(preciocosto) + parseFloat(calc);
-	var result = Math.round(result*Math.pow(10,2))/Math.pow(10,2);
-	return result;
-}
-
-
 //////////////////////////////
 // 							//
 //          ALERTS          //
@@ -337,20 +328,3 @@ function toggleLoader(){
     // }
 }
 
-
-var get_client = function(route){
-		
-	var output;
-	$.ajax({
-		url: route,
-		type: "GET",
-		async: true,
-		success: function (data) {
-			output = data;
-			return output;
-		},
-		error: function () {}
-	}); // ajax synchronus request 
-	return output;
-
-}

@@ -9,7 +9,7 @@
 	@section('header_title', 'Listado de Categorias') 
 	@section('options')
 		<div class="actions">
-            <a href="{{ url('vadmin/categories/create') }}" class="btn btnSm buttonOther">Nueva</a>
+            <a href="{{ url('vadmin/categories/create') }}" class="btn btnSm buttonOther">Nueva Categoría</a>
 			<button class="OpenFilters btnSm buttonOther pull-right"><i class="ion-ios-search"></i></button>
 		</div>	
 	@endsection

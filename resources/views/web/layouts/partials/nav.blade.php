@@ -15,7 +15,7 @@
 
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#">Nuestra Escencia</a></li>
-				<li><a href="#">Blog</a></li>
+				<li><a href="{{ url('blog') }}">Blog</a></li>
 				<li><a href="#">Tienda</a></li>
 				<li role="separator" class="divider"></li>
 				<li><a href="#">Contacto</a></li>
