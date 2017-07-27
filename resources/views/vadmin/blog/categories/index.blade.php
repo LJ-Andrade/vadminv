@@ -65,13 +65,14 @@
 
                 @endforeach
 
-                {{-- If there is no articles published shows this --}}
-                @if(! count($categories))
-                <div class="Item-Row item-row empty-row">
-                    No se han encontrado items 
-                </div><br>
-				<a href="{{ url('vadmin/categories') }}"><button class="btnSmall buttonOk">Mostrar Todos</button></a>
-                @endif
+                {{-- If there is no published categories shows this --}}
+				@if(! count($categories))
+				<div class="Item-Row item-row empty-row">
+					No se han encontrado categorias
+				</div>
+				@endif
+
+   
             </div>
             {!! $categories->render(); !!}
             <br>
@@ -141,7 +142,7 @@
 					$('#Id'+id[i]).hide(200);
 				}
 				$('#BatchDeleteBtn').addClass('Hidden');
-				ajax_list();
+				location.reload();
 				// $('#Error').html(data.responseText);
 				// console.log(data);
 			},

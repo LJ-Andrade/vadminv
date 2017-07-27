@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'Los datos no coindiden con nuestros registros.',
-    'throttle' => 'Demasiados intentos fallidos. Espere :seconds seconds.',
+    'failed' => 'Los datos no coindiden con los registros.',
+    'throttle' => 'Demasiados intentos fallidos. Espere :seconds segundos.',
 
 ];

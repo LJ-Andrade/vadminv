@@ -8,7 +8,7 @@
 		<div class="inner">
 			{{-- Header --}}
 			<div class="login-header">
-				<span class="title">VADmin</span> <br> <span class="subtitle">Gestor de Operaciones</span>
+				<span class="title">VADmin</span> <br> <span class="subtitle">Gestor de Contenido</span>
 			</div>
 			{{-- Content --}}
 			<form role="form" method="POST" action="{{ url('/login') }}">
@@ -44,9 +44,9 @@
 						<a href="{{ url('/register') }}">
 							<button type="button" class="button buttonOther">Registrarse</button>
 						</a>
-						<a class="btn btn-link" href="{{ url('/password/reset') }}">
+						{{-- <a class="btn btn-link" href="{{ url('/password/reset') }}">
 							Olvidó su contraseña?
-						</a>
+						</a> --}}
 					</div>
 				</div>
 			</form>

@@ -23,17 +23,23 @@
 		<div class="row">
 			<div id="Error"></div>
         </div>
-	    <div class="row">
-	    	{!! Form::model($tag, [
-			'method' => 'PATCH',
-			'url' => ['/vadmin/tags', $tag->id],
-			'files' => true,
-			'class' => 'big-form'
-			]) !!}
+        <div class="narrow-form">
+			<div class="inner">
+				{!! Form::model($tag, [
+					'method' => 'PATCH',
+					'url' => ['/vadmin/tags', $tag->id],
+					'files' => true
+					]) !!}
 
-			@include ('vadmin.blog.tags.form', ['submitButtonText' => 'Update'])
-			{!! Form::submit('Editar Tag', ['class' => 'button btnGreen']) !!}
-			{!! Form::close() !!}
+					@include ('vadmin.blog.tags.form', ['submitButtonText' => 'Update'])
+					{!! Form::submit('Editar Tag', ['class' => 'button btnGreen']) !!}
+				{!! Form::close() !!}
+			</div>
+	    </div>
+
+
+	    <div class="row">
+	    	
         </div>
     </div>  
 @endsection

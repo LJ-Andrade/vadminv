@@ -1,76 +1,95 @@
 html
-  min-height: 100%
-  position: relative
-  font-size: 80%
+	min-height: 100%
+	overflow-x: hidden
+	position: relative
+	font-size: 80%
 
 body
-  height: 100%
-  overflow-x: hidden
-  font-size: 18px
-  background-color: #fff
-  color: #383838
-  font-family: $font1
-  line-height: 25px
+	height: 100%
+	overflow-x: hidden
+	font-size: 18px
+	background-color: #fff
+	color: #383838
+	font-family: $font1
+	line-height: 25px
 a
-  text-decoration: none
-  color: rgb(187, 183, 242)
-  &:hover
-    text-decoration: none
+	text-decoration: none
+	color: rgb(187, 183, 242)
+	&:hover
+		text-decoration: none
 
 p
-  font-size: 1.5rem
-  font-family: $font2
-  font-weight: $f2w2
+	font-size: 1.5rem
+	line-height: 1.6rem
+	font-family: $font2
+	font-weight: $f2w2
+
+@media (max-width: 700px)
+	p
+		font-size: 1.3rem
+
 
 h1,h2,h3,h4
-  font-family: $font1
-  font-w
+	font-family: $font1
+	font-w
 h1
-  font-size: 2.5rem
-  font-weight: 400
+	font-size: 2.5rem
+	font-weight: 400
 h2
-  font-size: 1.8rem
-  font-weight: 400
+	font-size: 1.8rem
+	font-weight: 400
 h3
-  font-size: 1.6rem
-  font-weight: 400
-  color: #BDD9EB
+	font-size: 1.6rem
+	font-weight: 400
+	color: #BDD9EB
 h4
-  font-size: 1.3rem
-  font-weight: 400
+	font-size: 1.3rem
+	font-weight: 400
 
 
 
 .brd
-  border: 1px solid red
+	border: 1px solid red
 .txL
-  text-align: left
+	text-align: left
 .txR
-  text-align: right
+	text-align: right
 .txC
-  text-align: center
+	text-align: center
 .pad0
-  padding: 0
+	padding: 0
 .mar0
-  margin: 0
+	margin: 0
 .margTop0
-  margin-top: 0 !important
+	margin-top: 0 !important
 .padTop0
-  padding-top: 0 !important
+	padding-top: 0 !important
 .margTop50
-  margin-top: 50px
+	margin-top: 50px
+
+.bt-shadow
+	@include tx-shadow-soft
+
+.bt-shadow2
+	@include tx-shadow-soft2
+
+.bt-shadow3
+	@include tx-shadow-soft3
+
+.bt-shadow-w
+	@include tx-shadow-soft-w
 
 @media (max-width: 900px)
-  .hideMobile900
-    display: none !important
+	.hideMobile900
+		display: none !important
 .Hidden
-  display: none !important
+	display: none !important
 .floatRight
-  float: right
+	float: right
 .floatLeft
-  float: left
+	float: left
 
 // Resets
 ul
-  padding-left: 0
+	padding-left: 0
 

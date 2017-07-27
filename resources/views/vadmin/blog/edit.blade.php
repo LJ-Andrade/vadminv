@@ -14,10 +14,12 @@
 @endsection
 
 @section('content')
-
+	@component('vadmin.components.mainloader')
+		@slot('text','Editando...')
+	@endcomponent
 	<div class="container">
 	    <div class="row">
-	        {!! Form::open(['route' => ['blog.update', $article], 'class' => 'big-form', 'method' => 'PUT', 'files' => true]) !!}
+	        {!! Form::open(['route' => ['blog.update', $article], 'id' => 'EditForm', 'class' => 'big-form', 'method' => 'PUT', 'files' => true]) !!}
 	        	<div class="row">
 					{{-- Title --}}
 					<div class="col-md-6">
@@ -68,8 +70,8 @@
 						<h2>Imágenes publicadas</h2>
 						<ul>
 							@foreach($article->images as $image)
-							<li id="Img{{ $image->id }}" class="Edit_Actual_Image" data-imgid="{{ $image->id }}">	
-								<img src="{{ asset('webimages/blog/'.$image->name) }}">
+							<li id="Id{{ $image->id }}" class="Edit_Actual_Image" data-imgid="{{ $image->id }}">	
+								<img src="{{ asset('webimages/blog/articles/'.$image->name) }}">
 								<div class="overlayItemCenter"><i class="ion-trash-a"></i></div>
 							</li>
 							@endforeach
@@ -116,56 +118,25 @@
 		// Init
 		$('.Textarea-Editor').trumbowyg();
 
+		// -------------- Single Delete -------------- //
+		// --------------------------------------------//
+		$(document).on('click', '.Edit_Actual_Image', function(e){
+			e.preventDefault();
+			// var id    = $(this).data('id');
+			var id    = $(this).data('imgid');
+			var route = "{{ url('vadmin/deleteArticleImg') }}/"+id+"";
+			
+			singleDelete(id, route, 'Cuidado!','Está seguro?');
 
-		// ----- Image Delete Ajax ------- //
-		// Ask Delete Confirmation
-		$('.Edit_Actual_Image').click(function(){
-			var id = $(this).data('imgid');
-			confirm_delete(id, 'Cuidado','Desea eliminar esta imágen permanentemente?');
 		});
 
-		// Proceed to deletion
-		function delete_item(id) {	
-		
-			var route = "{{ url('vadmin/deleteArticleImg') }}/"+id+"";
-			console.log(route);
-			$.ajax({
-					url:  route,
-					method: 'post',             
-					dataType: "json",
-					data: {id: id, _token: $('input[name="_token"]').val()
-					},
-						success: function(data){
-					},
-					complete: function(data)
-					{
-						console.log(data);
-						
-						if(data.responseText == 1)
-						{
-							swal(
-							  'Ok!',
-							  'Imágen eliminada !',
-							  'success'
-							);
-							$('#Img'+id).hide(400);
-						} else {
-							swal(
-							  'Ups!',
-							  'La imágen no se pudo eliminar ! <br> Contacte al servicio técnico.',
-							  'error'
-							);
-						}
+		// Loader
+		$("#EditForm").on("submit", function(){
+			$('.Main-Loader').removeClass('Hidden');
+		});
 
-					},
-					error: function(data)
-					{
-						// console.log(data);
-					},
-				});
 
-		}
-	
+
 		
 	</script>
 

@@ -23,14 +23,14 @@
 		<div class="row">
 			<div id="Error"></div>
         </div>
-	    <div class="row">
-	    	{!! Form::open(['route' => 'tags.store', 'method' => 'POST', 'files' => true, 'id' => 'NewItemForm', 'class' => 'big-form', 'data-parsley-validate' => '']) !!}	
-            	@include ('vadmin.blog.tags.form')
-				<div class="text-center">
-					{!! Form::submit('Aceptar', ['class' => 'button btnGreen', 'id' => 'InsertItemBtn']) !!}
-				</div>
-            {!! Form::close() !!}
-        </div>
+        <div class="narrow-form">
+			<div class="inner">
+				{!! Form::open(['route' => 'tags.store', 'method' => 'POST', 'files' => true, 'id' => 'NewItemForm', 'data-parsley-validate' => '']) !!}	
+	            	@include ('vadmin.blog.tags.form')
+					{!! Form::submit('Crear', ['class' => 'button btnGreen', 'id' => 'InsertItemBtn']) !!}
+	            {!! Form::close() !!}
+			</div>
+	    </div>
     </div>  
 @endsection
 

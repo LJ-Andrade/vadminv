@@ -140,7 +140,7 @@
 					$('#Id'+id[i]).hide(200);
 				}
 				$('#BatchDeleteBtn').addClass('Hidden');
-				ajax_list();
+				location.reload();
 				// $('#Error').html(data.responseText);
 				// console.log(data);
 			},

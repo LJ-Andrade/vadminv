@@ -10,7 +10,7 @@
 		  </div>
 		  <div class="collapse navbar-collapse" id="expand-nav">
 				<ul class="nav navbar-nav navbar-left">
-					 <li><a href="{{ url('/vadmin') }}">VADmin | Panel de Control</a></li>
+					<li><a href="{{ url('/vadmin') }}"><img src="{{ asset('images/logos/vadminlogo.png') }}" alt=""> <span>Vadmin</span></a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					 <li class="dropdown user-menu">
@@ -49,19 +49,33 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Catálogo
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Blog
 						<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="{{ url('vadmin/blog') }}"><i class="ion-ios-list-outline"></i> Artículos</a></li>
-							<li><a href="{{ url('vadmin/categories') }}"><i class="ion-bookmark"></i> Categorías</a></li>
-							<li><a href="{{ url('vadmin/tags') }}"><i class="ion-ios-pricetags"></i> Tags</a></li>
+							<li><a href="{{ url('vadmin/blog/create') }}"><i class="ion-plus-round"></i> Nuevo Artículo</a></li>
+							<li><a href="{{ url('vadmin/blog') }}"><i class="ion-ios-list-outline"></i> Listar Artículos</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="{{ url('vadmin/categories/create') }}"><i class="ion-plus-round"></i> Nueva Categoría</a></li>
+							<li><a href="{{ url('vadmin/categories') }}"><i class="ion-bookmark"></i> Listar Categorías</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="{{ url('vadmin/tags/create') }}"><i class="ion-plus-round"></i> Nuevo Tag</a></li>
+							<li><a href="{{ url('vadmin/tags') }}"><i class="ion-ios-pricetags"></i> Listar Tags</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Varios
 						<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="{{ url('/') }}"><i class="ion-ios-monitor-outline"></i> Ver Web</a></li>
+							<li><a href="{{ url('newsletter') }}" target="_blank"><i class="ion-ios-monitor-outline"></i> Newsletter</a></li>
+							<li><a href="{{ url('/') }}" target="_blank"><i class="ion-ios-monitor-outline"></i> Ver Web</a></li>
+							<li><a href="{{ url('blog') }}" target="_blank"><i class="ion-ios-monitor-outline"></i> Ver Blog</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin
+						<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="{{ url('vadmin/users') }}"><i class="ion-person"></i> Usuarios</a></li>
 							
 						</ul>
 					</li>

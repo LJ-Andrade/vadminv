@@ -1,29 +1,6 @@
 @extends('web.layouts.main')
-@section('title', 'FASCINATION | Contacto')
+@section('title', 'V de Verde | Contacto')
 
-@section('styles')
-    
-
-@endsection
-
-
-@section('content')
-    	
+@section('content')    	
     @include('web.layouts.partials.contact')
-    @include('web.layouts.partials.foot')
-
-@endsection
-
-@section('scripts')
-
-
-@endsection
-
-@section('custom_js')
-
-	<script type="text/javascript">
-		
-
-	</script>
-
 @endsection

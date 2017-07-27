@@ -335,6 +335,8 @@ class ComposerStaticInit330b97a82fe5b82ebca2a6f85b56c534
         'AddCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_14_060743_add_categories_table.php',
         'AddImagesTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_14_061856_add_images_table.php',
         'AddTagsTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_14_063259_add_tags_table.php',
+        'CreateMigrationsTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_14_211436_create_migrations_table.php',
+        'CreateNewslettersTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_14_211603_create_newsletters_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'CrudGeneratorTest' => __DIR__ . '/..' . '/appzcoder/crud-generator/tests/CrudGeneratorTest.php',

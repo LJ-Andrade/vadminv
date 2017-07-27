@@ -4,126 +4,359 @@
 //                                    //
 ////////////////////////////////////////
 
-
-.swiper-container
+.home-banner-container
 	width: 100%
-	// height: 450px
-	padding-bottom: 40px
-	z-index: -1
-.swiper-slide
-	text-align: center
-	font-size: 18px
-	background: #fff
-	/* Center slide text vertically */
-	display: -webkit-box
-	display: -ms-flexbox
-	display: -webkit-flex
-	display: flex
-	-webkit-box-pack: center
-	-ms-flex-pack: center
-	-webkit-justify-content: center
-	justify-content: center
-	-webkit-box-align: center
-	-ms-flex-align: center
-	-webkit-align-items: center
-	align-items: center
-	position: relative
-	.inner
-		position: absolute
-		span.title
-			font-size: 6rem
-			font-weight: 400
-			line-height: 6rem
-			color: $dark-blue
-		p
-			color: #000
-			font-size: 1.4rem
-			font-weight: 400
-	
-@media (max-width: 970px)
-	.swiper-slide
+	.home-banner
+		background: url(../webimages/home/homebanner.jpg) no-repeat center center
+		-webkit-background-size: cover
+		-moz-background-size: cover
+		-o-background-size: cover
+		background-size: cover
+		height: auto
+		// max-height: 100vh
+		padding-bottom: 80px
+		padding-top: 40px
+		text-align: center
+		@include flex-column
+		z-index: 200
 		.inner
+			padding: 10px
 			span.title
-				font-size: 4rem
-				line-height: 4rem
-
-
-@media (max-width: 970px)
-	.swiper-slide		
-		.banner-img-mobile
-			display: block
-		.banner-img-desktop
-			display: none
-
-@media (min-width: 970px)
-	.swiper-slide		
-		.banner-img-mobile
-			display: none
-		.banner-img-desktop
-			display: block
-			
+				font-size: 5rem
+				font-weight: 400
+				line-height: 5rem
+				color: #fff
+				@include tx-shadow-soft2
+			hr
+				border-top: 1px solid #fff
+				max-width: 450px
+			p
+				color: #fff
+				font-size: 1.4rem
+				font-weight: 400
+				@include tx-shadow-soft
 .centered-logo
 	text-align: center
-	margin-top: -70px
-	z-index: 2
+	margin-top: -75px
+	z-index: 400
+	// max-width: 100%
 	img
 		width: 150px
 
-.accesorios-img-link
-	background: url(../webimages/home/accesorioslink.jpg) no-repeat center center
-	-webkit-background-size: cover
-	-moz-background-size: cover
-	-o-background-size: cover
-	background-size: cover
+.centered-logo-no-banner
+	text-align: center
+	img
+		width: 150px
+
+
+
+@media (max-width: 1000px)
+	.home-banner-container
+		.home-banner
+			padding-top: 0
+			.inner
+				span.title
+					font-size: 4rem
+					line-height: 4rem
+
+@media (max-width: 765px)
+	.home-banner-container
+		.home-banner
+			height: auto
+			padding-bottom: 80px
+			.inner
+				hr
+					width: 50%
+				span.title
+					font-size: 3rem
+					line-height: 2.9rem
+				p
+					padding: 0 2px
+
+// .home-slider
+// 	.swiper-container
+// 		width: 100%
+// 		// height: 450px
+// 		padding-bottom: 40px
+// 		z-index: -1
+// 	.swiper-slide
+// 		text-align: center
+// 		font-size: 18px
+// 		background: #fff
+// 		/* Center slide text vertically */
+// 		display: -webkit-box
+// 		display: -ms-flexbox
+// 		display: -webkit-flex
+// 		display: flex
+// 		-webkit-box-pack: center
+// 		-ms-flex-pack: center
+// 		-webkit-justify-content: center
+// 		justify-content: center
+// 		-webkit-box-align: center
+// 		-ms-flex-align: center
+// 		-webkit-align-items: center
+// 		align-items: center
+// 		position: relative
+// 		.inner
+// 			position: absolute
+// 			span.title
+// 				font-size: 6rem
+// 				font-weight: 400
+// 				line-height: 6rem
+// 				color: #fff
+// 				@include tx-shadow-soft2
+// 			hr
+// 				border-top: 1px solid #fff
+// 			p
+// 				color: #fff
+// 				font-size: 1.4rem
+// 				font-weight: 400
+// 				@include tx-shadow-soft
+	
+// @media (max-width: 970px)
+// 	.home-slider
+// 		.swiper-slide
+// 			.inner
+// 				span.title
+// 					font-size: 4rem
+// 					line-height: 4rem
+
+
+// @media (max-width: 970px)
+// 	.home-slider
+// 		.swiper-slide		
+// 			.banner-img-mobile
+// 				display: block
+// 			.banner-img-desktop
+// 				display: none
+
+// @media (min-width: 970px)
+// 	.home-slider
+// 		.swiper-slide		
+// 			.banner-img-mobile
+// 				display: none
+// 			.banner-img-desktop
+// 				display: block
+
+
+.home-big-menu
+	margin-bottom: 20px
+	.home-bm-item
+		border-radius: 15px
+		height: 250px
+		border: 1px solid red
+
+		.inner
+			position: relative
+			.text
+				position: absolute
+				text-align: center
+				width: 100%
+				margin-top: 20%
+				top: 0
+				left: 0
+				color: #fff
+				font-size: 2.6rem
+				font-weight: 600
+				line-height: 2.5rem
+				img
+					border-radius: 15px
+					max-width: 100%
+					max-height: 100%
+			&:hover
+				img
+					@include transition(0.5s)
+					filter: brightness(1.1)
+	.blue-bg
+		background-color: $dark-blue		
+
+
+.mosaic-block
+
+.bgimg-container
+	max-width: 900px
+
+.bgimg-link
+	height: 180px
+	padding: 2px
+	text-align: center
+	.inner
+		// @include transition(0.2s)
+		border-radius: 15px
+		height: 100%
+		background-size: 112%
+		@include flex-column
+		h1
+			margin: 0
+			font-weight: 600
+		.bgsize
+			-webkit-background-size: cover
+			-moz-background-size: cover
+			-o-background-size: cover
+			background-size: cover
+
+
+
+@media (min-width: 1250px)
+	.home-banner-container
+		.home-banner
+			height: 780px
+
+
+@media (min-width: 1250px), screen and (min-height: 750px)
+	.home-banner-container
+		.home-banner
+			height: 700px
+
+@media screen and ( max-height: 850px )
+	.home-banner-container
+		.home-banner
+			height: 650px
+
+@media screen and ( max-height: 798px )
+	.home-banner-container
+		.home-banner
+			height: 550px
+
+@media screen and ( max-height: 692px )
+	.home-banner-container
+		.home-banner
+			height: 450px
+
+@media screen and ( max-height: 600px )
+	.home-banner-container
+		.home-banner
+			height: 390px
+
+
+
+@media screen and ( max-height: 700px )
+	.mosaic-block
+	.bgimg-container
+		max-width: 750px
+	.bgimg-link
+		height: 150px
+		.inner 
+			p
+				line-height: 1.5rem
+				font-size: 1.2rem
+			h1
+				font-size: 2rem
+				text-align: center
+
+@media screen and ( max-height: 580px )
+	.bgimg-container
+		max-width: 650px
+	.bgimg-link
+		height: 140px
+		.inner 
+			p
+				line-height: 1.2rem
+				font-size: 1.2rem
+			h1
+				font-size: 1.5rem
+				text-align: center
+
+@media screen and ( max-height: 500px )
+	.bgimg-container
+		max-width: 590px
+	.bgimg-link
+		height: 130px
+		.inner 
+			p
+				line-height: 1rem
+				font-size: 1.2rem
+			h1
+				font-size: 1.5rem
+				text-align: center
+
+
+			
+@media screen and ( min-height: 840px )
+	.bgimg-container
+		max-width: 1170px
+	.bgimg-link
+		height: 250px
+
+@media (max-width: 768px)
+	.bgimg-link
+		height: 160px
+		.inner 
+			p
+				line-height: 1rem
+				font-size: 1.2rem
+			h1
+				font-size: 2rem
+				text-align: center
+
+		
+@media (max-width: 768px)
+	.bgimg-link
+		max-width: 400px
+		.inner
+			p
+				font-size: 1.2rem
+
+.bg-zoom-home
+	@include transition(0.5s)
+	background-size: 110%
+	-webkit-filter: brightness(1)
+	filter: brightness(1)
+	&:hover
+		background-size: 115%
+		cursor: pointer
+		-webkit-filter: brightness(1.2)
+	    filter: brightness(1.2)
+
+@media (max-width: 1200px)
+	.bg-zoom-home
+		background-size: 110%
+		@include transition(0.5s)
+		&:hover
+			cursor: pointer
+			-webkit-filter: brightness(1.2)
+			filter: brightness(1.2)
+
+
 
 .blue-back-link
 	background-color: $dark-blue
 
+@media (min-width: 1000px)
+	.blue-back-link p
+		font-size: 1.2rem
+
+.accesorios-img-link
+	background: url(../webimages/home/accesorioslink.jpg) no-repeat center center
+
 .maderas-img-link
 	background: url(../webimages/home/regaloslink.jpg) no-repeat center center
-	-webkit-background-size: cover
-	-moz-background-size: cover
-	-o-background-size: cover
-	background-size: cover
 
 .huerta-img-link
 	background: url(../webimages/home/huertalink.jpg) no-repeat center center
-	-webkit-background-size: cover
-	-moz-background-size: cover
-	-o-background-size: cover
-	background-size: cover
+
+@media (max-width: 768px)
+	.huerta-img-link, .accesorios-img-link
+		background-position: bottom
 
 .urbana-img-link
 	background: url(../webimages/home/urbanalink.jpg) no-repeat center center
-	-webkit-background-size: cover
-	-moz-background-size: cover
-	-o-background-size: cover
-	background-size: cover
+	
 
 .blog-img-link
 	background: url(../webimages/home/bloglink.jpg) no-repeat center center
-	-webkit-background-size: cover
-	-moz-background-size: cover
-	-o-background-size: cover
-	background-size: cover
-
-.bg-zoom-home
-	@include transition(0.5s)
-	background-size: 100% 100%
-	-webkit-filter: brightness(1)
-	filter: brightness(1)
-	&:hover
-		cursor: pointer
-		background-size: 110% 110%
-		-webkit-filter: brightness(1.2)
-	    filter: brightness(1.2)
 
 
 .shop-preview
-	padding: 20px 10px 45px
+	padding: 0 10px 45px
+	max-width: 950px
+	margin: 0 auto
 	.action
 		margin-top: 35px 
 
+@media screen and ( max-height: 700px )
+	.shop-preview
+		max-width: 750px
 
 // Social Banner
 .social-banner
@@ -132,11 +365,13 @@
 	-moz-background-size: cover
 	-o-background-size: cover
 	background-size: cover
+	// background-position: 0px -150px
 	text-align: center
 	padding: 40px 10px
 	h1
 		color: #fff
-		margin-bottom: 40px
+		margin-bottom: 20px
+		margin-top: 0
 	.inner
 		img
 			width: 100px
@@ -181,15 +416,143 @@
 			.form-inline
 				min-width: 100%
 				text-align: center
+
+@media (max-width: 765px)
+	.newsletter-banner
+		padding: 10px 5px
+	.inner2 .form-inline input
 		
 
-		
+.shop-preview-block
+	.shop-item-preview
+		padding: 5px
+		.inner
+			border: 1px solid #ccc
+			.image
+				margin-bottom: 5px
+				@include transition(0.4s)
+			.description
+				padding: 10px		
+				.title
+					font-family: $font2
+				.text
+					font-family: $font2
+					margin-bottom: 5px
+					font-size: 1rem
+				.price
+					font-family: $fnumber
+					font-weight: 600
+					font-size: 2rem
+			&:hover
+				.image
+					filter: opacity(0.7)
+					cursor: pointer
+
+@media screen and ( max-height: 800px )
+	.shop-preview-block
+		.shop-preview
+			max-width: 750px
+
+@media screen and ( max-height: 710px )
+	.shop-preview-block
+		.shop-preview
+			max-width: 680px
+			.inner
+				.description
+					padding: 2px
+					.title
+						font-size: 1.3rem
+					.price
+						font-size: 1.6rem
+				.image
+					margin-bottom: 5px
+
+
+
 @media (max-width: 647px)
 	.shop-preview
 		@include flex-column
 
+.esencia-banner
+	padding: 0
+	text-align: center
+	margin-bottom: -25px
+	position: relative
+	img
+		max-width: 100%
+	.title
+		margin-top: 0px
+		font-style: italic
+	.text
+		padding-top: 185px
+		position: absolute
+		width: 100%
+		p
+			color: #fff
+		.quote
+			margin-top: 15px
+			font-size: 2.4rem
+			line-height: 2.6rem
+			color: #fff
+			font-style: italic
 
+@media (min-width: 1500px)
+	.esencia-banner
+		.text
+			padding-top: 240px
 
+@media (max-width: 1300px)
+	.esencia-banner
+		.text
+			padding: 15px
+			padding-top: 160px
+			span
+				font-size: 2rem
+			
+@media (max-width: 1160px)
+	.esencia-banner
+		.text
+			.quote
+				font-size: 2rem
+
+@media (max-width: 1038px)
+	.esencia-banner
+		.text
+			padding: 15px
+			padding-top: 130px
+
+@media (max-width: 1011px)
+	.esencia-banner
+		.text
+			padding: 15px
+			padding-top: 110px
+			h1
+				margin-top: 15px
+			p
+				font-size: 1.1rem
+				line-height: 1.3rem
+			.quote
+				font-size: 1.9rem
+
+@media (max-width: 860px)
+	.esencia-banner	
+		background: url(../webimages/esencia/bannermobile.jpg) no-repeat center center
+		-webkit-background-size: cover
+		-moz-background-size: cover
+		-o-background-size: cover
+		background-size: cover
+		background-position: bottom
+		height: 500px
+		.img-desktop
+			display: none
+
+@media (max-width: 560px)
+	.esencia-banner
+		height: 680px
+
+@media (max-width: 350px)
+	.esencia-banner
+		height: 750px
 
 ////////////////////////////////////////
 //                                    //
@@ -197,11 +560,12 @@
 //                                    //
 ////////////////////////////////////////
 
-
 .contact-section
 	padding: 45px 10px
 	.inner
 		.form
+			form
+				position: relative
 			input,textarea
 				border-radius: 0
 				font-size: 1.5rem
@@ -246,7 +610,12 @@
 				.title
 					display: block
 	
-
+.closeForm
+	position: absolute
+	right: 2px
+	top: 2px
+	&:hover
+		cursor: pointer
 
 .form-response
 	padding-top: 45px
@@ -270,37 +639,23 @@ footer
 	background-color: #ccc
 	padding-left: 0 !important
 	padding-right: 0 !important
-	.footer
-		padding: 20px 10px 40px
-		h2
-			color: #fff
-		.contact-data
-			span
-				font-size: 1.3rem
-				font-family: $font2
-				font-weight: $f2w1
-				color: #fff
-				text-align: center
+	background-color: #f9f9f9
+	.footer-content
+		padding: 25px 15px
+		color: $main-blue
+		.address
 			i
-				color: #E7E7E7
-				font-size: 2.5rem
-			span.icon
-				margin-right: 10px
-				width: 50px
-		.social
-			span
-				color: #fff
-			#u_0_3
-				display: none
+				font-size: 1.5rem
 
 
 	.copyright
-		background-color: #2E2E36
+		background-color: #ececec
 		padding: 10px 5px
 		text-align: center
-		color: #fff
+		color: $main-blue
 		font-family: $font2
 		font-weight: $f2w1
-		font-size: 1.2rem
+		font-size: 1.3rem
+		font-weight: 400
 
 

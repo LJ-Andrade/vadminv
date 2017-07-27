@@ -23,7 +23,9 @@
 @endsection
 
 @section('content')
-
+		@component('vadmin.components.mainloader')
+		@slot('text','Creando...')
+	@endcomponent
 	<div class="container">
 	    <div class="row">
 	        {!! Form::open(['route' => 'blog.store', 'method' => 'POST', 'files' => true, 'id' => 'NewItemForm', 'class' => 'big-form', 'data-parsley-validate' => '']) !!}	
@@ -88,7 +90,7 @@
 					</div>
 				</div>
 				<div class="row text-center">
-					{!! Form::submit('Agregar artículo', ['class' => 'button buttonOk']) !!}
+					{!! Form::submit('Creando artículo', ['class' => 'button buttonOk']) !!}
 				</div>
 			{!! Form::close() !!}
 	    </div>
@@ -129,6 +131,10 @@
 			}
 		});
 
+		// Loader
+		$("#NewItemForm").on("submit", function(){
+			$('.Main-Loader').removeClass('Hidden');
+		});
 		
 
 	</script>

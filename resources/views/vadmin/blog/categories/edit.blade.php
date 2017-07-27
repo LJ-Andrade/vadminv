@@ -13,18 +13,18 @@
 
 @section('content')
 <div class="container">
-	<div class="row">
-		{!! Form::model($category, [
-			'method' => 'PATCH',
-			'url' => ['/vadmin/categories', $category->id],
-			'files' => true,
-			'class' => 'big-form'
-		]) !!}
+    <div class="narrow-form">
+		<div class="inner">
+			{!! Form::model($category, [
+				'method' => 'PATCH',
+				'url' => ['/vadmin/categories', $category->id],
+				'files' => true
+			]) !!}
 
-		@include ('vadmin.blog.categories.form', ['submitButtonText' => 'Update'])
-		{!! Form::submit('Editar Categoría', ['class' => 'button btnGreen']) !!}
-		{!! Form::close() !!}
-		
+			@include ('vadmin.blog.categories.form', ['submitButtonText' => 'Update'])
+			{!! Form::submit('Editar Categoría', ['class' => 'button btnGreen']) !!}
+			{!! Form::close() !!}
+		</div>
 	</div>
 </div>
 

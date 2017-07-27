@@ -16,11 +16,11 @@
                 {!! Form::label('password', 'Contraseña:') !!}
                 <input class="form-control" name="password" type="password" value="" required="">
                 {!! Form::label('type', 'Permisos:') !!}
-                {!! Form::select('type', ['user' => 'Usuario','admin' => 'Admin', 'superadmin' => 'SuperAdmin'], null, ['class' => 'form-control', 'placeholder' => 'Seleccione una opcion', 'required' => '']) !!}
+                {!! Form::select('type', ['user' => 'Usuario','admin' => 'Administrador'], null, ['class' => 'form-control', 'placeholder' => 'Seleccione una opcion', 'required' => '']) !!}
             </div>
             <div class="col-md-6">
                 {!! Form::label('role', 'Rol') !!}
-				{!! Form::select('role', ['seller' => 'Vendedor', 'none' => 'Ninguno'], null, 
+				{!! Form::select('role', ['Autor' => 'Autor', 'none' => 'Ninguno'], null, 
 				['class' => 'form-control', 'placeholder' => 'Seleccione una opción...', 'required'])!!}
             </div>
         </div>
@@ -59,7 +59,7 @@
                 </div>
                  <div class="col-md-6">
                     {!! Form::label('role', 'Rol') !!}
-                    {!! Form::select('role', ['seller' => 'Vendedor', 'none' => 'Ninguno'], null, 
+                    {!! Form::select('role', ['Autor' => 'Autor', 'Ninguno' => 'Ninguno'], null, 
                     ['id' => 'EditRole', 'class' => 'form-control', 'placeholder' => 'Seleccione una opción...', 'required'])!!}
                 </div>
             </div>

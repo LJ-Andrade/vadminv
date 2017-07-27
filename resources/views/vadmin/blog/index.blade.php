@@ -25,6 +25,9 @@
 
 @section('content')
 	@include('vadmin.blog.searcher')
+	@component('vadmin.components.mainloader')
+		@slot('text','Cargando...')
+	@endcomponent
 
     <div class="container">
 		@include('vadmin.blog.list')
@@ -56,40 +59,6 @@
 
 	});
 
-
-	// $(document).on('click', '.Delete', function(e){
-	// 	e.preventDefault();
-	// 	var id = $(this).data('id');
-	// 	confirm_delete(id, 'Cuidado!','Está seguro?');
-	// });
-
-	// function delete_item(id) {	
-
-	// 	var route = "{{ url('vadmin/ajax_delete_article') }}/"+id+"";
-
-	// 	$.ajax({
-	// 		url: route,
-	// 		method: 'post',             
-	// 		dataType: "json",
-	// 		data: {id: id},
-	// 		success: function(data){
-			
-	// 			console.log(data);
-	// 			if (data == 1) {
-	// 				$('#Id'+id).hide(200);
-	// 				alert_ok('Ok!','Eliminación completa');
-	// 			} else {
-	// 				alert_error('Ups!','Ha ocurrido un error');
-	// 			}
-	// 		},
-	// 		error: function(data)
-	// 		{
-	// 			$('#Error').html(data.responseText);
-	// 			console.log(data);	
-	// 		},
-	// 	});
-	// }
-
 	// -------------- Batch Deletex -------------- //
 
 	// ---- Batch Confirm Deletion ---- //
@@ -120,7 +89,7 @@
 					$('#Id'+id[i]).hide(200);
 				}
 				$('#BatchDeleteBtn').addClass('Hidden');
-				ajax_list();
+				location.reload();
 				// $('#Error').html(data.responseText);
 				// console.log(data);
 			},
@@ -146,7 +115,9 @@
 			url: route,
 			method: 'post',             
 			dataType: 'json',
-			data: { id: id, status: switchstatus
+			data: { id: id, status: switchstatus },
+			beforeSend: function(){
+				$('#Main-Loader').removeClass('Hidden');
 			},
 			success: function(data){
 				var updatedStatus = (data.lastStatus);
@@ -195,11 +166,10 @@
 			},
 			complete: function(data)
 			{				
-				
+				$('#Main-Loader').addClass('Hidden');
 			},
 			error: function(data)
 			{
-				// $('#Error').html(data);
 				console.log(data.responseText);
 			},
 		});

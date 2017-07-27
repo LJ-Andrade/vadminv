@@ -1,6 +1,6 @@
 @extends('web.layouts.main')
 
-@section('title', 'Studio Vimana | Portfolio')
+@section('title', 'V de Verde | Blog')
 
 @section('styles')
 @endsection
@@ -11,21 +11,27 @@
             <h1>BLOG</h1>
         </div>
     </div>
-    @include('web.blog.partials.filter') 
+    <div class="row centered-logo">
+        <img src="{{ asset('webimages/logos/logo.png') }}" alt="">
+    </div>
     {{-- Content and Sidebar --}}
-    <div class="container-fluid blog-container">
+    <div class="container blog-container">
+        @include('web.blog.partials.filter') 
         <div class="row">
             <div class="col-md-9 col-sm-12">
                 @include('web.blog.content')
-            <div class="clearfix"></div>
             </div>
             <div class="col-md-3 col-sm-3">
                 @include('web.blog.sidebar')
             </div>
-            {!! $articles->render(); !!}
         </div>
     </div>
     {{-- / Content and Sidebar --}}
+    <div class="container">
+        <div class="row">
+            {!! $articles->render(); !!}
+        </div>
+    </div>
 @endsection
 
 @section('scripts')
@@ -46,6 +52,12 @@
             } else {
                 filter.addClass('Hidden');
             }
+        });
+
+        $('.CloseFilters').click(function(){
+
+            $(this).parent().addClass('Hidden');
+
         });
 
     </script>

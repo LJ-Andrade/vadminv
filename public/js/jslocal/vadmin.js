@@ -148,6 +148,57 @@ $('.CloseDirsEntregaBtn').click(function(){
 //                          //
 //////////////////////////////
 
+var deleteRecord = function(id, route, bigtext, smalltext) {
+	swal({
+		title: bigtext,
+		text: smalltext,
+		type: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		confirmButtonText: 'ELIMINAR',
+		cancelButtonText: 'Cancelar',
+		confirmButtonClass: 'button buttonOk',
+		cancelButtonClass: 'button buttonCancel',
+		buttonsStyling: false
+	}).then(function () {
+		$.ajax({
+			url: route,
+			method: 'POST',             
+			dataType: 'JSON',
+			data: { id: id },
+			beforeSend: function(){
+				$('#Main-Loader').removeClass('Hidden');
+			},
+			success: function(data){
+				if (data.result == 1) {
+					$('#Id'+id).hide(200);
+					for(i=0; i < id.length ; i++){
+						$('#Id'+id[i]).hide(200);
+					}
+					alert_ok('Ok!','Eliminación completa');
+				} else {
+					alert_error('Ups!','Ha ocurrido un error');
+					console.log(data);
+				}
+			},
+			error: function(data)
+			{
+				$('#Error').html(data.responseText);
+				console.log(data);	
+			},
+			complete: function()
+			{
+				$('#Main-Loader').addClass('Hidden');
+			}
+		});
+	});
+
+}
+
+
+
+
 
 var singleDelete = function(id, route, bigtext, smalltext) {
 	swal({
@@ -169,6 +220,9 @@ var singleDelete = function(id, route, bigtext, smalltext) {
 			method: 'post',             
 			dataType: "json",
 			data: {id: id},
+			beforeSend: function(){
+				$('#Main-Loader').removeClass('Hidden');
+			},
 			success: function(data){
 				if (data.result == 1) {
 					$('#Id'+id).hide(200);
@@ -182,6 +236,10 @@ var singleDelete = function(id, route, bigtext, smalltext) {
 				$('#Error').html(data.responseText);
 				console.log(data);	
 			},
+			complete: function()
+			{
+				$('#Main-Loader').addClass('Hidden');
+			}
 		});
 	});
 

@@ -12,12 +12,23 @@ class CategoriesController extends Controller
 
     //---------------------------  Display ----------------------------------- //
 
-    public function index()
+    public function index(Request $request)
     {
-        $categories = Category::orderBy('id', 'ASC')->paginate(12);
+        $key     = $request->get('search');
+        $perPage = 20;
 
-        return view('vadmin.blog.categories.index')->with('categories', $categories);
+        if (!empty($key)) {
+            $categories = Category::where('name', 'LIKE', "%$key%")->paginate($perPage);
+        } else {
+            $categories = Category::paginate($perPage);
+        }
+
+            return view('vadmin.blog.categories.index')->with('categories', $categories);
+
     }
+
+
+
 
 
     public function show($id)

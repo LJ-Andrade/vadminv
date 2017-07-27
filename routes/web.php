@@ -63,10 +63,15 @@ Route::get('home', [
 	'uses' => 'WebController@home',
 ]);
 
+Route::get('maderas', function () {
+    return view('web.maderas');
+});
+
 Route::get('/home', 'HomeController@index');
 
 // Main Contact Form
 Route::post('ajax_mail', 'WebController@mail_sender');
+Route::post('ajax_mail_mayorist', 'WebController@mail_sender_mayorist');
 
 
 /////////////////////////////////////////////////
@@ -86,15 +91,28 @@ Route::group(['prefix' => 'vadmin', 'middleware' => ['auth','admin']], function(
 
 });
 
-
-
-
-
-
 Route::get('blog', [
 	'as'   => 'web.blog',
 	'uses' => 'WebController@blog',
 ]);
+
+Route::get('esencia', function () {	
+    return view('web.esencia');
+});
+
+Route::get('desayunos', function () {	
+    return view('web.desayunos');
+});
+
+Route::get('accesorios', function () {	
+    return view('web.accesorios');
+});
+
+
+Route::get('contacto', function () {
+	$url = URL::route('web') . '#contacto';
+	return Redirect::to($url);
+});
 
 
 // Show Article / Catalogue
@@ -113,6 +131,11 @@ Route::get('tag/{name}', [
 	'uses' => 'WebController@searchTag',
 	'as'   => 'web.search.tag'
 ]);
+
+// NewSletter
+Route::get('addnewsletter', 'WebController@addnewsletter');
+Route::get('newsletter', 'VadminController@newsletter');
+
 
 Route::group(['prefix' => 'vadmin', 'middleware' => ['auth','admin']], function(){
 
@@ -136,28 +159,14 @@ Route::group(['prefix' => 'vadmin', 'middleware' => ['auth','admin']], function(
 	Route::resource('tags', 'Blog\TagsController');
 	Route::post('ajax_delete_tag/{id}', 'Blog\TagsController@destroy');
 	Route::post('ajax_batch_delete_tags/{id}', 'Blog\TagsController@ajax_batch_delete');
-	Route::post('ajax_update_tag/{id}', 'Blog\TagsController@update');
-	
+	Route::post('ajax_update_tag/{id}', 'Blog\TagsController@update');	
 	Route::get('ajax_list_tags/{page?}', 'Blog\TagsController@ajax_list');
-
-
-
-	// Route::resource('articles', 'Catalogo\ArticlesController');
-	// Route::get('articles/{id}/destroy', [
-	// 	'uses' => 'ArticlesController@destroy',
-	// 	'as'   => 'articles.destroy'
-	// ]);
-
-	// Route::get('images', [
-	// 	'uses' => 'ImagesController@index',
-	// 	'as'   => 'images.index',
-	// ]);
-
-	
-	
-
 	Route::get('ajax_list_articles/{page?}', 'Blog\ArticlesController@ajax_list');
 
+	// ------ Newsletter ------- //
+	Route::get('newsletter', 'VadminController@newsletter');
+	// Route::post('delete_suscriptor/{id}', 'VadminController@delete_subscriptor');
+	Route::post('delete_suscriptors/{id}', 'VadminController@delete_subscriptors');
 	
 
 });

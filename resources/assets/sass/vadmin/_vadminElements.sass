@@ -287,6 +287,41 @@ $phvFsize: 0.9rem
 			padding: 10px 
 			background-color: #fbfbfb
 
+// --------- Narrow Form ------------ //
+.narrow-form
+	@include flex-column
+	.inner
+		padding: 10px
+		border: 1px solid #ccc
+		border-top: 10px solid $dark4
+		background-color: #fff
+		margin-bottom: 20px
+		@include box-shadow
+		width: 450px
+		max-width: 100%
+		hr
+			border
+		.sub-title
+			margin-top: 15px
+			padding: 7px 6px 3px
+			padding-left: 6px
+			background-color: #f5f5f5
+			span
+				font-size: 1rem
+				font-weight: 700
+			i.icon
+				padding-top: 4px
+				font-size: 1rem
+				margin-right: 8px
+				margin-left: 8px
+		.output-box
+			background: #f9f9f9
+			padding: 10px
+			margin-top: 10px
+			margin-bottom: 10px
+
+			
+
 .main-form
 	.form-container
 		@include flex-center
@@ -828,10 +863,12 @@ $phvFsize: 0.9rem
 	
 .search-filters
 	position: relative
-	background-color: $dark3
-	padding: 5px
+	background-color: #dadada
+	@include box-shadow
+	padding: 12px
 	z-index: 999
 	display: none
+	color: #383838
 	.navbar-form
 		padding: 0
 		margin: 0
@@ -840,7 +877,6 @@ $phvFsize: 0.9rem
 	label
 		font-weight: 300
 		margin: 0
-		color: #fff
 	.hide-desk
 		display: none
 
@@ -867,7 +903,7 @@ $phvFsize: 0.9rem
 .custom-badge
 	display: inline-block
 	min-width: 10px
-	padding: 3px 7px
+	padding: 5px 10px
 	font-size: 12px
 	font-weight: 700
 	line-height: 1
@@ -875,7 +911,7 @@ $phvFsize: 0.9rem
 	text-align: center
 	white-space: nowrap
 	vertical-align: middle
-	border-radius: 10px
+	border-radius: 0
 	margin-bottom: 5px
 
 //////////////////////////////////////
@@ -1222,15 +1258,17 @@ $phvFsize: 0.9rem
 	z-index: 9999
 	overflow: hidden
 	.inner
-		border-radius: 10px
-		width: 120px
-		height: 125px
+		border-radius: 50%
+		width: 150px
+		height: 150px
 		text-align: center
 		background-color: #59596c
 		color: #fff
-		padding: 10px
+		padding: 20px
 		img
 			width: 80px
+	&:hover
+		cursor: wait
 
 //////////////////////////////////////
 //                                  //
@@ -1280,3 +1318,38 @@ $phvFsize: 0.9rem
 		.inner2
 			max-width: 200px
 
+
+// Vadmin article preview
+.article-preview-container
+	.title
+		margin-bottom: 25px
+		span
+			font-size: 1.5rem
+	.item
+		position: relative
+		.edit
+			position: absolute
+			right: 15px
+			top: 0px
+			padding: 1px 6px
+			background-color: #fff
+			opacity: 0
+			@include transition(0.2s)
+			i
+				color: #383838
+				&:hover
+					color: #e46565
+		&:hover
+			.edit
+				opacity: 1
+			
+			
+		img
+			width: 100%
+			max-width: 100%
+	.content
+		background-color: #fff
+		text-align: center
+		padding: 10px
+		.small-text
+			font-size: 0.8rem

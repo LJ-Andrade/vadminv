@@ -1,5 +1,9 @@
 @section('searcher')
 
+@if(isset($_GET['search']))
+    <a href="{{ url('vadmin/categories') }}"><button type="button" class="btnSmall buttonOk">Mostrar Todos</button></a> <br><br>
+    Resultados de la búsqueda:
+@endif
 <div class="row header-options">
     <div class="Search-Filters search-filters">
         {{-- Search --}}
@@ -8,17 +12,15 @@
             <div class="inner-column">
                 <div class="input-group">
                     <span class="input-group-btn">
-                    <input type="text" class="form-control" name="name" placeholder="Buscar...">
-                        <button class="btn btn-default" type="submit">
-                            <i class="ion-ios-search"></i>
-                        </button>
+                    <input type="text" class="form-control" name="search" placeholder="Buscar categoría...">
+
                     </span>
                 </div>
             </div>
-            <a href="{{ url('vadmin.index.blade.php') }}"><button class="btnSmall buttonOk">Todos</button></a>
+            
         {!! Form::close() !!}
         {{-- /Search --}}
-        <div class="btnClose"><i class="ion-close-round"></i></div>		
+        <div class="btnClose"><i class="ion-close-round"></i></div>        
     </div>
 </div>
 

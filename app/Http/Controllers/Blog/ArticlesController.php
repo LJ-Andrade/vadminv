@@ -26,7 +26,7 @@ class ArticlesController extends Controller
 
         if ($title != ''){
                 // Search User AND Role
-                $articles = Article::where('title', 'LIKE', "%$title%")->paginate($perPage);
+                $articles = Article::where('title', 'LIKE', "%$title%")->paginate(25);
                 $articles->each(function($articles){
                     $articles->category;
                     $articles->user;
@@ -46,23 +46,6 @@ class ArticlesController extends Controller
 
         return view('vadmin.blog.index')->with('articles', $articles);
     }
-
-
-
-    // ----------- List --------------- //
-    // public function ajax_list(Request $request)
-    // {
-        
-    //     $articles = Article::search($request->title)->orderBy('id', 'DESC')->paginate(12);
-    //     $articles->each(function($articles){
-    //         $articles->category;
-    //         $articles->user;
-    //         $articles->images;
-    //     });
-
-    //     return view('vadmin/blog/list')->with('articles', $articles);
-        
-    // }
 
     /////////////////////////////////////////////////
     //                  CREATE                     //
@@ -125,7 +108,7 @@ class ArticlesController extends Controller
                 $name     = md5($phisic_image->getFilename().time()).'.'.$phisic_image->getClientOriginalExtension();
                 $img      = \Image::make($phisic_image->path());
                 
-                $img->fit(600)->save($path.'/'.$name);
+                $img->fit(915,617)->save($path.'/'.$name);
 
                 $image            = new Image();
                 $image->name      = $name;
@@ -187,7 +170,7 @@ class ArticlesController extends Controller
                 $name         = md5($phisic_image->getFilename().time()).'.'.$phisic_image->getClientOriginalExtension();
                 $img          = \Image::make($phisic_image->path());
                 
-                $img->fit(600)->save($path.'/'.$name);
+                $img->fit(915,617)->save($path.'/'.$name);
 
                 $image        = new Image();
                 $image->name  = $name;
@@ -223,9 +206,21 @@ class ArticlesController extends Controller
     {
         $image  = Image::find($id);
         $path   = 'webimages/blog/articles/';
-        File::Delete(public_path($path . $image->name));
-        $image->delete();
-        echo 1;
+        
+        try {
+            File::Delete(public_path($path . $image->name));
+            $image->delete();
+            return response()->json([
+                "result"   => 1,
+            ]);  
+            
+        } catch (Exception $e) {
+            return response()->json([
+                "result"   => 0,
+                "error"    => $e
+            ]);    
+        }
+
     }
 
     // ---------- Ajax Bach Delete -------------- //
@@ -244,12 +239,26 @@ class ArticlesController extends Controller
         // BORRAR IMAGEN ARREGLAR
         $article_image = $article->images;
 
-        foreach ($article_image as $phisic_image) {
-            File::Delete(public_path( $path . $phisic_image->name));
+        
+        
+        try {
+            foreach ($article_image as $phisic_image) {
+                File::Delete(public_path( $path . $phisic_image->name));
+            }
+
+            $article->delete();
+            return response()->json([
+                "result"   => 1,
+            ]);  
+            
+        } catch (Exception $e) {
+            return response()->json([
+                "result"   => 0,
+                "error"    => $e
+            ]);    
         }
 
-        $article->delete();
-        echo 1;
+
         // return redirect()->route('catalogo.index')->with('message', 'El artículo ha sido eliminado');
     }
 

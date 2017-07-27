@@ -78,18 +78,22 @@ class TagsController extends Controller
 
 
     // ---------- Delete -------------- //
-    public function ajax_delete(Request $request, $id)
-    {
-        $tag  = Tag::find($id);
-        $tag->delete();
-        echo 1;
-    }
 
     public function destroy($id)
     {
-        $tag = Tag::find($id);
-        $tag->delete();
-        echo 1;
+        try {
+            $tag = Tag::find($id);
+            $tag->delete();
+            return response()->json([
+                "result"   => 1,
+            ]); 
+            
+        } catch (Exception $e) {
+            return response()->json([
+                "result"   => 0,
+                "error"    => $e
+            ]); 
+        }
     }
 
     // ---------- Ajax Bach Delete -------------- //
