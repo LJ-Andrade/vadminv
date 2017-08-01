@@ -121,7 +121,7 @@
             <h1><i>Empezá hoy a conectar</i></h1>
             <p>
                 Contamos con diferentes modelos para que puedas armar tu huerta orgánica <br> en tu jardín,
-                patio o balcon, incorporando productos frescos sin aditivos ni pesticidas.
+                patio o balcón, incorporando productos frescos sin aditivos ni pesticidas.
             </p>
         </div>
     </div>
