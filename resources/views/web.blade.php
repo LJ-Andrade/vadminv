@@ -176,6 +176,7 @@
                 </div>
             </div>
         </div>
+        
     </div>
 
     @include('web.layouts.partials.seguinosnews')
