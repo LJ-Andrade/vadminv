@@ -1,41 +1,30 @@
 @extends('vadmin.layouts.main')
 
-@section('title', 'Vadmin | Creación de Usuario')
+@section('title', 'Vadmin | Categorias')
+
+@section('header')
+	@section('header_title', 'Categoría del Portfolio') 
+	@section('options')
+		<div class="actions">
+			<a href="{{ url('vadmin/users') }}"><button type="button" class="animated fadeIn btnSm buttonOther">Volver</button></a>
+		</div>	
+	@endsection
+@endsection
 
 @section('content')
-<div class="container">
-	<div class="row">
-		<h2>Creación de Usuario</h2>
-		<hr>
-		{!! Form::open(['route' => 'users.store', 'method' => 'POST']) !!}
-
-			<div class="form-group">
-				{!! Form::label('name', 'Nombre') !!}
-				{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre de Usuario', 'required'] )!!}
+	<div class="container">
+		{!! Form::open(['route' => 'users.store',  'class' => 'big-form', 'method' => 'POST', 'data-parsley-validate' => '']) !!}	
+			@include ('vadmin.users.form')
+			<div class="text-center">
+				{!! Form::submit('Crear', ['class' => 'button btnGreen', 'id' => 'InsertItemBtn']) !!}
 			</div>
-			<div class="form-group">
-				{!! Form::label('email', 'E-Mail') !!}
-				{!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'E-Mail', 'required'] )!!}
-			</div>
-			<div class="form-group">
-				{!! Form::label('password', 'Contraseña') !!}
-				{!! Form::password('password', ['class' => 'form-control', 'placeholder' => '*********', 'required'] )!!}
-			</div>
-			<div class="form-group">
-				{!! Form::label('type', 'Tipo') !!}
-				{!! Form::select('type', ['member' => 'Usuario', 'admin' => 'Administrador'], null, 
-				['class' => 'form-control', 'placeholder' => 'Seleccione una opción...', 'required'])!!}
-				
-			</div>
-
-			
-			<div class="form-group">
-				{!! Form::submit('Agregar Usuario', ['class' => 'btn btn-primary']) !!}
-			</div>
-			
 		{!! Form::close() !!}
-		
-	</div>
-</div>
 
+		<div id="Error"></div>
+    </div>  
+@endsection
+
+@section('scripts')
+	<script type="text/javascript" src="{{ asset('js/products.js') }}" ></script>
+	@include('vadmin.components.ajaxscripts')
 @endsection

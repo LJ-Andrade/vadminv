@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container-fluid">
 	
 		<div class="navbar-header">
@@ -18,8 +18,8 @@
 				<li><a {{{ (Request::is('blog') ? 'class=nav-active' : '') }}} href="{{ url('blog') }}">Blog</a></li>
 				<li><a {{{ (Request::is('contacto') ? 'class=nav-active' : '') }}} href="{{ url('contacto#contact') }}">Contacto</a></li>
 				
-				<li><a href="http://www.tienda.vdeverde.com.ar/"  target="_blank">Tienda</a></li>
-				<li class="nav-icon"><a href="http://www.tienda.vdeverde.com.ar/" target="_blank"><i class="ion-ios-cart-outline"></i></a></li>
+				<li><a href="https://vdeverde.mercadoshops.com.ar/"  target="_blank">Tienda</a></li>
+				<li class="nav-icon"><a href="https://vdeverde.mercadoshops.com.ar/" target="_blank"><i class="ion-ios-cart-outline"></i></a></li>
 			{{-- 	<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
 					<ul class="dropdown-menu">

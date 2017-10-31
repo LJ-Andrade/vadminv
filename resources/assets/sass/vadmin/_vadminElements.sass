@@ -180,6 +180,7 @@
 		margin-top: 15px
 
 
+
 //////////////////////////////////////
 //                                  //
 //            LISTS                 //
@@ -286,6 +287,22 @@ $phvFsize: 0.9rem
 		.output-inner
 			padding: 10px 
 			background-color: #fbfbfb
+	.actual-image
+		margin-top: 15px
+		margin-bottom: 15px
+		position: relative
+		@include flex-center
+		.inner
+			max-width: 250px
+			.overlay
+				@include transition(0.2)
+				border: 1px solid #ccc
+				opacity: 0
+			&:hover
+				cursor: pointer
+				.overlay
+					opacity: 1
+
 
 // --------- Narrow Form ------------ //
 .narrow-form
@@ -1119,6 +1136,8 @@ $phvFsize: 0.9rem
 	i.paused
 		color: red
 
+.paused-item
+	color: #ccc
 
 //////////////////////////////////////
 //                                  //

@@ -1,7 +1,6 @@
 @extends('vadmin.layouts.main')
 @section('title', 'VADmin | Nuevo Artículo')
 
-
 @section('header')
 	@section('header_title', 'Nuevo Artículo') 
 	@section('header_subtitle', ' ')
@@ -12,14 +11,11 @@
 	@endsection
 @endsection
 
-
-
 @section('styles')
 	{!! Html::style('plugins/texteditor/trumbowyg.min.css') !!}
 	{!! Html::style('plugins/jqueryFileUploader/jquery.fileuploader.css') !!}
 	{!! Html::style('plugins/jqueryfiler/themes/jquery.filer-dragdropbox-theme.css') !!}
 	{!! Html::style('plugins/jqueryfiler/jquery.filer.css') !!}
-	{!! Html::style('plugins/colorpicker/spectrum.css') !!}
 @endsection
 
 @section('content')
@@ -102,14 +98,11 @@
 	<script type="text/javascript" src="{{ asset('plugins/texteditor/trumbowyg.min.js')}} "></script>
 	<script type="text/javascript" src="{{ asset('plugins/jqueryfiler/jquery.filer.min.js')}} "></script>
 	<script type="text/javascript" src="{{ asset('plugins/jqueryFileUploader/jquery.fileuploader.min.js')}} "></script>
-	<script type="text/javascript" src="{{ asset('plugins/colorpicker/spectrum.js')}} "></script>
-	<script type="text/javascript" src="{{ asset('plugins/colorpicker/jquery.spectrum-es.js')}} "></script>
-	<script type="text/javascript" src="{{ asset('plugins/jqueryFileUploader/jquery.fileuploader.min.js')}} "></script>
-	<script type="text/javascript" src="{{ asset('js/jslocal/forms.js') }}" ></script>
+	<script type="text/javascript" src="{{ asset('plugins/chosen/chosen.jquery.min.js') }}" ></script>
+	<script type="text/javascript" src="{{ asset('js/forms.js') }}" ></script>
 @endsection
 
 @section('custom_js')
-	
 	<script>
 
 		// ------------------- Textarea Text Editor --------------------------- //
@@ -118,27 +111,11 @@
 		// Init
 		$('.Textarea-Editor').trumbowyg();
 
-		// ----------------------- Color Picker --------------------------------//
-		// Add Color Selector
-		$(".ColorPicker").spectrum({
-			color: "#fff",
-			change: function(color) {
-				// var div = ;
-				var hex = color.toHexString(); // #ff0000
-				// alert(div);
-				$('.ColorPickerList').append("<div class='picked-color' style='background-color:"+ hex +"'><input type='hidden' name='color[]' value='"+ hex +"'></div>");
-				console.log(hex);
-			}
-		});
-
 		// Loader
 		$("#NewItemForm").on("submit", function(){
 			$('.Main-Loader').removeClass('Hidden');
 		});
-		
-
 	</script>
-
 @endsection
 
 

@@ -1,3 +1,0 @@
-Trello Board PowerUps API
-======================
-

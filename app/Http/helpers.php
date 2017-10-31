@@ -1,16 +1,16 @@
 <?php
     
-function typeTrd($type)
+function roleTrd($role)
 {
-    switch ($type) {
-        case 'user':
-            echo 'Usuario';
+    switch ($role) {
+        case '1':
+            echo 'Super Administrador';
             break;
-        case 'admin':
+        case '2':
             echo 'Administrador';
             break;
-        case 'superadmin':
-            echo 'Super Administrador';
+        case '3':
+            echo 'Invitado';
             break;
 
         default:
@@ -19,17 +19,20 @@ function typeTrd($type)
     }
 }
 
-function roleTrd($role)
+function groupsTrd($group)
 {
-    switch ($role) {
-        case 'seller':
-            echo 'Vendedor';
+    switch ($group) {
+        case '1':
+            echo 'Miembro';
             break;
-        case 'none':
+        case '2':
+            echo 'Usuario';
+            break;
+        case '0':
             echo 'Sin Rol';
             break;
         default:
-            echo '';
+            echo 'Sin Rol';
             break;
     }
 }

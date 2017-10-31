@@ -26,7 +26,6 @@ class Article extends Model
     	return $this->belongsToMany('App\Tag');
     }
 
-
     public function scopeSearch($query, $title)
     {
         // Remember to add Namespace::search($request->$title)orderBy('id', 'DESCC')->paginate(5);

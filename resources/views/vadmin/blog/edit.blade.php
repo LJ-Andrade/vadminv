@@ -105,7 +105,7 @@
 	<script type="text/javascript" src="{{ asset('plugins/jqueryFileUploader/jquery.fileuploader.min.js')}} "></script>
 	<script type="text/javascript" src="{{ asset('plugins/colorpicker/spectrum.js')}} "></script>
 	<script type="text/javascript" src="{{ asset('plugins/colorpicker/jquery.spectrum-es.js')}} "></script>
-	<script type="text/javascript" src="{{ asset('js/jslocal/forms.js') }}" ></script>
+	<script type="text/javascript" src="{{ asset('js/forms.js') }}" ></script>
 @endsection
 
 @section('custom_js')

@@ -9,7 +9,7 @@
 			</div>
 		</div> --}}
 	</div> 
-	<div class="copyright">
-		Desarrollado por Studio Vimana - Todos los derechos reservados - 2017
+	<div class="copyright" style="font-size: 15px">
+		<b>V de Verde</b> | Todos los derechos reservados &#9400; 2017 - By <a href="{{ url('https://vimana.studio')}}" target="_blank">Vimana Studio</a>
 	</div>
 </footer>

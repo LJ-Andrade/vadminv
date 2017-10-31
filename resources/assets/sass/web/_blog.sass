@@ -44,8 +44,7 @@
 .blog-container
 	min-height: 550px
 	margin-top: 15px
-	padding: 10px 0
-	
+	padding: 10px 0	
 	.blog-item
 		@include flex-column
 		margin-bottom: 25px
@@ -106,6 +105,32 @@
 						color: #ABABAB
 						font-family: $font2
 						font-size: 1.2rem
+
+.portfolio-container
+	margin-top: 15px
+	padding: 10px 0	
+	.portfolio-item
+		@include flex-column
+		margin-bottom: 25px
+		max-width: 339px
+		.inner
+			// width: auto
+			img
+				z-index: 0
+				max-width: 100%
+				@include transition(0.2s)
+				&:hover
+					filter: brightness(50%)
+					cursor: pointer
+			.info
+				padding: 5px
+				position: relative
+				background-color: #f9f9f9
+				.title a
+					font-family: $font2
+					font-weight: 400
+					font-size: 1.1rem
+					color: $main-blue
 
 
 @media (max-width: 767px)

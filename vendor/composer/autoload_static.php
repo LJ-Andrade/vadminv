@@ -8,15 +8,16 @@ class ComposerStaticInit330b97a82fe5b82ebca2a6f85b56c534
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '1d1b89d124cc9cb8219922c9d5569199' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
-        'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
         '6d394c3a532652dafb4dd296ba6a3f0b' => __DIR__ . '/../..' . '/app/Http/helpers.php',
     );
 
@@ -93,6 +94,7 @@ class ComposerStaticInit330b97a82fe5b82ebca2a6f85b56c534
         array (
             'Dotenv\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\Common\\Inflector\\' => 26,
             'DeepCopy\\' => 9,
         ),
         'C' => 
@@ -247,6 +249,10 @@ class ComposerStaticInit330b97a82fe5b82ebca2a6f85b56c534
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
+        'Doctrine\\Common\\Inflector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
+        ),
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
@@ -274,13 +280,6 @@ class ComposerStaticInit330b97a82fe5b82ebca2a6f85b56c534
     );
 
     public static $prefixesPsr0 = array (
-        'T' => 
-        array (
-            'Trello\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/cdaguerre/php-trello-api/lib',
-            ),
-        ),
         'P' => 
         array (
             'Prophecy\\' => 
@@ -310,33 +309,17 @@ class ComposerStaticInit330b97a82fe5b82ebca2a6f85b56c534
                 0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
             ),
         ),
-        'G' => 
-        array (
-            'Guzzle\\Tests' => 
-            array (
-                0 => __DIR__ . '/..' . '/guzzle/guzzle/tests',
-            ),
-            'Guzzle' => 
-            array (
-                0 => __DIR__ . '/..' . '/guzzle/guzzle/src',
-            ),
-        ),
-        'D' => 
-        array (
-            'Doctrine\\Common\\Inflector\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
-            ),
-        ),
     );
 
     public static $classMap = array (
         'AddArticlesTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_14_061057_add_articles_table.php',
         'AddCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_14_060743_add_categories_table.php',
         'AddImagesTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_14_061856_add_images_table.php',
+        'AddPortArticlesTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_17_224619_add_port_articles_table.php',
+        'AddPortCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_17_225014_add_port_categories_table.php',
+        'AddPortImagesTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_17_225123_add_port_images_table.php',
+        'AddPortTagsTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_17_225115_add_port_tags_table.php',
         'AddTagsTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_14_063259_add_tags_table.php',
-        'CreateMigrationsTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_14_211436_create_migrations_table.php',
-        'CreateNewslettersTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_14_211603_create_newsletters_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'CrudGeneratorTest' => __DIR__ . '/..' . '/appzcoder/crud-generator/tests/CrudGeneratorTest.php',
@@ -414,9 +397,12 @@ class ComposerStaticInit330b97a82fe5b82ebca2a6f85b56c534
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
         'Kernel' => __DIR__ . '/..' . '/appzcoder/crud-generator/tests/Kernel.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
+        'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/AssertionFailedError.php',
         'PHPUnit\\Framework\\BaseTestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
+        'PHPUnit\\Framework\\Test' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Test.php',
         'PHPUnit\\Framework\\TestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
         'PHPUnit\\Framework\\TestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestListener.php',
+        'PHPUnit\\Framework\\TestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestSuite.php',
         'PHPUnit_Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit_Extensions_GroupTestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
         'PHPUnit_Extensions_PhptTestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/PhptTestCase.php',

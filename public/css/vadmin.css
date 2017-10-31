@@ -564,6 +564,41 @@ hr {
   background-color: #fbfbfb;
 }
 
+.big-form .actual-image {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.big-form .actual-image .inner {
+  max-width: 250px;
+}
+
+.big-form .actual-image .inner .overlay {
+  -webkit-transition: all 0.2 ease 0s;
+  transition: all 0.2 ease 0s;
+  border: 1px solid #ccc;
+  opacity: 0;
+}
+
+.big-form .actual-image .inner:hover {
+  cursor: pointer;
+}
+
+.big-form .actual-image .inner:hover .overlay {
+  opacity: 1;
+}
+
 .narrow-form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1673,6 +1708,10 @@ hr {
 
 .status i.paused {
   color: red;
+}
+
+.paused-item {
+  color: #ccc;
 }
 
 .colors-container {

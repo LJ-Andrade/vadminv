@@ -1,40 +1,35 @@
-@extends('vadmin.layouts.main')
-
-@section('title', 'Vadmin | %%crudNameCap%%')
-
-@section('header')
-	@section('header_title', 'Creación de %%crudNameCap%%') 
-	@section('options')
-		<div class="actions">
-			<a href="{{ url('vadmin/%%crudName%%') }}"><button type="button" class="animated fadeIn btnSm buttonOther">Volver</button></a>
-		</div>	
-	@endsection
-@endsection
-
-@section('styles')
-	
-@endsection
+@extends('layouts.app')
 
 @section('content')
-
     <div class="container">
-        <div class="small-form container animated fadeIn">
-            {!! Form::open(['url' => 'vadmin/%%crudName%%', 'data-parsley-validate' => '']) !!}
-            <div class="row inner">
-                <div class="col-md-12 title">
-                    <span><i class="ion-plus-round"></i> Creación de Nuevo Item</span>
-                    <a href="{{ url('vadmin/%%crudName%%') }}"><div class="close-btn2"><i class="ion-close-round"></i></div></a>
-                </div>
-                <div class=" col-md-12 form-group">
-                    {!! Form::label('name', 'Nombre:') !!}
-                    {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre del item', 'required' => '', 'maxlength' => '120', 'minlength' => '4']) !!} 
-                </div>
-                <div class="col-md-12 actions">
-                    {!! Form::submit(isset($submitButtonText) ? $submitButtonText : 'Crear', ['class' => 'animated fadeIn button buttonOk pull-right']) !!}
+        <div class="row">
+            @include('admin.sidebar')
+
+            <div class="col-md-9">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Create New %%modelName%%</div>
+                    <div class="panel-body">
+                        <a href="{{ url('/%%routeGroup%%%%viewName%%') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <br />
+                        <br />
+
+                        @if ($errors->any())
+                            <ul class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
+
+                        {!! Form::open(['url' => '/%%routeGroup%%%%viewName%%', 'class' => 'form-horizontal', 'files' => true]) !!}
+
+                        @include ('%%viewTemplateDir%%.form')
+
+                        {!! Form::close() !!}
+
+                    </div>
                 </div>
             </div>
-            {!! Form::close() !!}
         </div>
     </div>
-
 @endsection

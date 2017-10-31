@@ -13,90 +13,31 @@ use File;
 class UsersController extends Controller
 {
 
-    public function index()
-    {
-        $users = User::orderBy('id', 'ASC')->paginate(10);
-        return view('vadmin.users.index')->with('users', $users);
-    } 
-    
-
     /////////////////////////////////////////////////
     //                   LIST                      //
     /////////////////////////////////////////////////
-    
-    public function ajax_list(Request $request)
+
+    public function index(Request $request)
     {
-        $users = User::orderBy('id', 'DESC')->paginate(12);
-        return view('vadmin/users/list')->with('users', $users);   
-    }
+        $name = $request->get('name');
+        $perPage = 25;
 
-
-    public function ajax_list_search(Request $request)
-    {   
-       
-        if ($request->ajax())
-        {
-
-
-            if (isset($_GET['query'])){ 
-                $query = $_GET['query'];
-            }
-
-            if (isset($_GET['role'])){
-                $role = $_GET['role'];
-            } 
-
-            if ($role != '' and $query != ''){
-                // Search User AND Role
-               $users = User::where('type', '=', $role)->where('name', 'LIKE', '%'.$query.'%')->paginate(20);
-            } else if($role != '') {
-                // Search by Role
-                $users = User::where('type', '=', $role )->paginate(50);
-           
-            } else if ($query!='') {
-                // Search by Name or Email
-                $users = User::where('name', 'LIKE', '%'.$query.'%' )->orWhere('email', 'LIKE', '%'.$query.'%' )->paginate(20);
+        if ($name != ''){
+                $users = User::where('name', 'LIKE', "%$title%")->orderBy('id', 'ASC')->paginate(10);
             } else {
-                // Seatch All
-                $users = User::orderBy('id', 'DESC')->paginate(12);
-            }
-
-
-            // if ($role && $query) {
-            //     // $users = User::where('name', 'LIKE', '%'.$query.'%' )->orWhere('email', 'LIKE', '%'.$query.'%')->andWhere('type', '=', $role)->paginate(10);    
-            //     $users = User::select( User::raw("SELECT * FROM users") );
-            // } else {
-            //     if ($query == '') {
-            //     $users = User::orderBy('id', 'DESC')->paginate(12);        
-            //     } else {
-            //         $users = User::where('name', 'LIKE', '%'.$query.'%' )->orWhere('email', 'LIKE', '%'.$query.'%')->paginate(10);    
-            //     }
-            // }
-
-
-            // if ($query == '') {
-            //     $users = User::orderBy('id', 'DESC')->paginate(12);        
-            // } else {
-            //     $users = User::where('name', 'LIKE', '%'.$query.'%' )->orWhere('email', 'LIKE', '%'.$query.'%')->paginate(10);    
-            // }
-            
-
-
-        
-        return view('vadmin/users/list')->with('users', $users);  
+                $users = User::orderBy('id', 'ASC')->paginate(10);
         }
-
-        
-        // $users = User::where('name', '=', $name )->paginate(10);    
-
-
+        return view('vadmin.users.index')->with('users', $users);
     }
-
 
     /////////////////////////////////////////////////
     //                   CREATE                    //
     /////////////////////////////////////////////////
-
+    
+    public function create(Request $request)
+    {
+        return view('vadmin.users.create');
+    }
     public function store(Request $request)
     {
         
@@ -104,7 +45,8 @@ class UsersController extends Controller
             'name'              => 'min:4|max:20|required',
             'email'             => 'min:3|max:250|required|unique:users,email',
             'password'          => 'min:4|max:120|required|',
-            'type'              => 'required'
+            'role'              => 'required',
+            'groups'            => 'required',
         ],[
             'name.required'     => 'Debe ingresar un nombre',
             'name.min'          => 'El nombre debe tener 4 caracteres como mínimo',
@@ -116,49 +58,58 @@ class UsersController extends Controller
             'password.required' => 'Se requiere una contraseña',
             'password.min'      => 'La contraseña debe tener 4 caracteres como mínimo',
             'password.max'      => 'La contraseña debe tener 120 caracteres como máximo',
-            'type.required'     => 'Debe ingresar un rol'
+            'role.required'     => 'El usuario debe tener rol',
+            'groups.required'   => 'El usuario debe pertenecer a un grupo'
         ]);
 
-        if ($request->ajax())
-        {  
-            $user           = new User($request->all());
-            $user->password = Hash::make($request->password);
-            $user->save();
-
-            
-            if ($user)
-            {
-                return response()->json(['success'=>'true', 'message'=>'Usuario creado']);
-            } else {
-                return response()->json(['success'=>'false', 'error'=>'Error']);        
-            }
-        }
+        $user           = new User($request->all());
+        $user->password = Hash::make($request->password);
+        $user->save();
         
+        return redirect('vadmin/users')->with('message', 'Usuario '.$user->name.' creado.');
     }
 
     /////////////////////////////////////////////////
     //                   UPDATE                    //
     /////////////////////////////////////////////////
     
+    
+    public function edit($id)
+    {
+        $user = User::find($id);
+        return view('vadmin.users.edit')->with('user', $user);
+    }
+
     public function update(Request $request, $id)
     {
-        // $this->validate($request,[
-        //     'name'     => 'max:120|required|unique:categories'
-        // ],[
-        //     'name.unique'         => 'La categoría ya existe'
-        // ]);
+        $user = User::find($id);
+        $this->validate($request,[
+            'name'              => 'min:4|max:20|required',
+            'email'             => 'min:3|max:250|required|unique:users,email,'.$user->id,
+            'password'          => 'min:4|max:120|required|',
+            'role'              => 'required',
+            'groups'            => 'required',
+        ],[
+            'name.required'     => 'Debe ingresar un nombre',
+            'name.min'          => 'El nombre debe tener 4 caracteres como mínimo',
+            'name.max'          => 'El nombre debe tener 20 caracteres como máximo',
+            'email.required'    => 'Debe ingresar un email',
+            'email.unique'      => 'El email pertenece a otro usuario registrado',
+            'email.min'         => 'El E-Mail debe tener 3 caracteres como mínimo',
+            'email.max'         => 'El E-Mail debe tener 250 caracteres como máximo',
+            'password.required' => 'Se requiere una contraseña',
+            'password.min'      => 'La contraseña debe tener 4 caracteres como mínimo',
+            'password.max'      => 'La contraseña debe tener 120 caracteres como máximo',
+            'role.required'     => 'El usuario debe tener rol',
+            'groups.required'   => 'El usuario debe pertenecer a un grupo'
+        ]);
 
         $user = User::find($id);
         $user->fill($request->all());
         $user->password = Hash::make($request->password);
-
+        $user->save();
         
-        $result = $user->save();
-        if ($result) {
-            return response()->json(['success'=>'true']);
-        } else {
-            return response()->json(['success'=>'false']);
-        }
+        return redirect('vadmin/users')->with('message', 'Usuario '.$user->name.' actualizado.');
     }
 
     /////////////////////////////////////////////////
@@ -202,36 +153,49 @@ class UsersController extends Controller
 
     public function destroy($id)
     {
-
         $user = User::find($id);
         $path = 'images/users/';
-        if($user->avatar == 'user-gen.jpg'){
-        } else {
-            File::Delete(public_path( $path . $user->avatar));
-        }
 
-        $user->delete();
-
-        echo 1;
-        // return redirect()->route('users.index')->with('message', $user->name.' ha sido eliminado');
-    }
-
-    // ---------- Ajax Bach Delete -------------- //
-    public function ajax_batch_delete(Request $request, $id)
-    {
-        // $ids = $request->id;
-
-        foreach ($request->id as $id) {
-        
-            $user  = User::find($id);
-            $path  = 'images/users/';
+        try {
             if($user->avatar == 'user-gen.jpg'){
             } else {
                 File::Delete(public_path( $path . $user->avatar));
             }
-            User::destroy($id);
+            $user->delete();
+
+            return response()->json([
+                "result"   => 1,
+                ]);  
+                
+            } catch (Exception $e) {
+                return response()->json([
+                    "result"   => 0,
+                    "error"    => $e
+                ]);    
         }
-        echo 1;
+
     }
+
+    // ---------- Ajax Bach Delete -------------- //
+    public function ajax_batch_delete(Request $request, $id)
+    {        
+        $path     = 'webimages/portfolio/';
+        foreach ($request->id as $id) {
+            try {
+                foreach ($request->id as $id) {
+                    $user  = User::find($id);
+                    File::Delete(public_path( $path . $user->avatar));
+                    User::destroy($id);
+                }
+                
+            } catch (Exception $e) {
+                return response()->json([
+                    "result"   => 0,
+                    "error"    => $e
+                    ]);    
+                }
+            }
+        echo 1;
+    }       
 
 } // End

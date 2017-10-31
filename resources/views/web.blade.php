@@ -13,14 +13,11 @@
                 <div class="home-banner">
                     <div class="row inner">
                         <span class="title">
-                            Reconectate <br>
-                            con lo Natural
+                            Macetas de Diseño
                         </span>
                         <hr>
                         <p>
-                            Es volver a incorporar a tu vida elementos esenciales. <br>
-                            Todo lo que necesitamos está en la naturaleza, sólo hay <br>
-                            que saber conectarse con ella.
+                            Ideal para huertas orgánicas y decoración
                         </p>
                     </div>
                 </div>
@@ -35,17 +32,16 @@
     <div class="mosaic-block">
         <div class="container centered-info">
             <div class="row wow animated fadeIn" data-wow-delay="300ms">
-                <h1><i>Rico. Simple. Nutritivo</i></h1>
+                <h1><i>Generá un espacio chic y natural en tu casa</i></h1>
                 <p>
-                    Meté mano en la tierra y disfrutá tu cosecha. <br> Generá aromas y sabores en tus
-                    comidas, conservando un espacio armonioso y natural dentro de tu casa.
+                    Contamos con diferentes modelos de macetas en madera, <br> además te ayudamos a armar tu diseño a medida.
                 </p>
             </div>
         </div>
         <div class="container bgimg-container">
             <div class="row mobile-flex-column">
                 <div class="col-md-4 col-sm-4 col-xs-12 bgimg-link wow animated fadeIn" data-wow-delay="200ms">
-                    <a href="{{ url('http://www.tienda.vdeverde.com.ar/kit-para-regalos_qO27058343XtOcxSM') }}">
+                    <a href="{{ url('http://www.tienda.vdeverde.com.ar/kit-para-regalos_qO27058343XtOcxSM') }}" target="_blank">
                         <div class="inner maderas-img-link bg-zoom-home border">
                             <h1 class="white-txt bt-shadow-w">KITS PARA <br>REGALOS</h1>
                         </div>
@@ -55,13 +51,13 @@
                 <div class="col-md-4 col-sm-4 col-xs-12 bgimg-link wow animated fadeIn" data-wow-delay="300ms" >
                     <a href="{{ url('maderas') }}">
                     <div class="inner blue-back-link bg-zoom-home">
-                        <h1 class="white-txt bt-shadow3">MADERAS</h1>
+                        <h1 class="white-txt bt-shadow3">NUESTRAS <br> MADERAS</h1>
                     </div>
                     </a>    
                 </div>
 
                 <div class="col-md-4 col-sm-4 col-xs-12 bgimg-link wow animated fadeIn" data-wow-delay="400ms">
-                    <a href="{{ url('accesorios') }}">
+                    <a href="{{ url('http://www.tienda.vdeverde.com.ar/accesorios-jardin_qO27284169XtOcxSM') }}" target="_blank">
                         <div class="inner accesorios-img-link bg-zoom-home">
                             <h1 class="white-txt bt-shadow">ACCESORIOS</h1>
                         </div>
@@ -70,16 +66,16 @@
             </div>
             <div class="row mobile-flex-column">
                 <div class="col-md-6 col-sm-6 col-xs-12 bgimg-link wow animated fadeIn" data-wow-delay="500ms">
-                    <a href="{{ url('http://www.tienda.vdeverde.com.ar/huerta-en-jardin_qO27061125XtOcxSM') }}">
+                    <a href="{{ url('http://www.tienda.vdeverde.com.ar/huerta-en-jardin_qO27061125XtOcxSM') }}" target="_blank">
                         <div class="inner huerta-img-link bg-zoom-home txC">
-                            <h1 class="white-txt bt-shadow">HUERTA DE JARDÍN</h1>
+                            <h1 class="white-txt bt-shadow">DISEÑOS PARA <br> JARDINES</h1>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12 bgimg-link wow animated fadeIn" data-wow-delay="600ms">
-                    <a href="{{ url('http://www.tienda.vdeverde.com.ar/huerta-urbana_qO27061017XtOcxSM') }}">
+                    <a href="{{ url('http://www.tienda.vdeverde.com.ar/huerta-urbana_qO27061017XtOcxSM') }}" target="_blank">
                         <div class="inner urbana-img-link bg-zoom-home txC">
-                            <h1 class="white-txt bt-shadow">HUERTA URBANA</h1>
+                            <h1 class="white-txt bt-shadow">DISEÑOS PARA <br>ESPACIOS PEQUEÑOS</h1>
                         </div>
                     </a>
                 </div>
@@ -101,15 +97,14 @@
                     </a>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12 bgimg-link wow animated fadeIn" data-wow-delay="900ms">
-                    <div class="inner blue-back-link bg-zoom-home">
-                        <h1 class="white-txt bt-shadow3">APP</h1>
-                        <p class="white-txt txC bt-shadow3">  
-                            Descargá Gratis la APP <br>
-                            Para bajarla poné me gusta en FB<br>   
-                            o ingresá tus datos: <br>
-                            Nombre y Mail
-                        </p>
-                    </div>
+                    <a href="{{ url('https://play.google.com/store/apps/details?id=ar.teovogel.vdeverde') }}" target="_blank">
+                        <div class="inner blue-back-link bg-zoom-home">
+                            <h1 class="white-txt bt-shadow3">APP</h1>
+                            <p class="white-txt txC bt-shadow3">  
+                                Consejos para armar y mantener tu huerta (Descargala gratis acá)
+                            </p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -120,8 +115,8 @@
         <div class="row">
             <h1><i>Empezá hoy a conectar</i></h1>
             <p>
-                Contamos con diferentes modelos para que puedas armar tu huerta orgánica <br> en tu jardín,
-                patio o balcón, incorporando productos frescos sin aditivos ni pesticidas.
+                Meté mano en la tierra y disfrutá tu cosecha. <br>
+                Generá aromas y sabores en tus comidas, conservando un espacio armonioso y natural dentro de tu casa.
             </p>
         </div>
     </div>

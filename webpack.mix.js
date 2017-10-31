@@ -35,6 +35,7 @@ const { mix } = require('laravel-mix');
 mix.js('resources/assets/js/web/web.js', 'public/js');
 
 
+
 // -------------- Solo estilos ----------------- //
 mix.sass('resources/assets/sass/vadmin/vadmin.sass', 'public/css')
   .options({

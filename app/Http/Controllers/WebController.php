@@ -6,6 +6,8 @@ use Carbon\Carbon;
 use App\Article;
 use App\Category;
 use App\Tag;
+use App\PortArticle;
+use App\PortCategory;
 use App\Newsletter;
 use Validator;
 
@@ -214,17 +216,9 @@ class WebController extends Controller
 
 		}
 
-
-
 	public function blog(Request $request)
 	{
-
-        $articles = Article::search($request->title)->orderBy('id', 'DESC')->where('status', 'active')->paginate(15);
-        // $articles->each(function($articles){
-        //     $articles->category;
-        //     $articles->images;
-        // }); 
-
+        $articles   = Article::search($request->title)->orderBy('id', 'DESC')->where('status', 'active')->paginate(15);
         $categories = Category::all();
         $tags       = Tag::all();
 
@@ -234,6 +228,7 @@ class WebController extends Controller
             ->with('tags', $tags);
     }
 
+    
     public function searchCategory($name)
     {
         $category = Category::SearchCategory($name)->first();
@@ -241,35 +236,35 @@ class WebController extends Controller
         $articles->each(function($articles){
                 $articles->category;
                 $articles->images;
-        });
-
-        $categories = Category::all();
-        $tags       = Tag::all();
-
-        return view('web.blog.blog')
+            });
+            
+            $categories = Category::all();
+            $tags       = Tag::all();
+            
+            return view('web.blog.blog')
             ->with('articles', $articles)
             ->with('categories', $categories)
             ->with('tags', $tags);
-    }
-
+        }
+    
     public function searchTag($name)
     {
         $tag = Tag::SearchTag($name)->first();
         $articles = $tag->article()->paginate(6);
         $articles->each(function($articles){
-                $articles->category;
-                $articles->images;
+            $articles->category;
+            $articles->images;
         });
         
         $categories = Category::all();
         $tags       = Tag::all();
-
+        
         return view('web.blog.blog')
-            ->with('articles', $articles)
-            ->with('categories', $categories)
-            ->with('tags', $tags);
+        ->with('articles', $articles)
+        ->with('categories', $categories)
+        ->with('tags', $tags);
     }
-
+    
     public function viewArticle($id)
     {
         $article = Article::find($id);
@@ -293,8 +288,56 @@ class WebController extends Controller
         return view('web.blog.article')->with('article', $article)->with('categories', $categories)
             ->with('tags', $tags);
     }
+    
+    // ------------------- Portfolio ---------------------- //
 
+    public function showPortArticleWithSlug($slug) {
+        $article    = PortArticle::where('slug', '=', $slug)->first();
+        $categories = PortCategory::all();
+        return view('web.blog.article')->with('article', $article)->with('categories', $categories);
+    }
+    
+    public function portfolio(Request $request)
+    {
+        $articles       = PortArticle::search($request->title)->orderBy('id', 'DESC')->where('status', 'active')->paginate(15);
+        $portCategories = PortCategory::all();
+        
+        return view('web.portfolio.portfolio')
+            ->with('articles', $articles)
+            ->with('portCategories', $portCategories);
+    }
 
+    
+    public function searchPortCategory($name)
+    {
+        $category = PortCategory::SearchPortCategory($name)->first();
+        
+        if($category == null){
+            $categories = null;
+            $articles   = null;
+        } else {
+            $articles = $category->article()->paginate(12);
+            $articles->each(function($articles){
+                $articles->category;
+            });
+            $portCategories = PortCategory::all();
+        }
+
+        return view('web.portfolio.portfolio')
+            ->with('articles', $articles)
+            ->with('portCategories', $portCategories);
+    }
+
+    public function viewPortArticle($id)
+    {
+        $article = PortArticle::find($id);
+        $article->each(function($article){
+                $article->category;
+                $article->colors;
+        });
+
+        return view('web.portfolio.article')->with('article', $article);
+    }
 
 
 }

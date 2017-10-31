@@ -49,6 +49,18 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Portfolio
+						<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="{{ url('vadmin/portfolio/create') }}"><i class="ion-plus-round"></i> Nuevo Artículo</a></li>
+							<li><a href="{{ url('vadmin/portfolio') }}"><i class="ion-ios-list-outline"></i> Listar Artículos</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="{{ url('vadmin/port_categories/create') }}"><i class="ion-plus-round"></i> Nueva Categoría</a></li>
+							<li><a href="{{ url('vadmin/port_categories') }}"><i class="ion-bookmark"></i> Listar Categorías</a></li>
+						</ul>
+					</li>
+
+					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Blog
 						<span class="caret"></span></a>
 						<ul class="dropdown-menu">
@@ -69,6 +81,7 @@
 							<li><a href="{{ url('newsletter') }}" target="_blank"><i class="ion-ios-monitor-outline"></i> Newsletter</a></li>
 							<li><a href="{{ url('/') }}" target="_blank"><i class="ion-ios-monitor-outline"></i> Ver Web</a></li>
 							<li><a href="{{ url('blog') }}" target="_blank"><i class="ion-ios-monitor-outline"></i> Ver Blog</a></li>
+							<li><a href="{{ url('portfolio') }}" target="_blank"><i class="ion-ios-monitor-outline"></i> Ver Portfolio</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">

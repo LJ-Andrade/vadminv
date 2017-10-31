@@ -238,8 +238,6 @@ class ArticlesController extends Controller
 
         // BORRAR IMAGEN ARREGLAR
         $article_image = $article->images;
-
-        
         
         try {
             foreach ($article_image as $phisic_image) {

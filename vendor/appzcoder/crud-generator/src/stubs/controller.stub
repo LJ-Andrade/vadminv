@@ -22,8 +22,7 @@ class DummyClass extends Controller
         $perPage = {{pagination}};
 
         if (!empty($keyword)) {
-            ${{crudName}} = {{modelName}}::{{whereSnippet}}
-                ->paginate($perPage);
+            ${{crudName}} = {{modelName}}::{{whereSnippet}}paginate($perPage);
         } else {
             ${{crudName}} = {{modelName}}::paginate($perPage);
         }
@@ -50,14 +49,6 @@ class DummyClass extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'name'              => 'required|unique:{{viewName}},name',
-        ],[
-            'name.required'     => 'Debe ingresar un nombre',
-            'name.unique'      => 'El item ya existe',
-        ]);
-
-
         {{validationRules}}
         $requestData = $request->all();
         {{fileSnippet}}
@@ -106,15 +97,6 @@ class DummyClass extends Controller
      */
     public function update($id, Request $request)
     {
-
-        $this->validate($request,[
-            'name'              => 'required|unique:{{viewName}},name',
-        ],[
-            'name.required'     => 'Debe ingresar un nombre',
-            'name.unique'      => 'El item ya existe',
-        ]);
-
-
         {{validationRules}}
         $requestData = $request->all();
         {{fileSnippet}}
@@ -126,25 +108,19 @@ class DummyClass extends Controller
         return redirect('{{routeGroup}}{{viewName}}');
     }
 
-    // ---------- Delete -------------- //
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function destroy($id)
     {
-        $item = {{modelName}}::find($id);
-        $item->delete();
-        echo 1;
+        {{modelName}}::destroy($id);
+
+        Session::flash('flash_message', '{{modelName}} deleted!');
+
+        return redirect('{{routeGroup}}{{viewName}}');
     }
-
-
-    // ---------- Ajax Bach Delete -------------- //
-    public function ajax_batch_delete(Request $request, $id)
-    {
-        foreach ($request->id as $id) {
-        
-            $item  = {{modelName}}::find($id);
-            {{modelName}}::destroy($id);
-        }
-        echo 1;
-    }
-
-
 }
