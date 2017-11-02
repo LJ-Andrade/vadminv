@@ -60,7 +60,7 @@
                 </div>
             </div>
 
-            <div class="col-md-12  img-and-text">
+            {{--  <div class="col-md-12  img-and-text">
                 <div class="col-md-6 image"><img src="{{ asset('webimages/maderas/img3.png') }}" alt=""></div>
                 <div class="col-md-6 text">
                     <h1>Rabo molle</h1>
@@ -74,7 +74,7 @@
                     <span>&#149; <b>Hongos: </b> poco resistente. Insectos: Susceptible.</span> <br>
                     <span>&#149; <b>Comportamiento:</b> Toma muy bien ceras y lustres.</span>
                 </div>
-            </div>
+            </div>  --}}
 
 
         </div>
