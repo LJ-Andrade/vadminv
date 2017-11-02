@@ -178,6 +178,7 @@
         </div>
         
     </div>
+    <div id="Error"></div>
 
     @include('web.layouts.partials.seguinosnews')
     <br>

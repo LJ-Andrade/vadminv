@@ -33,11 +33,15 @@
                 $('#ContactBtn').hide('Enviar');
                 $('#FormSuccess').removeClass('Hidden');
                 $('#FormResponse').hide();
+                $('#Error').html(data.responseText);
+                console.log(data);
             },
             error: function(data) {
                 $('#FormResponse').hide();
                 $('#ContactForm').hide();
                 $('#FormError').removeClass('Hidden');
+                $('#Error').html(data.responseText);
+                console.log(data);
             },
             complete: function(data){
                 $('#ContactBtn').html('Enviar');
