@@ -82,9 +82,9 @@
             </div>
             <div class="row  mobile-flex-column">
                 <div class="col-md-4 col-sm-4 col-xs-12 bgimg-link wow animated fadeIn" data-wow-delay="700ms">
-                    <a href="{{ url('desayunos') }}">
+                    <a href="{{ url('portfolio') }}">
                         <div class="inner blue-back-link bg-zoom-home txC">
-                            <h1 class="white-txt bt-shadow3">DESAYUNOS <br>NATURALES</h1>
+                            <h1 class="white-txt bt-shadow3">PORTFOLIO</h1>
                         </div>
                     </a>
                 </div>
