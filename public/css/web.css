@@ -1421,7 +1421,6 @@ footer .copyright {
   padding-bottom: 30px;
   background-color: #f9f9f9;
   position: relative;
-  height: 175px;
 }
 
 .blog-container .blog-item .inner .info hr {
@@ -1449,14 +1448,11 @@ footer .copyright {
 .blog-container .blog-item .inner .info .title a {
   font-family: "Raleway", sans-serif;
   font-weight: 800;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: #254460;
 }
 
 .blog-container .blog-item .inner .info .content-text {
-  border: 1px solid red;
-  max-height: 100px;
-  height: 100px;
   word-wrap: break-word;
   font-family: "Raleway", sans-serif;
   font-size: 1rem;
