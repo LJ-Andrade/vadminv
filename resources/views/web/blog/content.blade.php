@@ -44,7 +44,7 @@
                     </div>
                     {{--  <div class="content-text">
                         {!! (substr(strip_tags($article->content), 0, 150)) !!} <br>
-                    </div>  --}}
+                    </div>  dsdsd--}}
                     <div class="seemore">
                         <a href="{!! route('web.blog.article',$article->slug ) !!}">Leer más...</a>
                     </div>
