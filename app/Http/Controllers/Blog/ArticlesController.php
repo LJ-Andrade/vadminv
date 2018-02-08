@@ -26,7 +26,7 @@ class ArticlesController extends Controller
 
         if ($title != ''){
                 // Search User AND Role
-                $articles = Article::where('title', 'LIKE', "%$title%")->orderBy('id','DESC')->paginate(25);
+                $articles = Article::where('title', 'LIKE', "%$title%")->orderBy('title','DESC')->paginate(25);
                 $articles->each(function($articles){
                     $articles->category;
                     $articles->user;
@@ -35,7 +35,7 @@ class ArticlesController extends Controller
             
             } else {
                 // Search All
-                $articles = Article::paginate($perPage);
+                $articles = Article::orderBy('id', 'DESC')->paginate($perPage);
                 $articles->each(function($articles){
                     $articles->category;
                     $articles->user;
@@ -152,7 +152,7 @@ class ArticlesController extends Controller
     public function update(Request $request, $id)
     {
 
-        $path      = public_path("webimages/blog/articles/"); 
+        $path      = public_path("webimages/blog/articles"); 
 
         $article   = Article::find($id);
         $article->fill($request->all());
