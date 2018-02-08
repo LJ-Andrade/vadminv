@@ -26,6 +26,9 @@ Route::group(['prefix' => 'vadmin', 'middleware' => ['auth','admin']], function(
 
 	Route::resource('users', 'UsersController');
 
+
+	Route::post('updatepassword', ['as' => 'user.updatepassword', 'uses' => 'UsersController@updatePassword']);
+
 	Route::post('ajax_delete_user/{id}', 'UsersController@destroy');
 	Route::post('ajax_batch_delete_users/{id}', 'UsersController@ajax_batch_delete');
 	Route::post('ajax_update_user/{id}', 'UsersController@update');

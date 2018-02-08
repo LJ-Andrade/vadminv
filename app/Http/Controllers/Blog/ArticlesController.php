@@ -26,7 +26,7 @@ class ArticlesController extends Controller
 
         if ($title != ''){
                 // Search User AND Role
-                $articles = Article::where('title', 'LIKE', "%$title%")->paginate(25);
+                $articles = Article::where('title', 'LIKE', "%$title%")->orderBy('id','DESC')->paginate(25);
                 $articles->each(function($articles){
                     $articles->category;
                     $articles->user;

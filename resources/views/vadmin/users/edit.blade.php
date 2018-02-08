@@ -1,6 +1,3 @@
-
-
-
 @extends('vadmin.layouts.main')
 @section('title', 'VADmin | Nueva Imágen')
 
@@ -24,13 +21,34 @@
                 'method' => 'PATCH',
                 'url' => ['/vadmin/users', $user->id],
                 'files' => true,
-                'class' => 'row big-form'
+                'class' => 'narrow-form',
                 ]) !!}
-                @include('vadmin.users.form')
-				<div class="row text-center">
-                    {!! Form::submit('Editar Usuario', ['class' => 'button btnGreen']) !!}
+				<div class="inner">
+					@include('vadmin.users.form')
+					<div class="row text-center">
+						{!! Form::submit('Editar Usuario', ['class' => 'button btnGreen']) !!}
+					</div>
 				</div>
             {!! Form::close() !!}
+
+			@if(auth()->user()->id == $user->id)
+			{!! Form::open(['route' => 'user.updatepassword', 'class' => 'narrow-form', 'method' => 'POST']) !!}	
+				<div class="inner">
+					Cambiar contraseña
+					<hr class="softhr">
+					<div class="form-group">
+						{!! Form::label('password', 'Contraseña:') !!}
+						<input class="form-control" name="password" type="password" value="">
+						{!! Form::label('password', 'Repita la contraseña:') !!}
+						<input id="PassConfirmation" class="form-control" name="password-confirm" type="password" value="">
+						
+					</div>
+					<div class="text-center">
+						{!! Form::submit('Cambiar Contraseña', ['class' => 'button btnGreen']) !!}
+					</div>
+				</div>
+			{!! Form::close() !!}
+			@endif
 
 	    </div>
 	</div>  
@@ -46,7 +64,6 @@
         $('#ActualImage').click(function(){
             $('#SingleImage').click();
         }); 
-
 	</script>
 @endsection
 

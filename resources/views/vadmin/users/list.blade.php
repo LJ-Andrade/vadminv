@@ -9,11 +9,12 @@
 	@endif
 		{{-- Column --}}
 		<div class="img">
-			@if($item->avatar != '')
-			<img class="thumb" src="{{ asset('images/users/'.$item->avatar)   }}">
+			@if($item->avatar != '' || $item->avatar != null)
+			<img class="thumb" src="{{ asset('images/users/'.$item->avatar) }}">
 			@else
 			<img class="thumb" src="{{ asset('images/gen/user-gen.jpg') }}">
 			@endif
+			
 		</div>
 
 		<div class="content">

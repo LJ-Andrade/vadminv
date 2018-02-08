@@ -13,11 +13,20 @@
 
 @section('content')
 	<div class="container">
-		{!! Form::open(['route' => 'users.store',  'class' => 'big-form', 'method' => 'POST', 'data-parsley-validate' => '']) !!}	
-			@include ('vadmin.users.form')
+		{!! Form::open(['route' => 'users.store', 'class' => 'narrow-form', 'method' => 'POST', 'data-parsley-validate' => '']) !!}	
+			<div class="inner">
+				@include ('vadmin.users.form')
+				<div class="form-group">
+					{!! Form::label('password', 'Contraseña:') !!}
+					<input class="form-control" name="password" type="password" value="" required="" data-parsley-equalto="#PassConfirmation">
+					{!! Form::label('password', 'Repita la contraseña:') !!}
+					<input id="PassConfirmation" class="form-control" name="password-confirm" type="password" value="" required="">
+				</div>
+			</div>
 			<div class="text-center">
 				{!! Form::submit('Crear', ['class' => 'button btnGreen', 'id' => 'InsertItemBtn']) !!}
 			</div>
+	
 		{!! Form::close() !!}
 
 		<div id="Error"></div>

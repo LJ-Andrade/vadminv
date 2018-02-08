@@ -86,7 +86,7 @@ class UsersController extends Controller
         $this->validate($request,[
             'name'              => 'min:4|max:20|required',
             'email'             => 'min:3|max:250|required|unique:users,email,'.$user->id,
-            'password'          => 'min:4|max:120|required|',
+            // 'password'          => 'min:4|max:120|required|',
             'role'              => 'required',
             'groups'            => 'required',
         ],[
@@ -97,9 +97,9 @@ class UsersController extends Controller
             'email.unique'      => 'El email pertenece a otro usuario registrado',
             'email.min'         => 'El E-Mail debe tener 3 caracteres como mínimo',
             'email.max'         => 'El E-Mail debe tener 250 caracteres como máximo',
-            'password.required' => 'Se requiere una contraseña',
-            'password.min'      => 'La contraseña debe tener 4 caracteres como mínimo',
-            'password.max'      => 'La contraseña debe tener 120 caracteres como máximo',
+            //'password.required' => 'Se requiere una contraseña',
+            //'password.min'      => 'La contraseña debe tener 4 caracteres como mínimo',
+            //'password.max'      => 'La contraseña debe tener 120 caracteres como máximo',
             'role.required'     => 'El usuario debe tener rol',
             'groups.required'   => 'El usuario debe pertenecer a un grupo'
         ]);
@@ -110,6 +110,11 @@ class UsersController extends Controller
         $user->save();
         
         return redirect('vadmin/users')->with('message', 'Usuario '.$user->name.' actualizado.');
+    }
+
+    public function updatePassword()
+    {
+        dd('ok');
     }
 
     /////////////////////////////////////////////////
@@ -184,7 +189,10 @@ class UsersController extends Controller
             try {
                 foreach ($request->id as $id) {
                     $user  = User::find($id);
-                    File::Delete(public_path( $path . $user->avatar));
+                    if($user->avatar != '' || $user->avatar != null)
+                    {
+                        File::Delete(public_path( $path . $user->avatar));
+                    }
                     User::destroy($id);
                 }
                 
