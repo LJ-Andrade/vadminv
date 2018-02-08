@@ -151,7 +151,6 @@ class ArticlesController extends Controller
 
     public function update(Request $request, $id)
     {
-
         $path      = public_path("webimages/blog/articles"); 
 
         $article   = Article::find($id);
@@ -178,9 +177,8 @@ class ArticlesController extends Controller
                 $image->save();
             }
         } 
-
-        return redirect()->route('blog.index')->with('message', 'El artículo con éxito se ha editado');
-        
+     
+        return redirect()->route('blog.index')->with('message', 'El artículo se ha editado con éxito.');
     }
 
 
