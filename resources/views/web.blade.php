@@ -133,7 +133,7 @@
                         <div class="description">
                             <div class="title"> Maceta Individual </div>
                             <div class="left-divider-sm"></div>
-                            <div class="text"> Ideal aromáticas. <br> Rabo, Quebracho, Guayubira. </div>
+                            <div class="text"> Ideal aromáticas. <br> Quebracho, <br>  Guayubira. </div>
                             <div class="price"> $290 </div>
                         </div>
                     </div>
@@ -147,9 +147,9 @@
                             </div>
                         </a>
                         <div class="description">
-                            <div class="title"> Maceta Cubo  </div>
+                            <div class="title"> Maceta Cubo </div>
                             <div class="left-divider-sm"></div>
-                            <div class="text"> Maceta de diseño y decoración. <br> Esquinero. Ideal 4 Aromáticas. </div>
+                            <div class="text"> Maceta de diseño y decoración.<br> Ideal 4 Aromáticas.  <br> Esquinero.</div>
                             <div class="price"> $1.199 </div>
                         </div>
                     </div>
@@ -163,26 +163,23 @@
                             </div>
                         </a>
                         <div class="description">
-                            <div class="title"> Maceta Rectangular  </div>
+                            <div class="title"> Maceta Rectangular </div>
                             <div class="left-divider-sm"></div>
-                            <div class="text"> Ideal 3/4 plantines de aromáticas. Rabo, Quebracho, Guayubira   </div>
+                            <div class="text"> Maceta Escalera huerta orgánica vertical (varios en tamaños) Quebracho, Gayubira  </div>
                             <div class="price"> $599 </div>
                         </div>
                     </div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="action txC">
-                    <a style="color: #000" href="{{ url('https://vdeverde.mercadoshops.com.ar') }}"><button class="btnHollow"> VER COLECCIÓN COMPLETA</button></a>
+                    <a style="color: #000" href="{{ url('https://vdeverde.mercadoshops.com.ar') }}"><button class="btnHollow"> Ver Colección Completa</button></a>
                 </div>
             </div>
-        </div>
-        
+        </div>        
     </div>
-    <div id="Error"></div>
-
+    {{-- <div id="Error"></div> --}}
     @include('web.layouts.partials.seguinosnews')
     <br>
-
     @include('web.layouts.partials.contact')
 @endsection
 

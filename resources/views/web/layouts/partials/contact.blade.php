@@ -19,7 +19,6 @@
 					</div>
 					{{ csrf_field() }}
 					{!! Form::submit('Enviar', ['id' => 'ContactBtn', 'class' => 'btnHollow']) !!}
-				
 				{!! Form::close() !!}
 				{!! Form::open(['id' => 'ContactFormMayorist', 'url' => 'sendmail']) !!}
 					<div class="CloseFormMayorist closeForm"><i class="ion-close-circled"></i></div>

@@ -32,15 +32,45 @@
                     </p>
                 </div>
             </div>
-            {!! Form::open(['id' => 'NewsletterForm']) !!}
+            {!! Form::open(['class' => 'NewsletterForm']) !!}
             <div class="col-md-6 inner2">
                 <div class="form-inline">
-                    <input id="NewsletterEmail" type="email" name="email" required="">
-                    <button id="NewsletterBtn" class="newsbutton">Suscribirse</button>
+                    <input class="NewsletterEmail" type="email" name="email" placeholder="E-mail" required="">
+                    <button class="NewsletterBtn" class="newsbutton">Suscribirse</button>
                 </div>
             </div>
             
             {!! Form::close() !!} 
-            <div id="ErrorNewsletter"></div>
+            <div class="ErrorNewsletter"></div>
         </div>    
+    </div>
+
+    <!-- Newsletter trigger modal -->
+    <div class="modal fade newsletter-popup" id="NewsletterPopup" tabindex="-1" role="dialog" aria-labelledby="newsletter" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="header-image">
+                    <img src="{{ asset('images/gral/newsletter.jpg') }}" alt="">
+                    <div class="close-modal">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="inner-content">
+                    <h2>Suscribite a nuestro Newsletter!</h2>
+                    <p>
+                        Recibí todas las novedades suscribiendote a
+                        nuestro newsletter.
+                    </p>
+                    {!! Form::open(['class' => 'NewsletterForm']) !!}
+                        <div class="form-inline">
+                            <input class="NewsletterEmail" type="email" name="email" placeholder="E-mail" required="">
+                            <button class="NewsletterBtn" class="newsbutton">Suscribirse</button>
+                        </div>
+                    {!! Form::close() !!} 
+                    <p class="muted">Ingresá tu e-mail y hacé click en "Suscribirse"</p>
+                </div>
+            </div>
+        </div>
     </div>

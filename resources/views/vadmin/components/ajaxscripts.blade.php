@@ -3,14 +3,8 @@
 	/////////////////////////////////////////////////
 	//            SINGLE DELETE - AJAX             //
 	/////////////////////////////////////////////////
-
-
-
 	
 	function delete_item(id, route) {	
-
-		
-
 		$.ajax({
 			url: route,
 			method: 'post',             

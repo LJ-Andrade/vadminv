@@ -10,6 +10,6 @@
 		</div> --}}
 	</div> 
 	<div class="copyright" style="font-size: 15px">
-		<b>V de Verde</b> | Todos los derechos reservados &#9400; 2017 - By <a href="{{ url('https://vimana.studio')}}" target="_blank">Vimana Studio</a>
+		<b>V de Verde</b> | Todos los derechos reservados &#9400; 2017 - {{ date('Y') }} | By <a href="{{ url('https://vimana.studio')}}" target="_blank">Vimana Studio</a>
 	</div>
 </footer>
