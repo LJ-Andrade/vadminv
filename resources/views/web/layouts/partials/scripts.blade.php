@@ -28,7 +28,7 @@
     // Show Newsletter modal
     setTimeout(function(){
         $('#NewsletterPopup').modal('show'); 
-    },0) // 5 seconds.
+    },15000) // 5 seconds.
 
     $(document).ready(function() {
     });
