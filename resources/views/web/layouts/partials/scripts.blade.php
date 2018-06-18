@@ -26,9 +26,9 @@
 	}
 
     // Show Newsletter modal
-//    setTimeout(function(){
-//        $('#NewsletterPopup').modal('show'); 
-//    },15000) // 5 seconds.
+    setTimeout(function(){
+        $('#NewsletterPopup').modal('show'); 
+    },15000) // 5 seconds.
 
     $(document).ready(function() {
     });
