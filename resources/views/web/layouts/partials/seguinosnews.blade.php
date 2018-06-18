@@ -70,6 +70,9 @@
                         </div>
                     {!! Form::close() !!} 
                     <p class="muted">Ingresá tu e-mail y hacé click en "Suscribirse"</p>
+                    <button type="button" class="btn" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">Cerrar</span>
+                    </button>
                 </div>
             </div>
         </div>

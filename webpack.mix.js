@@ -44,7 +44,9 @@ mix.sass('resources/assets/sass/vadmin/vadmin.sass', 'public/css')
   }).sass('resources/assets/sass/web/web.sass', 'public/css')
   .options({
     processCssUrls: false
-  }).browserSync('http://localhost/vadminv/public/');
+  })
+  .js('resources/assets/js/web/web.js', 'public/js')
+  .browserSync('http://localhost/vadminv/public/');
 
 // .js('resources/assets/js/vadmin/vadmin.js', 'public/js')
 
