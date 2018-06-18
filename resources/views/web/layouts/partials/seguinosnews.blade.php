@@ -66,7 +66,7 @@
                     {!! Form::open(['class' => 'NewsletterForm']) !!}
                         <div class="form-inline">
                             <input class="NewsletterEmail" type="email" name="email" placeholder="E-mail" required="">
-                            <button class="NewsletterBtn" class="newsbutton">Suscribirse</button>
+                            <button class="newsbutton">Suscribirse</button>
                         </div>
                     {!! Form::close() !!} 
                     <p class="muted">Ingresá tu e-mail y hacé click en "Suscribirse"</p>
