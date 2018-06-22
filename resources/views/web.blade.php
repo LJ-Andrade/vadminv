@@ -133,8 +133,9 @@
                         <div class="description">
                             <div class="title"> Maceta Individual </div>
                             <div class="left-divider-sm"></div>
-                            <div class="text"> Ideal aromáticas. <br> Quebracho, <br>  Guayubira. </div>
-                            <div class="price"> $290 </div>
+                            <div class="text"> Ideal aromáticas.  <br>   Quebracho,Guayubira. </div>
+                            <div class="price">  </div>
+                            {{-- $290 --}}
                         </div>
                     </div>
                 </div>
@@ -149,8 +150,9 @@
                         <div class="description">
                             <div class="title"> Maceta Cubo </div>
                             <div class="left-divider-sm"></div>
-                            <div class="text"> Maceta de diseño y decoración.<br> Ideal 4 Aromáticas.  <br> Esquinero.</div>
-                            <div class="price"> $1.199 </div>
+                            <div class="text"> Maceta de diseño y decoración.<br> Ideal 4 Aromáticas. Esquinero.</div>
+                            <div class="price">  </div>
+                            {{-- $1.199 --}}
                         </div>
                     </div>
                 </div>
@@ -163,10 +165,10 @@
                             </div>
                         </a>
                         <div class="description">
-                            <div class="title"> Maceta Rectangular </div>
+                            <div class="title"> Maceta Escalera </div>
                             <div class="left-divider-sm"></div>
-                            <div class="text"> Maceta Escalera huerta orgánica vertical (varios en tamaños) Quebracho, Gayubira  </div>
-                            <div class="price"> $599 </div>
+                            <div class="text"> Huerta orgánica vertical (varios tamaños) Quebracho, Gayubira  </div>
+                            <div class="price"> </div>
                         </div>
                     </div>
                 </div>
