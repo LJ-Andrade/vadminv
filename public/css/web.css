@@ -566,7 +566,7 @@ ul {
 .home-banner-container .home-banner .inner span.title {
   font-family: "Playfair Display", serif;
   font-size: 5rem;
-  font-weight: 700;
+  font-weight: 900;
   font-style: italic;
   line-height: 5rem;
   color: #fff;
@@ -682,8 +682,19 @@ ul {
   background-color: #254460;
 }
 
+.mosaic-section h1 {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+}
+
+@media (min-width: 991px) {
+  .mmosaic-section {
+    max-width: 1200px;
+  }
+}
+
 .bgimg-link {
-  height: 180px;
+  height: 280px;
   padding: 2px;
   text-align: center;
 }
@@ -691,7 +702,7 @@ ul {
 .bgimg-link .inner {
   border-radius: 0;
   height: 100%;
-  background-size: 112%;
+  padding: 50px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -836,34 +847,6 @@ ul {
   }
 }
 
-.bg-zoom-home {
-  -webkit-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
-  background-size: 110%;
-  -webkit-filter: brightness(1);
-  filter: brightness(1);
-}
-
-.bg-zoom-home:hover {
-  background-size: 115%;
-  cursor: pointer;
-  -webkit-filter: brightness(1.2);
-  -webkit-filter-filter: brightness(1.2);
-}
-
-@media (max-width: 1200px) {
-  .bg-zoom-home {
-    background-size: 110%;
-    -webkit-transition: all 0.5s ease 0s;
-    transition: all 0.5s ease 0s;
-  }
-  .bg-zoom-home:hover {
-    cursor: pointer;
-    -webkit-filter: brightness(1.2);
-    filter: brightness(1.2);
-  }
-}
-
 .blue-back-link {
   background-color: #254460;
 }
@@ -876,14 +859,22 @@ ul {
 
 .accesorios-img-link {
   background: url(../webimages/home/accesorioslink.jpg) no-repeat center center;
+  background-size: cover;
 }
 
 .maderas-img-link {
   background: url(../webimages/home/regaloslink.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+.maderas-img-link h1 {
+  color: #254460;
+  text-shadow: none;
 }
 
 .huerta-img-link {
   background: url(../webimages/home/huertalink.jpg) no-repeat center center;
+  background-size: cover;
 }
 
 @media (max-width: 768px) {
@@ -894,10 +885,17 @@ ul {
 
 .urbana-img-link {
   background: url(../webimages/home/urbanalink.jpg) no-repeat center center;
+  background-size: cover;
 }
 
 .blog-img-link {
   background: url(../webimages/home/bloglink.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+.blog-img-link h1, .blog-img-link p {
+  color: #254460;
+  text-shadow: none;
 }
 
 .shop-preview {

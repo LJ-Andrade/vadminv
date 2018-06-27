@@ -23,7 +23,7 @@
 			span.title
 				font-family: $font1
 				font-size: 5rem
-				font-weight: 700
+				font-weight: 900
 				font-style: italic
 				line-height: 5rem
 				color: #fff
@@ -172,19 +172,27 @@
 		background-color: $dark-blue		
 
 
-.mosaic-block
+.mosaic-section
+	h1
+		font-family: $font1
+		font-style: italic
+
+@media (min-width: 991px)
+	.mmosaic-section
+		max-width: 1200px
 
 .bgimg-container
 	// max-width: 900px
 
 .bgimg-link
-	height: 180px
+	height: 280px
 	padding: 2px
 	text-align: center
 	.inner
 		border-radius: 0
 		height: 100%
-		background-size: 112%
+		padding: 50px 0
+		// background-size: 112%
 		@include flex-column
 		h1
 			margin: 0
@@ -229,9 +237,7 @@
 			height: 390px
 
 
-
 @media screen and ( max-height: 700px )
-	.mosaic-block
 	.bgimg-container
 		max-width: 750px
 	.bgimg-link
@@ -297,27 +303,6 @@
 			p
 				font-size: 1.2rem
 
-.bg-zoom-home
-	@include transition(0.5s)
-	background-size: 110%
-	-webkit-filter: brightness(1)
-	filter: brightness(1)
-	&:hover
-		background-size: 115%
-		cursor: pointer
-		-webkit-filter: brightness(1.2)
-	    filter: brightness(1.2)
-
-@media (max-width: 1200px)
-	.bg-zoom-home
-		background-size: 110%
-		@include transition(0.5s)
-		&:hover
-			cursor: pointer
-			-webkit-filter: brightness(1.2)
-			filter: brightness(1.2)
-
-
 
 .blue-back-link
 	background-color: $dark-blue
@@ -328,12 +313,27 @@
 
 .accesorios-img-link
 	background: url(../webimages/home/accesorioslink.jpg) no-repeat center center
+	-webkit-background-size: cover
+	-moz-background-size: cover
+	-o-background-size: cover
+	background-size: cover
 
 .maderas-img-link
 	background: url(../webimages/home/regaloslink.jpg) no-repeat center center
+	-webkit-background-size: cover
+	-moz-background-size: cover
+	-o-background-size: cover
+	background-size: cover
+	h1
+		color: $dark-blue
+		text-shadow: none
 
 .huerta-img-link
 	background: url(../webimages/home/huertalink.jpg) no-repeat center center
+	-webkit-background-size: cover
+	-moz-background-size: cover
+	-o-background-size: cover
+	background-size: cover
 
 @media (max-width: 768px)
 	.huerta-img-link, .accesorios-img-link
@@ -341,10 +341,21 @@
 
 .urbana-img-link
 	background: url(../webimages/home/urbanalink.jpg) no-repeat center center
+	-webkit-background-size: cover
+	-moz-background-size: cover
+	-o-background-size: cover
+	background-size: cover
 	
 
 .blog-img-link
 	background: url(../webimages/home/bloglink.jpg) no-repeat center center
+	-webkit-background-size: cover
+	-moz-background-size: cover
+	-o-background-size: cover
+	background-size: cover
+	h1,p
+		color: $dark-blue
+		text-shadow: none
 
 
 .shop-preview
