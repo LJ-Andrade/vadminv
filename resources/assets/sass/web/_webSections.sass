@@ -194,6 +194,7 @@
 		padding: 50px 0
 		// background-size: 112%
 		@include flex-column
+		@include transition(0.2s)
 		h1
 			margin: 0
 			font-weight: 600
@@ -202,6 +203,9 @@
 			-moz-background-size: cover
 			-o-background-size: cover
 			background-size: cover
+	&:hover
+		.inner
+			opacity: 0.9
 
 
 
@@ -326,7 +330,6 @@
 	background-size: cover
 	h1
 		color: $dark-blue
-		text-shadow: none
 
 .huerta-img-link
 	background: url(../webimages/home/huertalink.jpg) no-repeat center center
@@ -355,7 +358,6 @@
 	background-size: cover
 	h1,p
 		color: $dark-blue
-		text-shadow: none
 
 
 .shop-preview

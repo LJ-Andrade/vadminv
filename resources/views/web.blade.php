@@ -42,7 +42,7 @@
             <div class="col-md-4 col-sm-4 col-xs-12 bgimg-link wow animated fadeIn" data-wow-delay="200ms">
                 <a href="{{ url('https://vdeverde.mercadoshops.com.ar/kit-para-regalos_qO27058343XtOcxSM') }}">
                     <div class="inner maderas-img-link border">
-                        <h1 class="white-txt bt-shadow-w">KITS PARA <br>REGALOS</h1>
+                        <h1 class="white-txt wt-shadow">KITS PARA <br>REGALOS</h1>
                     </div>
                 </a>
             </div>
@@ -90,8 +90,8 @@
             <div class="col-md-4 col-sm-4 col-xs-12 bgimg-link wow animated fadeIn" data-wow-delay="800ms">
                 <a style="color: #fff" href="{{ url('blog') }}">
                     <div class="inner blog-img-link">
-                        <h1 class="white-tx bt-shadow">BLOG</h1>
-                        <p class="white-tx bt-shadow">NOVEDADES / CONSEJOS</p>
+                        <h1 class="white-tx wt-shadow">BLOG</h1>
+                        <p class="white-tx wt-shadow">NOVEDADES / CONSEJOS</p>
                     </div>
                 </a>
             </div>

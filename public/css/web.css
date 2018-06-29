@@ -408,6 +408,14 @@ h4 {
   -o-text-shadow: 1px 2px 4px #383838;
 }
 
+.wt-shadow {
+  text-shadow: 0px -2px 8px #ffffff;
+  -webkit-text-shadow: 0px -2px 8px #ffffff;
+  -moz-text-shadow: 0px -2px 8px #ffffff;
+  -moz-text-shadow: 0px -2px 8px #ffffff;
+  -o-text-shadow: 0px -2px 8px #ffffff;
+}
+
 @media (max-width: 900px) {
   .hideMobile900 {
     display: none !important;
@@ -717,6 +725,8 @@ ul {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
 }
 
 .bgimg-link .inner h1 {
@@ -726,6 +736,10 @@ ul {
 
 .bgimg-link .inner .bgsize {
   background-size: cover;
+}
+
+.bgimg-link:hover .inner {
+  opacity: 0.9;
 }
 
 @media (min-width: 1250px) {
@@ -869,7 +883,6 @@ ul {
 
 .maderas-img-link h1 {
   color: #254460;
-  text-shadow: none;
 }
 
 .huerta-img-link {
@@ -895,7 +908,6 @@ ul {
 
 .blog-img-link h1, .blog-img-link p {
   color: #254460;
-  text-shadow: none;
 }
 
 .shop-preview {
