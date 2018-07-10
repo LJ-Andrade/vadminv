@@ -544,7 +544,7 @@ ul {
 }
 
 .home-banner-container .home-banner {
-  background: url(../webimages/home/homebanner.jpg) no-repeat center center;
+  background: url(../webimages/home/homebanner.jpg) no-repeat center 80px;
   background-size: cover;
   height: auto;
   padding-bottom: 80px;
@@ -643,6 +643,13 @@ ul {
   }
   .home-banner-container .home-banner .inner p {
     padding: 0 2px;
+  }
+}
+
+@media (max-width: 765px) {
+  .home-banner-container .home-banner {
+    background: url(../webimages/home/homebannermobile.jpg) no-repeat center 80px;
+    background-size: cover;
   }
 }
 

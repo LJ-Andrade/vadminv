@@ -7,7 +7,7 @@
 .home-banner-container
 	width: 100%
 	.home-banner
-		background: url(../webimages/home/homebanner.jpg) no-repeat center center
+		background: url(../webimages/home/homebanner.jpg) no-repeat center 80px
 		-webkit-background-size: cover
 		-moz-background-size: cover
 		-o-background-size: cover
@@ -73,6 +73,15 @@
 					line-height: 2.9rem
 				p
 					padding: 0 2px
+
+@media (max-width: 765px)
+	.home-banner-container
+		.home-banner
+			background: url(../webimages/home/homebannermobile.jpg) no-repeat center 80px
+			-webkit-background-size: cover
+			-moz-background-size: cover
+			-o-background-size: cover
+			background-size: cover
 
 // .home-slider
 // 	.swiper-container
