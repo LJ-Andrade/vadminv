@@ -16,10 +16,10 @@
                 {{-- Prevents error when No image is uploaded in article --}}
                 <div class="imagen">
                     <a href="{!! route('web.blog.article',$article->slug ) !!}">
-                        @if (count($article->images))
-                            <img src="{{ asset('webimages/blog/articles/'. $article->images->first()->name ) }}" class="img-responsive" alt="">
+                        @if (count($article->images))                            
+                            <img src="{{ asset('webimages/blog/articles/'. $article->images->first()->name ) }}" class="CheckImg img-responsive" alt="{{ $article->title }}">
                         @else
-                            <img src="{{ asset('webimages/gen/genlogo.jpg') }}" class="img-responsive" alt="">
+                            <img src="{{ asset('webimages/gen/blog-gen.jpg') }}" class="CheckImg img-responsive" style="border: 1px solid #d6cccc" alt="V de Verde Logo">
                         @endif
                     </a>
                 </div>

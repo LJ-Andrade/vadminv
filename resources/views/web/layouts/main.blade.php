@@ -55,6 +55,15 @@
 				s1.setAttribute('crossorigin','*');
 				s0.parentNode.insertBefore(s1,s0);
 			})();
+
+			// Check Broken Images
+			$('.CheckImg').on('error', function(){
+				var defaultImg = "{{ asset('webimages/gen/logo-gen.jpg') }}"
+				$(this).attr('src', defaultImg);
+				$(this).css("border", "1px solid #d6cccc");
+			});
+
+
 		</script>
 		<!--End of Tawk.to Script-->
 	</body>

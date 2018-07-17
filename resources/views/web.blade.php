@@ -22,7 +22,7 @@
                     </div>
                 </div>
                 <div class="row centered-logo" style="margin-top: -80px">
-                    <img src="{{ asset('webimages/logos/logo.png') }}" alt="">
+                    <img src="{{ asset('webimages/logos/logo.png') }}" alt="V de Verde Logo">
                 </div>   
             </div>
         </div>
@@ -125,7 +125,7 @@
                     <div class="inner">
                         <a href="{{ url('https://vdeverde.mercadoshops.com.ar/huerta-organica-individual-ideal-aromaticas-en-distintas-variedad-de-maderas-551260335xJM') }}">
                             <div class="image">
-                                <img src="{{ asset('webimages/home/shop-pre-1.jpg') }}"  class="img-responsive" alt="">
+                                <img src="{{ asset('webimages/home/shop-pre-1.jpg') }}"  class="img-responsive" alt="Maceta de madera">
                             </div>
                         </a>
                         <div class="description">
@@ -142,7 +142,7 @@
                     <div class="inner">
                         <a href="{{ url('https://vdeverde.mercadoshops.com.ar/huerta-organica-maceta-de-diseno-decoracion-ideal-esquinero-apto-aromaticas-opcion-en-diferente-variedad-de-maderas-551260347xJM') }}">
                             <div class="image">
-                                <img src="{{ asset('webimages/home/shop-pre-2.jpg') }}"  class="img-responsive" alt="">
+                                <img src="{{ asset('webimages/home/shop-pre-2.jpg') }}"  class="img-responsive" alt="Macetas de madera">
                             </div>
                         </a>
                         <div class="description">
@@ -157,9 +157,9 @@
 
                 <div class="col-md-4 col-sm-4 col-xs-12 shop-item-preview wow animated fadeIn" data-wow-delay="300ms">
                     <div class="inner">
-                        <a href="{{ url('https://vdeverde.mercadoshops.com.ar/huerta-organica-ideal-34-plantines-de-aromaticas-macetas-disponibles-en-diferentes-opciones-de-maderas-551260282xJM') }}">
+                        <a href="{{ url('https://vdeverde.mercadoshops.com.ar/huerta-organica-verticalescalera-grande-ideal-balcon-terraza-apto-12-plantines-madera-quebracho-guayubira-780555788xJM') }}">
                             <div class="image">
-                                <img src="{{ asset('webimages/home/shop-pre-3.jpg') }}"  class="img-responsive" alt="">
+                                <img src="{{ asset('webimages/home/shop-pre-3.jpg') }}"  class="img-responsive" alt="Huerta vertical">
                             </div>
                         </a>
                         <div class="description">
