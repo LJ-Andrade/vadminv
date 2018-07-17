@@ -17,9 +17,9 @@
                 <div class="imagen">
                     <a href="{!! route('web.blog.article',$article->slug ) !!}">
                         @if (count($article->images))                            
-                            <img src="{{ asset('webimages/blog/articles/'. $article->images->first()->name ) }}" class="CheckImg img-responsive" alt="{{ $article->title }}">
+                            <img src="{{ asset('webimages/blog/articles/'. $article->images->first()->name ) }}" class="CheckImgBlog img-responsive" alt="{{ $article->title }}">
                         @else
-                            <img src="{{ asset('webimages/gen/blog-gen.jpg') }}" class="CheckImg img-responsive" style="border: 1px solid #d6cccc" alt="V de Verde Logo">
+                            <img src="{{ asset('webimages/gen/blog-gen.jpg') }}" class="img-responsive" alt="V de Verde Logo">
                         @endif
                     </a>
                 </div>

@@ -62,6 +62,7 @@ class ArticlesController extends Controller
             ->with('status', $status);
     }
 
+
     public function store(Request $request)
     {
 
@@ -81,9 +82,9 @@ class ArticlesController extends Controller
             'title.unique'         => 'El título ya existe en otro artículo',
             'category_id.required' => 'Debe ingresar una categoría',
             'slug.required'        => 'Se requiere un slug',
+            'slug'                 => 'El slug debe tener guiones bajos en vez de espacios',
             'slug.min'             => 'El slug debe tener 5 caracteres como mínimo',
             'slug.max'             => 'El slug debe tener 255 caracteres como máximo',
-            'slug.max'             => 'El slug debe tener guiones bajos en vez de espacios',
             'slug.unique'          => 'El slug debe ser único, algún otro artículo lo está usando',
             'content.min'          => 'El contenido debe contener al menos 60 caracteres',
             'content.required'     => 'Debe ingresar contenido',
@@ -94,6 +95,8 @@ class ArticlesController extends Controller
         $article          = new Article($request->all());
 
         $article->user_id = \Auth::user()->id;
+        $article->slug = $this->checkSlug(slugify($article->slug));
+        
         $article->save();
 
         // Sync() fills pivote table. Gets un array.
@@ -155,6 +158,7 @@ class ArticlesController extends Controller
 
         $article   = Article::find($id);
         $article->fill($request->all());
+        $article->slug = $this->checkSlug(slugify($article->slug));
         $article->save();
 
         // Sync() fills pivote table. Gets un array.
@@ -194,6 +198,21 @@ class ArticlesController extends Controller
             ]);
 
     }
+
+    public function checkSlug($slug)
+    {
+        $checkSlug = Article::where('slug', $slug)->first();
+        if($checkSlug != null) 
+        {
+            $checkSlug = $checkSlug->slug.'-dif-'. rand(1000,10000). date('d').date('s');
+            return $checkSlug;
+        } 
+        else
+        {
+            return $slug;
+        }
+    }
+
 
     /////////////////////////////////////////////////
     //                   DELETE                    //

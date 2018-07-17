@@ -184,6 +184,10 @@
 		font-family: $font1
 		font-style: italic
 
+@media (max-width: 768px)
+	.mosaic-block
+		@include flex-column()
+
 @media (min-width: 991px)
 	.mmosaic-section
 		max-width: 1200px

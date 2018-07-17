@@ -33,6 +33,7 @@
 						<div class="form-group">
 							{!! Form::label('slug', 'Slug') !!}
 							{!! Form::text('slug', $article->slug, ['class' => 'SlugInput form-control', 'required']) !!}
+							<p class="muted-small-text"> La URL no debe contener espacios, caracteres extraños ni acentos. Solo palabras en minúsculas separadas con guiones. (Ej.: este-es-un-slug-correcto)</p>
 						</div>
 					</div>
 				</div>

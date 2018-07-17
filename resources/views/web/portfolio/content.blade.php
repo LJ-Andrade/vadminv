@@ -17,9 +17,9 @@
                 {{-- Prevents error when No image is uploaded in article --}}
                 <div class="imagen">
                     @if ($article->thumb != '')
-                        <img class="CheckImg ViewImage" data-filename="{{ asset('webimages/portfolio/'. $article->filename ) }}" src="{{ asset('webimages/portfolio/'. $article->thumb ) }}" class="img-responsive" alt="{{ $article->title }}" data-toggle="modal" data-target="#ImageModal">
+                        <img class="CheckImgPortfolio ViewImage" data-filename="{{ asset('webimages/portfolio/'. $article->filename ) }}" src="{{ asset('webimages/portfolio/'. $article->thumb ) }}" class="img-responsive" alt="{{ $article->title }}" data-toggle="modal" data-target="#ImageModal">
                     @else
-                        <img src="{{ asset('webimages/gen/portfolio-gen.jpg') }}" class="img-responsive" style="border: 1px solid #d6cccc" alt="V de Verde Logo">
+                        <img src="{{ asset('webimages/gen/portfolio-gen.jpg') }}" class="img-responsive" alt="VdeVerde Portfolio">
                     @endif
                 </div>
                 {{-- ARTICLE INFO --}}

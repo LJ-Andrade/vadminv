@@ -8,6 +8,7 @@
 			<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('webimages/logos/navlogo.png') }}" alt=""></a>
+			<a href="https://vdeverde.mercadoshops.com.ar/" class="mobile-shop-cta"><div class="icon"><i class="ion-ios-cart-outline"></i></div> <div class="text">Visitá nuestra tienda</div></a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">

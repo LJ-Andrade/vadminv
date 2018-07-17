@@ -1,18 +1,14 @@
-
 <div class="col-md-12 animated fadeIn main-list">
-
 
 	@foreach($articles as $item)
 	<div id="Id{{ $item->id }}" class="Select-Row-Trigger Item-Row row item-row {{ $item->status }}">
 		{{-- Column --}}
 		<div class="img">
-			
 			@if(count($item->images))
-			<img class="thumb" src="{{ asset('webimages/blog/articles/'. $item->images->first()->name ) }}">
+			<img class="thumb CheckImgBlog" src="{{ asset('webimages/blog/articles/'. $item->images->first()->name ) }}" alt="V de Verde Blog">
 			@else
-			<img class="thumb" src="{{ asset('webimages/gen/genlogo.jpg') }}">
+			<img class="thumb" src="{{ asset('webimages/gen/gen.jpg') }}" alt="V de Verde Logo">
 			@endif
-
 		</div>
 
 		<div class="content">
@@ -32,9 +28,9 @@
 
 		
 		{{-- Batch Delete --}} 
-		<div class="batch-delete-checkbox">
+		{{-- <div class="batch-delete-checkbox">
 			<input type="checkbox" class="BatchDelete" data-id="{{ $item->id }}">
-		</div>
+		</div> --}}
 		{{-- Actions --}}
 		<div class="List-Actions lists-actions Hidden">
 			{{-- Edit --}}

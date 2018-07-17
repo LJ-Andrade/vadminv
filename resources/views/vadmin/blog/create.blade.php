@@ -40,6 +40,7 @@
 							{!! Form::label('slug', 'Url - Dirección web') !!}
 							{!! Form::text('slug', null, ['class' => 'SlugInput form-control', 'placeholder' => 'Dirección visible (en explorador)', 'id' => 'SlugInput', 'required' => '']) !!}
 							<div class="slug2"></div>
+							<p class="muted-small-text"> La URL no debe contener espacios, caracteres extraños ni acentos. Solo palabras en minúsculas separadas con guiones. (Ej.: este-es-un-slug-correcto)</p>
 						</div>
 					</div>
 				</div>
@@ -112,9 +113,9 @@
 		$('.Textarea-Editor').trumbowyg();
 
 		// Loader
-		$("#NewItemForm").on("submit", function(){
-			$('.Main-Loader').removeClass('Hidden');
-		});
+		//$("#NewItemForm").on("submit", function(){
+		//	$('.Main-Loader').removeClass('Hidden');
+		//});
 	</script>
 @endsection
 

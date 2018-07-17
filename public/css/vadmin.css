@@ -99,6 +99,14 @@ hr {
   text-align: center;
 }
 
+.muted-small-text {
+  font-size: .9rem;
+  margin: 0;
+  padding: 0;
+  line-height: 1.1rem;
+  margin-top: 5px;
+}
+
 .flexCentVert {
   display: -webkit-box;
   display: -ms-flexbox;

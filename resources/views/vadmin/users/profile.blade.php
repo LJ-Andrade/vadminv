@@ -34,7 +34,7 @@
 					<div class="text col-md-12">
 						<div class="col-md-6">
 							<span>Permisos</span> <br>
-							<span class="data">{{ typeTrd($user->type) }}</span>
+							<span class="data">{{ groupsTrd($user->type) }}</span>
 						</div>
 						<div class="col-md-6">
 							<span>Rol</span> <br>

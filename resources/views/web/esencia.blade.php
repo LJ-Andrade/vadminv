@@ -26,9 +26,9 @@
         <img class="img-desktop" src="{{ asset('webimages/esencia/banner.jpg') }}" alt="">
     </div>
 
+    {{-- <br>
     <br>
-    <br>
-    <br>
+    <br> --}}
     <br>
     <br>
 @endsection

@@ -67,3 +67,47 @@
   .navbar-default
     padding-left: 50px
     padding-right: 50px
+
+.mobile-shop-cta
+    display: none
+
+@media (max-width: 768px)
+    .mobile-shop-cta
+        display: block
+        float: none
+        margin: 0 auto
+        padding-top: 20px
+        display: table
+        table-layout: fixed
+        min-width: 215px
+        .text
+            color: #383838
+            font-style: italic
+            padding-top: 5px
+        .icon
+            text-align: center
+            padding-top: 4px
+            float: left
+            background: #94c471
+            border-radius: 50%
+            margin-right: 5px
+            width: 35px
+            min-width: 35px
+            height: 35px
+            color: #fff
+            padding: 4px
+            &:hover
+                background-color: #5a823d
+            i
+                font-size: 2rem
+        &:hover
+            cursor: pointer
+
+@media (max-width: 374px)
+    .mobile-shop-cta
+        min-width: auto
+        padding-top: 15px
+        .text
+            padding-top: 0px
+        .icon
+            margin-top: 8px

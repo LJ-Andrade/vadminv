@@ -56,11 +56,16 @@
 				s0.parentNode.insertBefore(s1,s0);
 			})();
 
-			// Check Broken Images
-			$('.CheckImg').on('error', function(){
-				var defaultImg = "{{ asset('webimages/gen/logo-gen.jpg') }}"
+			// Check Broken Portfolio Images
+			$('.CheckImgPortfolio').on('error', function(){
+				var defaultImg = "{{ asset('webimages/gen/portfolio-gen.jpg') }}"
 				$(this).attr('src', defaultImg);
-				$(this).css("border", "1px solid #d6cccc");
+			});
+
+			// Check Broken Blog Images
+			$('.CheckImgBlog').on('error', function(){
+				var defaultImg = "{{ asset('webimages/gen/blog-gen.jpg') }}"
+				$(this).attr('src', defaultImg);
 			});
 
 

@@ -9,10 +9,10 @@
 	@endif
 		{{-- Column --}}
 		<div class="img">
-			@if(count($item->thumb != ''))
-			<img class="thumb" src="{{ asset('webimages/portfolio/'.$item->thumb)   }}">
+			@if($item->thumb != '')
+			<img class="thumb CheckImgPortfolio" src="{{ asset('webimages/portfolio/'.$item->thumb)   }}">
 			@else
-			<img class="thumb" src="{{ asset('webimages/gen/genlogo.jpg') }}">
+			<img class="thumb" src="{{ asset('webimages/gen/gen.jpg') }}" alt="V de Verde Logo">
 			@endif
 		</div>
 
@@ -29,9 +29,9 @@
 		</div>
 		
 		{{-- Batch Delete --}} 
-		<div class="batch-delete-checkbox">
+		{{-- <div class="batch-delete-checkbox">
 			<input type="checkbox" class="BatchDelete" data-id="{{ $item->id }}">
-		</div>
+		</div> --}}
 		{{-- Actions --}}
 		<div class="List-Actions lists-actions Hidden">
 			{{-- Edit --}}

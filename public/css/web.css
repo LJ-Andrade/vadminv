@@ -539,6 +539,62 @@ ul {
   }
 }
 
+.mobile-shop-cta {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-shop-cta {
+    display: block;
+    float: none;
+    margin: 0 auto;
+    padding-top: 20px;
+    display: table;
+    table-layout: fixed;
+    min-width: 215px;
+  }
+  .mobile-shop-cta .text {
+    color: #383838;
+    font-style: italic;
+    padding-top: 5px;
+  }
+  .mobile-shop-cta .icon {
+    text-align: center;
+    padding-top: 4px;
+    float: left;
+    background: #94c471;
+    border-radius: 50%;
+    margin-right: 5px;
+    width: 35px;
+    min-width: 35px;
+    height: 35px;
+    color: #fff;
+    padding: 4px;
+  }
+  .mobile-shop-cta .icon:hover {
+    background-color: #5a823d;
+  }
+  .mobile-shop-cta .icon i {
+    font-size: 2rem;
+  }
+  .mobile-shop-cta:hover {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 374px) {
+  .mobile-shop-cta {
+    min-width: auto;
+    padding-top: 15px;
+  }
+  .mobile-shop-cta .text {
+    padding-top: 0px;
+  }
+  .mobile-shop-cta .icon {
+    margin-top: 8px;
+  }
+}
+
 .home-banner-container {
   width: 100%;
 }
@@ -700,6 +756,25 @@ ul {
 .mosaic-section h1 {
   font-family: "Playfair Display", serif;
   font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .mosaic-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
 }
 
 @media (min-width: 991px) {
@@ -1453,7 +1528,7 @@ footer .copyright {
   font-style: italic;
   font-size: 3.5rem;
   font-weight: 600;
-  color: #fff;
+  color: #254460;
   margin-bottom: 40px;
 }
 

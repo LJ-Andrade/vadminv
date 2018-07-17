@@ -84,14 +84,15 @@ class ArticlesController extends Controller
             'slug.required'        => 'Se requiere un slug',
             'slug.min'             => 'El slug debe tener 5 caracteres como mínimo',
             'slug.max'             => 'El slug debe tener 255 caracteres como máximo',
-            'slug.max'             => 'El slug debe tener guiones bajos en vez de espacios',
+            'slug'                 => 'El slug debe tener guiones bajos en vez de espacios',
             'slug.unique'          => 'El slug debe ser único, algún otro artículo lo está usando',
             // 'image'                => 'El archivo adjuntado no es soportado',
         ]);
 
         $article           = new PortArticle($request->all());
         $article->user_id  = \Auth::user()->id;
-       
+        $article->slug = $this->checkSlug(slugify($article->slug));
+
         $physic_image      = $request->file('image');
         $imgPath           = public_path("webimages/portfolio/"); 
         $filename          = date("dmYis");
@@ -134,6 +135,7 @@ class ArticlesController extends Controller
         $path      = public_path("webimages/portfolio/");
         $article   = PortArticle::find($id);
         $article->fill($request->all());
+        $article->slug = $this->checkSlug(slugify($article->slug));
         $image = $request->file('image');
         try{
             if ($image) {
@@ -164,6 +166,20 @@ class ArticlesController extends Controller
             return response()->json([
                 "status" => 1
             ]);
+    }
+
+    public function checkSlug($slug)
+    {
+        $checkSlug = PortArticle::where('slug', $slug)->first();
+        if($checkSlug != null) 
+        {
+            $checkSlug = $checkSlug->slug.'-dif-'. rand(1000,10000). date('d').date('s');
+            return $checkSlug;
+        } 
+        else
+        {
+            return $slug;
+        }
     }
 
     /////////////////////////////////////////////////

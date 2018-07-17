@@ -16,13 +16,16 @@
 
 @section('content')
 	<div class="container">
-		Este es el panel de control del sitio. <br>	
-		Aquí vas a poder crear y actualizar el contenido del mismo.
+		<h2>Blog</h2>
+		<a href="{{ url('vadmin/blog/create') }}"><button type="button" class="button btnGreen btnSm w-icon"><i class="ion-paper-airplane"></i> Nuevo Posteo</button></a>
+		<a href="{{ url('vadmin/blog') }}"><button type="button" class="button btnBlue btnSm w-icon"><i class="ion-clipboard"></i> Listado de Posts</button></a>
+		<a href="{{ url('vadmin/categories/create') }}"><button type="button" class="button btnYellow btnSm w-icon"><i class="ion-shuffle"></i> Nueva Categoría</button></a>
+		<a href="{{ url('vadmin/tags/create') }}"><button type="button" class="button btnRed btnSm w-icon"><i class="ion-pricetags"></i> Nuevo Tag</button></a>
 		<hr class="softhr">
-		<a href="{{ url('vadmin/blog/create') }}"><button type="button" class="button btnGreen w-icon"><i class="ion-paper-airplane"></i> Nuevo Artículo</button></a>
-		<a href="{{ url('vadmin/blog') }}"><button type="button" class="button btnBlue w-icon"><i class="ion-clipboard"></i> Listado de Artículos</button></a>
-		<a href="{{ url('vadmin/categories/create') }}"><button type="button" class="button btnYellow w-icon"><i class="ion-shuffle"></i> Nueva Categoría</button></a>
-		<a href="{{ url('vadmin/tags/create') }}"><button type="button" class="button btnRed w-icon"><i class="ion-pricetags"></i> Nuevo Tag</button></a>
+		<h2>Porfolio</h2>
+		<a href="{{ url('vadmin/portfolio/create') }}"><button type="button" class="button btnGreen btnSm w-icon"><i class="ion-paper-airplane"></i> Nueva Imágen</button></a>
+		<a href="{{ url('vadmin/portfolio') }}"><button type="button" class="button btnBlue btnSm w-icon"><i class="ion-clipboard"></i> Listado de Imágenes</button></a>
+		<a href="{{ url('vadmin/port_categories/create') }}"><button type="button" class="button btnYellow btnSm w-icon"><i class="ion-shuffle"></i> Nueva Categoría</button></a>
 		<hr class="softhr">
 		<div class="row article-preview-container">
 			<div class="col-md-12 title">
