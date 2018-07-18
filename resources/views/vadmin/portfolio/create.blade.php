@@ -24,7 +24,7 @@
 	@endcomponent
 	<div class="container">
 	    <div class="row">
-	        {!! Form::open(['route' => 'portfolio.store', 'method' => 'POST', 'enctype' => 'multipart/form-data', 'class' => 'big-form', 'data-parsley-validate' => '']) !!}	
+	        {!! Form::open(['route' => 'portfolio.store', 'method' => 'POST', 'enctype' => 'multipart/form-data', 'class' => 'row big-form', 'data-parsley-validate' => '']) !!}	
 				{{--  <input type="hidden" name="_token" value="{{ csrf_token() }}">  --}}
 				{{-- Title --}}
 				<div class="col-md-6 col-sm-6 col-xs-12">
@@ -59,7 +59,7 @@
 						<div class="ErrorImage"></div>
 					</div>
 				</div>
-				<div class="row text-center">
+				<div class="col-md-12 text-center">
 					{!! Form::submit('Agregar imágen', ['class' => 'button buttonOk']) !!}
 				</div>
 			{!! Form::close() !!}

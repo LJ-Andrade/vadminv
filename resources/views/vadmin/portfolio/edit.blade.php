@@ -34,7 +34,7 @@
                 'class' => 'row big-form'
                 ]) !!}
                 @include('vadmin.portfolio.editform')
-				<div class="row text-center">
+				<div class="col-md-12 text-center">
                     {!! Form::submit('Editar Artículo', ['class' => 'button btnGreen']) !!}
 				</div>
             {!! Form::close() !!}

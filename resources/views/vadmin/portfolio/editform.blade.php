@@ -28,7 +28,7 @@
     @if($article->filename != '')
     <div class="text-center actual-image">
         <div class="inner">
-            <img id="ActualImage" src="{{ asset('webimages/portfolio/'.$article->thumb ) }}" alt="">
+            <img id="ActualImage" class="CheckImgPortfolio" src="{{ asset('webimages/portfolio/'.$article->thumb ) }}" alt="">
             
             
             <div class="overlay">Cambiar imágen</div>

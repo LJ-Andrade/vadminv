@@ -72,7 +72,7 @@
 						<ul>
 							@foreach($article->images as $image)
 							<li id="Id{{ $image->id }}" class="Edit_Actual_Image" data-imgid="{{ $image->id }}">	
-								<img src="{{ asset('webimages/blog/articles/'.$image->name) }}">
+								<img class="CheckImgPortfolio" src="{{ asset('webimages/blog/articles/'.$image->name) }}">
 								<div class="overlayItemCenter"><i class="ion-trash-a"></i></div>
 							</li>
 							@endforeach
