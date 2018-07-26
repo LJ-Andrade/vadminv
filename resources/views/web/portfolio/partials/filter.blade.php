@@ -2,8 +2,8 @@
 	{!! Form::open(['route' => 'web.portfolio', 'method' => 'GET', 'class' => '']) !!}
 		<div class="form-group form-inline center-mobile">
 			{!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Buscar artículo', 'aria-describedby' => 'search']) !!}
-			<button type="submit" class="btn search-btn"><i class="ion-ios-search"></i></button>
-			<button class="Show-Mobile-Filter btn openFilterBtn"> <b> Filtros</b></button>
+			<button type="submit" class="btn btn-hollow-sm search-btn"><i class="ion-ios-search"></i></button>
+			<button class="Show-Mobile-Filter btn-hollow-sm btn openFilterBtn"> <b> Filtros</b></button>
 		</div>
 	{!! Form::close() !!}
 

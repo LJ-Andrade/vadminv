@@ -92,6 +92,19 @@
   background-color: #fff;
 }
 
+.btn-hollow-sm {
+  background-color: transparent;
+  padding: 8px 15px;
+  border: 1px solid #ccc;
+  font-family: "Playfair Display", serif;
+  -webkit-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+}
+
+.btn-hollow-sm:hover {
+  background-color: #fff;
+}
+
 .border {
   border: 1px solid rgba(39, 36, 23, 0.24);
 }
@@ -543,7 +556,7 @@ ul {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .mobile-shop-cta {
     display: block;
     float: none;
@@ -1532,6 +1545,14 @@ footer .copyright {
   margin-bottom: 40px;
 }
 
+@media (max-width: 767px) {
+  .blog-header {
+    max-width: 100%;
+    background: url(../webimages/blog/blog-header-mobile.jpg) no-repeat center center;
+    background-size: cover;
+  }
+}
+
 .number {
   font-family: "Lato", sans-serif !important;
 }
@@ -1786,7 +1807,6 @@ footer .copyright {
 
 .mobile-filters-actions {
   min-height: 40px;
-  padding-left: 15px;
   margin-top: 10px;
   margin-bottom: 15px;
   display: none;
@@ -1796,7 +1816,8 @@ footer .copyright {
   float: left;
   height: 43px;
   max-width: 200px;
-  border-radius: 0;
+  border-radius: 30px;
+  margin-right: 6px;
 }
 
 @media (max-width: 1020px) {
@@ -1827,15 +1848,16 @@ footer .copyright {
 }
 
 .mobile-filters .filter-inner {
+  box-shadow: 7px 6px 5px -6px rgba(0, 0, 0, 0.75) !important;
   position: absolute;
-  top: 0;
-  left: -15px;
+  top: 15px;
+  left: 0;
   z-index: 500;
   width: 100%;
-  padding: 20px 10px;
+  min-width: 100%;
   text-align: center;
   background-color: #f9f9f9;
-  padding: 10px;
+  padding: 50px 10px;
   color: #383838;
 }
 
