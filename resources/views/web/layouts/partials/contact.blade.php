@@ -68,8 +68,7 @@
 				<div class="title">Contáctanos</div>
 				<div class="subtitle">Soluciones personalizadas a tu medida</div>
 				<div class="text">
-					Dejanos tu mensaje o consulta, me pondré en contacto
-					contigo lo antes posible para concretar una visita.
+					Dejanos tu mensaje o consulta.
 				</div>
 				<div class="row">
 					<div class="col-md-6 col-xs-6 data-container">
