@@ -42,8 +42,41 @@ class Handler extends ExceptionHandler
      * @param  \Exception  $exception
      * @return \Illuminate\Http\Response
      */
+    // public function render($request, Exception $exception)
+    // {
+    //     return parent::render($request, $exception);
+    // }
+
+
     public function render($request, Exception $exception)
     {
+        // Original Line
+        // return parent::render($request, $exception);
+
+        // Moded Line
+        if ($exception instanceof TokenMismatchException){
+            return redirect('/')->with("message", "Su sesión ha expirado, recarge la página e intente logearse nuevamente");
+        }
+
+        if ($exception instanceof NotFoundHttpException){
+            return response('Resource not found', 404);
+        }
+
+        if($this->isHttpException($exception))
+        {
+            switch($exception->getStatusCode())
+            {
+                case 404:
+                    return redirect()->route('404');
+                    break;
+                case '500':
+                    return redirect()->route('404');
+                    break;
+                default: 
+                    return $this->renderHttpException($exception);
+                    break;
+            }
+        }
         return parent::render($request, $exception);
     }
 
@@ -63,26 +96,29 @@ class Handler extends ExceptionHandler
         return redirect()->guest(route('login'));
     }
 
-        /**
+    /**
      * Create a Symfony response for the given exception.
      *
      * @param  \Exception  $e
      * @return mixed
      */
-    protected function convertExceptionToResponse(Exception $e)
-    {
-        if (config('app.debug')) {
-            $whoops = new \Whoops\Run;
-            $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+    // protected function convertExceptionToResponse(Exception $e)
+    // {
+    //     if (config('app.debug')) {
+    //         $whoops = new \Whoops\Run;
+    //         $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 
-            return response()->make(
-                $whoops->handleException($e),
-                method_exists($e, 'getStatusCode') ? $e->getStatusCode() : 500,
-                method_exists($e, 'getHeaders') ? $e->getHeaders() : []
-            );
-        }
+    //         return response()->make(
+    //             $whoops->handleException($e),
+    //             method_exists($e, 'getStatusCode') ? $e->getStatusCode() : 500,
+    //             method_exists($e, 'getHeaders') ? $e->getHeaders() : []
+    //         );
+    //     }
 
-        return parent::convertExceptionToResponse($e);
-    }
+    //     return parent::convertExceptionToResponse($e);
+    // }
+
+    
+    
     
 }

@@ -206,3 +206,11 @@ Route::group(['prefix' => 'vadmin', 'middleware' => ['auth','admin']], function(
 	
 });
 
+/*
+|--------------------------------------------------------------------------
+| Errors
+|--------------------------------------------------------------------------
+*/
+Route::get('404', ['as' => '404', 'uses' => 'ErrorController@notfound']);
+Route::get('500', ['as' => '500', 'uses' => 'ErrorController@fatal']);
+
