@@ -150,9 +150,9 @@ Route::get('port_categories/{name}', [
 
 // NewSletter
 Route::get('addnewsletter', 'WebController@addnewsletter');
-Route::get('newsletter', 'VadminController@newsletter');
 
 Route::group(['prefix' => 'vadmin', 'middleware' => ['auth','admin']], function(){
+	Route::get('newsletter', 'VadminController@newsletter');
 
 	//////////////////////// BLOG ///////////////////////////////
 	// ------ Blog Article ------- //

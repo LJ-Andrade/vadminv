@@ -78,7 +78,7 @@
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Varios
 						<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="{{ url('newsletter') }}" target="_blank"><i class="ion-ios-monitor-outline"></i> Newsletter</a></li>
+							<li><a href="{{ url('vadmin/newsletter') }}" target="_blank"><i class="ion-ios-monitor-outline"></i> Newsletter</a></li>
 							<li><a href="{{ url('/') }}" target="_blank"><i class="ion-ios-monitor-outline"></i> Ver Web</a></li>
 							<li><a href="{{ url('blog') }}" target="_blank"><i class="ion-ios-monitor-outline"></i> Ver Blog</a></li>
 							<li><a href="{{ url('portfolio') }}" target="_blank"><i class="ion-ios-monitor-outline"></i> Ver Portfolio</a></li>
