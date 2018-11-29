@@ -1,7 +1,6 @@
 
 <div class="col-md-12 animated fadeIn main-list">
 	@foreach($articles as $item)
-	
 	@if($item->status == 'paused')
 		<div id="Id{{ $item->id }}" class="Select-Row-Trigger Item-Row row item-row paused-item {{ $item->status }}">
 	@else
@@ -20,7 +19,7 @@
 			{{-- Column --}}
 			<div class="col-xs-6 col-sm-4 col-md-4 inner">
 				<span><b>{{ $item->title }}</b></span><br>
-				<span class="small">{{ $item->category->name }}</span>
+				<span class="small">@if(isset($item->category)) {{ $item->category->name }} @endif</span>
 			</div>
 			{{-- Column --}}
 			<div class="col-xs-6 col-sm-3 col-md-4 mobile-hide inner-tags">
