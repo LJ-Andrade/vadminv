@@ -36,11 +36,10 @@
 					<div class="swiper-container">
 						<div class="swiper-wrapper">
 							@if(count($article->images) == 0)
-							
-							@else
-							@foreach($article->images as $image)
-								<div class="swiper-slide"><img src="{{ asset('webimages/portfolio/'.$image->name ) }}" class="slider-image"></div>
-							@endforeach
+								@else
+								@foreach($article->images as $image)
+									<div class="swiper-slide"><img src="{{ asset('webimages/portfolio/'.$image->name ) }}" class="slider-image"></div>
+								@endforeach
 							@endif
 						</div>
 						<div class="swiper-pagination"></div>

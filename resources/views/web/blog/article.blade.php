@@ -35,12 +35,10 @@
 				<div class="blog-slider">
 					<div class="swiper-container">
 						<div class="swiper-wrapper">
-							@if(count($article->images) == 0)
-							
-							@else
-							@foreach($article->images as $image)
-								<div class="swiper-slide"><img src="{{ asset('webimages/blog/articles/'.$image->name ) }}" class="slider-image"></div>
-							@endforeach
+							@if($article->images != null)
+								@foreach($article->images as $image)
+									<div class="swiper-slide"><img src="{{ asset('webimages/blog/articles/'.$image->name ) }}" class="slider-image"></div>
+								@endforeach
 							@endif
 						</div>
 						<div class="swiper-pagination"></div>
@@ -57,14 +55,22 @@
 					<hr>
 					<div class="bottom">
 						Categoría: 
+						@if(isset($article->category))
 						<a href="{{ route('web.search.category', $article->category->name ) }}">
 							{!! $article->category->name !!}
 						</a>
+						@else
+						<br> Sin categoría <br>
+						@endif
 						<div class="pull-right">
 							<span>Etiquetas: </span>
-							@foreach($article->tags as $tag)
-								<a href="{{ route('web.search.tag', $tag->name ) }}"><span class="custom-badge green-back">{!! $tag->name !!}</span></a>
-							@endforeach
+							@if($article->tags != null)
+								@foreach($article->tags as $tag)
+									<a href="{{ route('web.search.tag', $tag->name ) }}"><span class="custom-badge green-back">{!! $tag->name !!}</span></a>
+								@endforeach
+							@else
+							<br> Sin etiquetas <br>
+							@endif
 						</div>	
 					</div>
 				</div> {{-- / single-item --}}

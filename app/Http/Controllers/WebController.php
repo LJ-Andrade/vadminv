@@ -282,6 +282,7 @@ class WebController extends Controller
     public function viewArticle($id)
     {
         $article = Article::find($id);
+        
         $article->each(function($article){
                 $article->category;
                 $article->images;
@@ -308,7 +309,8 @@ class WebController extends Controller
     public function showPortArticleWithSlug($slug) {
         $article    = PortArticle::where('slug', '=', $slug)->first();
         $categories = PortCategory::all();
-        return view('web.blog.article')->with('article', $article)->with('categories', $categories);
+        $tags       = Tag::all();
+        return view('web.blog.article')->with('article', $article)->with('categories', $categories)->with('tags', $tags);
     }
     
     public function portfolio(Request $request)

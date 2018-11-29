@@ -14,6 +14,7 @@
     <br>
     
     <div class="title">Categorías</div>
+    
     @foreach($categories as $category)
         <a href="{{ route('web.search.category', $category->name ) }}">
             <span class="items">{{ $category->name }} ({{ $category->article->count() }})</span>
