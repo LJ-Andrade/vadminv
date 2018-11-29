@@ -57,9 +57,11 @@
 					<hr>
 					<div class="bottom">
 						Categoría: 
-						<a href="{{ route('web.search.category', $article->category->name ) }}">
-							{!! $article->category->name !!}
-						</a>
+						@if(isset($article->category))
+							<a href="{{ route('web.search.category', $article->category->name ) }}">
+								{!! $article->category->name !!}
+							</a>
+						@endif
 					</div>
 				</div> {{-- / single-item --}}
 			</div>

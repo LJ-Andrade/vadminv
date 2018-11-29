@@ -15,10 +15,12 @@
     
     <div class="title">Categorías</div>
     @foreach($portCategories as $category)
-        <a href="{{ route('web.search.port_category', $category->name ) }}">
-            <span class="items">{{ $category->name }} ({{ $category->article->count() }})</span>
-            <hr>
-        </a>
+        @if(isset($category))
+            <a href="{{ route('web.search.port_category', $category->name ) }}">
+                <span class="items"> {{ $category->name }} ({{ $category->article->count() }})</span>
+                <hr>
+            </a>
+        @endif
     @endforeach
     <span class="items"><a href="{{ route('web.portfolio') }}">Todos</a><span class="items">
 </div>
