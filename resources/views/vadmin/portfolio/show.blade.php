@@ -15,7 +15,7 @@
 				<hr>
 				Url: <span class="badge">{!! $article->slug !!}</span>
 				<hr>
-				Categoría: <span class="badge">{!! $article->category->name !!}</span>
+				Categoría: <span class="badge">@if(isset($article->category)) {!! $article->category->name !!} @endif</span>
 				<hr>
             </div>
         </div>
