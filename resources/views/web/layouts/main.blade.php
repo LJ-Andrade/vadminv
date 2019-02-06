@@ -40,6 +40,10 @@
 			@include('web.layouts.partials.nav')
 		</header>
 		@yield('content')
+		<div class="qr-container">
+			<a href="http://qr.ap.gob.ar/?qr=4eudXoohi0uG3EyBb0rmHA,," target="_F960AFIPInfo">
+			<img src="http://www.ap.gob.ar/images/f960/DATAWEB.jpg" border="0"></a>
+		</div>
 		@include('web.layouts.partials.foot')
 		@include('web.layouts.partials.scripts')
 		@yield('scripts')

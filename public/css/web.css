@@ -218,6 +218,13 @@
   padding: 10px 10px;
 }
 
+.qr-container {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  border: 1px solid red;
+}
+
 .image-modal {
   position: fixed;
   margin-top: 100px;
