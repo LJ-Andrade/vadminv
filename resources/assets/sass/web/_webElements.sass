@@ -254,10 +254,20 @@ $lblue:   #e5edee
 // Floating QR
 .qr-container
 	position: absolute
-	bottom: 20px
+	bottom: 60px
 	left: 20px
-	border: 1px solid red
+	a
+		width: 150px
+		height: 150px
 
+@media (max-width: 1536px)
+	.qr-container
+		position: relative
+		bottom: auto
+		left: auto
+		@include flex-center()
+		a
+			margin: 20px 0
 
 //////////////////////////////////////
 //                                  //
