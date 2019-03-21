@@ -41,11 +41,7 @@
 		</header>
 		@yield('content')
 		<div class="row qr-container">
-			<a href="http://qr.ap.gob.ar/?qr=4eudXoohi0uG3EyBb0rmHA,,"
-				target="_F960AFIPInfo"><img
-				src="http://www.ap.gob.ar/images/f960/DATAWEB.jpg"
-				border="0">
-			</a>
+			<a href="http://qr.afip.gob.ar/?qr=4eudXoohi0uG3EyBb0rmHA,," target="_F960AFIPInfo"><img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" style="max-width: 80px"></a>
 		</div>
 		@include('web.layouts.partials.foot')
 		@include('web.layouts.partials.scripts')
