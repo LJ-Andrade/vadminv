@@ -65,16 +65,16 @@
         </div>
         <div class="row mosaic-block">
             <div class="col-md-6 col-sm-6 col-xs-12 bgimg-link wow animated fadeIn" data-wow-delay="500ms">
-                <a href="{{ url('https://vdeverde.mercadoshops.com.ar/huerta-en-jardin_qO27061125XtOcxSM') }}">
+                <a href="{{ url('https://vdeverde.mercadoshops.com.ar/decoracion_qO32059905XtOcxSM') }}">
                     <div class="inner huerta-img-link">
-                        <h1 class="white-txt bt-shadow">DISEÑOS PARA <br> JARDINES</h1>
+                        <h1 class="white-txt bt-shadow">DECO</h1>
                     </div>
                 </a>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12 bgimg-link wow animated fadeIn" data-wow-delay="600ms">
-                <a href="{{ url('https://vdeverde.mercadoshops.com.ar/huerta-urbana_qO27061017XtOcxSM') }}">
+                <a href="{{ url('https://vdeverde.mercadoshops.com.ar/huertas_qO32547882XtOcxSM') }}">
                     <div class="inner urbana-img-link">
-                        <h1 class="white-txt bt-shadow">DISEÑOS PARA <br>ESPACIOS PEQUEÑOS</h1>
+                        <h1 class="white-txt bt-shadow">HUERTAS</h1>
                     </div>
                 </a>
             </div>
