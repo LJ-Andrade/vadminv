@@ -190,6 +190,9 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         // Crud Generator
         Appzcoder\CrudGenerator\CrudGeneratorServiceProvider::class,
+        // Seo
+        RenatoMarinho\LaravelPageSpeed\ServiceProvider::class
+        
 
     ],
 

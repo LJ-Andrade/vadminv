@@ -61,6 +61,8 @@ Route::get('/', [
 	'uses' => 'WebController@home',
 ]);
 
+
+
 Route::get('home', [
 	'as'   => 'web',
 	'uses' => 'WebController@home',
