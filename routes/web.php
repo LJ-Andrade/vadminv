@@ -61,12 +61,19 @@ Route::get('/', [
 	'uses' => 'WebController@home',
 ]);
 
+// Route::get('home', [
+// 	'as'   => 'web',
+// 	'uses' => 'WebController@home',
+// ]);
 
+Route::get('home', function(){ 
+    return view('web');
+});
 
-Route::get('home', [
-	'as'   => 'web',
-	'uses' => 'WebController@home',
-]);
+Route::get('homeTest', function(){ 
+    return view('web-old');
+});
+
 
 Route::get('maderas', function () {
     return view('web.maderas');

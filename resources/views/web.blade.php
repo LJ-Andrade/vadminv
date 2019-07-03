@@ -29,10 +29,13 @@
 		{{-- <link rel="stylesheet" type="text/css" href="{{ asset('plugins/sweetalert/sweetalert2.min.css') }}"> --}}
 		
 		@yield('styles')
-		{{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/web.css') }}"> --}}
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/web.css') }}">
 		@include('web.layouts.partials.analyticstracking')		
         <style>
         /*! CSS Used from: http://localhost/vadminv/public/plugins/bootstrap/css/bootstrap.min.css */
+@font-face {
+font-family: 'myOwnFontSet';
+src: local('Verdana'), local('Arial'), local(sans-serif); }
 body{margin:0;}
 footer,header,nav{display:block;}
 a{background-color:transparent;}
