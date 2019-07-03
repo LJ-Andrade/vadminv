@@ -36,6 +36,7 @@
 @font-face {
 font-family: 'myOwnFontSet';
 src: local('Verdana'), local('Arial'), local(sans-serif); }
+/*! CSS Used from: https://vdeverde.com.ar/plugins/bootstrap/css/bootstrap.min.css */
 body{margin:0;}
 footer,header,nav{display:block;}
 a{background-color:transparent;}
@@ -193,10 +194,10 @@ button.close{-webkit-appearance:none;padding:0;cursor:pointer;background:0 0;bor
 }
 .clearfix:after,.clearfix:before,.container-fluid:after,.container-fluid:before,.container:after,.container:before,.nav:after,.nav:before,.navbar-collapse:after,.navbar-collapse:before,.navbar-header:after,.navbar-header:before,.navbar:after,.navbar:before,.row:after,.row:before{display:table;content:" ";}
 .clearfix:after,.container-fluid:after,.container:after,.nav:after,.navbar-collapse:after,.navbar-header:after,.navbar:after,.row:after{clear:both;}
-/*! CSS Used from: http://localhost/vadminv/public/plugins/animate/animate.css */
+/*! CSS Used from: https://vdeverde.com.ar/plugins/animate/animate.css */
 .animated{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both;}
 .fadeIn{-webkit-animation-name:fadeIn;animation-name:fadeIn;}
-/*! CSS Used from: http://localhost/vadminv/public/plugins/ionicons/ionicons.min.css */
+/*! CSS Used from: https://vdeverde.com.ar/plugins/ionicons/ionicons.min.css */
 .ion-checkmark-round:before,.ion-close-circled:before,.ion-close-round:before,.ion-email:before,.ion-home:before,.ion-ios-cart-outline:before,.ion-iphone:before{display:inline-block;font-family:"Ionicons";speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;text-rendering:auto;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
 .ion-checkmark-round:before{content:"\f121";}
 .ion-close-circled:before{content:"\f128";}
@@ -205,7 +206,7 @@ button.close{-webkit-appearance:none;padding:0;cursor:pointer;background:0 0;bor
 .ion-home:before{content:"\f144";}
 .ion-ios-cart-outline:before{content:"\f3f7";}
 .ion-iphone:before{content:"\f1fa";}
-/*! CSS Used from: http://localhost/vadminv/public/css/web.css */
+/*! CSS Used from: https://vdeverde.com.ar/css/web.css */
 .white-txt{color:#fff;}
 .lblue-back{background-color:#e5edee;}
 .btn{border:0;border-radius:50px;padding:7px 20px;font-size:1.2rem;white-space:nowrap;vertical-align:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;line-height:1.42857143;margin:4px;transition:all 0.2s ease 0s;}
@@ -284,7 +285,7 @@ ul{padding-left:0;}
 .mobile-shop-cta .icon{margin-top:8px;}
 }
 .home-banner-container{width:100%;}
-.home-banner-container .home-banner{background:url(http://localhost/vadminv/public/webimages/home/homebanner.jpg) no-repeat center 80px;background-size:cover;height:auto;padding-bottom:80px;padding-top:40px;text-align:center;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;-ms-grid-row-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;-ms-flex-direction:column;flex-direction:column;z-index:200;}
+.home-banner-container .home-banner{background:url(https://vdeverde.com.ar/webimages/home/homebanner.jpg) no-repeat center 80px;background-size:cover;height:auto;padding-bottom:80px;padding-top:40px;text-align:center;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;-ms-grid-row-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;-ms-flex-direction:column;flex-direction:column;z-index:200;}
 .home-banner-container .home-banner .inner{padding:10px;}
 .home-banner-container .home-banner .inner span.title{font-family:"Playfair Display", serif;font-size:5rem;font-weight:900;font-style:italic;line-height:5rem;color:#fff;text-shadow:5px 7px 30px #383838;-webkit-text-shadow:5px 7px 30px #383838;-moz-text-shadow:5px 7px 30px #383838;-moz-text-shadow:5px 7px 30px #383838;-o-text-shadow:5px 7px 30px #383838;}
 .home-banner-container .home-banner .inner hr{border-top:2px solid #fff;max-width:450px;}
@@ -302,7 +303,7 @@ ul{padding-left:0;}
 .home-banner-container .home-banner .inner p{padding:0 2px;}
 }
 @media (max-width: 765px){
-.home-banner-container .home-banner{background:url(http://localhost/vadminv/public/webimages/home/homebannermobile.jpg) no-repeat center 80px;background-size:cover;}
+.home-banner-container .home-banner{background:url(webimages/home/homebannermobile.jpg) no-repeat center 80px;background-size:cover;}
 }
 .mosaic-section h1{font-family:"Playfair Display", serif;font-style:italic;}
 @media (max-width: 768px){
@@ -361,21 +362,21 @@ ul{padding-left:0;}
 @media (min-width: 1000px){
 .blue-back-link p{font-size:1.2rem;}
 }
-.accesorios-img-link{background:url(http://localhost/vadminv/public/webimages/home/accesorioslink.jpg) no-repeat center center;background-size:cover;}
-.maderas-img-link{background:url(http://localhost/vadminv/public/webimages/home/regaloslink.jpg) no-repeat center center;background-size:cover;}
-.huerta-img-link{background:url(http://localhost/vadminv/public/webimages/home/huertalink.jpg) no-repeat center center;background-size:cover;}
+.accesorios-img-link{background:url(webimages/home/accesorioslink.jpg) no-repeat center center;background-size:cover;}
+.maderas-img-link{background:url(webimages/home/regaloslink.jpg) no-repeat center center;background-size:cover;}
+.huerta-img-link{background:url(webimages/home/huertalink.jpg) no-repeat center center;background-size:cover;}
 @media (max-width: 768px){
 .huerta-img-link,.accesorios-img-link{background-position:bottom;}
 }
-.urbana-img-link{background:url(http://localhost/vadminv/public/webimages/home/urbanalink.jpg) no-repeat center center;background-size:cover;}
-.blog-img-link{background:url(http://localhost/vadminv/public/webimages/home/bloglink.jpg) no-repeat center center;background-size:cover;}
+.urbana-img-link{background:url(webimages/home/urbanalink.jpg) no-repeat center center;background-size:cover;}
+.blog-img-link{background:url(webimages/home/bloglink.jpg) no-repeat center center;background-size:cover;}
 .blog-img-link h1,.blog-img-link p{color:#254460;}
 .shop-preview{padding:0 10px 45px;max-width:950px;margin:0 auto;}
 .shop-preview .action{margin-top:35px;}
 @media screen and (max-height: 700px){
 .shop-preview{max-width:750px;}
 }
-.social-banner{background:url(http://localhost/vadminv/public/webimages/home/banner-redes.jpg) no-repeat center center;background-size:cover;text-align:center;padding:40px 10px;}
+.social-banner{background:url(webimages/home/banner-redes.jpg) no-repeat center center;background-size:cover;text-align:center;padding:40px 10px;}
 .social-banner h1{color:#fff;margin-bottom:20px;margin-top:0;}
 .social-banner .inner img{width:100px;transition:all 0.5s ease 0s;}
 .social-banner .inner img:hover{cursor:pointer;-webkit-transform:rotate(-10deg);-webkit-transform-transform:rotate(-10deg);}
@@ -456,17 +457,19 @@ ul{padding-left:0;}
 footer{background-color:#ccc;padding-left:0!important;padding-right:0!important;background-color:#f9f9f9;}
 footer .copyright{background-color:#ececec;padding:10px 5px;text-align:center;color:#254460;font-family:"Raleway", sans-serif;font-weight:200;font-size:1.3rem;font-weight:400;}
 /*! CSS Used from: Embedded */
-.page_speed_1154081967{margin-top:-80px;}
-.page_speed_1011728959{color:#fff;}
-.page_speed_1807721403{color:#000;}
-.page_speed_642699941{margin-top:0;}
-.page_speed_705678531{max-width:80px;}
-.page_speed_1289819462{font-size:15px;}
+.page_speed_770456319{margin-top:-80px;}
+.page_speed_659744609{color:#fff;}
+.page_speed_2042705392{color:#000;}
+.page_speed_1196602352{margin-top:0;}
+.page_speed_2054372408{max-width:80px;}
+.page_speed_1911534507{font-size:15px;}
+/*! CSS Used from: Embedded */
+#nvxvxWb-1562184511419{outline:none!important;visibility:visible!important;resize:none!important;box-shadow:none!important;overflow:visible!important;background:none!important;opacity:1!important;filter:alpha(opacity=100)!important;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity1)!important;-moz-opacity:1!important;-khtml-opacity:1!important;top:auto!important;right:10px!important;bottom:0px!important;left:auto!important;position:fixed!important;border:0!important;min-height:0!important;min-width:0!important;max-height:none!important;max-width:none!important;padding:0!important;margin:0!important;-moz-transition-property:none!important;-webkit-transition-property:none!important;-o-transition-property:none!important;transition-property:none!important;transform:none!important;-webkit-transform:none!important;-ms-transform:none!important;width:auto!important;height:auto!important;display:none!important;z-index:2000000000!important;background-color:transparent!important;cursor:auto!important;float:none!important;border-radius:unset!important;}
 /*! CSS Used keyframes */
 @-webkit-keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 /*! CSS Used fontfaces */
-@font-face{font-family:"Ionicons";src:url("http://localhost/vadminv/public/plugins/fonts/ionicons.eot?v=2.0.0");src:url("http://localhost/vadminv/public/plugins/fonts/ionicons.eot?v=2.0.0#iefix") format("embedded-opentype"),url("http://localhost/vadminv/public/plugins/fonts/ionicons.ttf?v=2.0.0") format("truetype"),url("http://localhost/vadminv/public/plugins/fonts/ionicons.woff?v=2.0.0") format("woff"),url("http://localhost/vadminv/public/plugins/fonts/ionicons.svg?v=2.0.0#Ionicons") format("svg");font-weight:normal;font-style:normal;}
+@font-face{font-family:"Ionicons";src:url("https://vdeverde.com.ar/plugins/fonts/ionicons.eot?v=2.0.0");src:url("https://vdeverde.com.ar/plugins/fonts/ionicons.eot?v=2.0.0#iefix") format("embedded-opentype"),url("https://vdeverde.com.ar/plugins/fonts/ionicons.ttf?v=2.0.0") format("truetype"),url("https://vdeverde.com.ar/plugins/fonts/ionicons.woff?v=2.0.0") format("woff"),url("https://vdeverde.com.ar/plugins/fonts/ionicons.svg?v=2.0.0#Ionicons") format("svg");font-weight:normal;font-style:normal;}
 @font-face{font-family:'Playfair Display';font-style:italic;font-weight:400;src:local('Playfair Display Italic'), local('PlayfairDisplay-Italic'), url(https://fonts.gstatic.com/s/playfairdisplay/v14/nuFkD-vYSZviVYUb_rj3ij__anPXDTnohkk72xU.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
 @font-face{font-family:'Playfair Display';font-style:italic;font-weight:400;src:local('Playfair Display Italic'), local('PlayfairDisplay-Italic'), url(https://fonts.gstatic.com/s/playfairdisplay/v14/nuFkD-vYSZviVYUb_rj3ij__anPXDTnojUk72xU.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;}
 @font-face{font-family:'Playfair Display';font-style:italic;font-weight:400;src:local('Playfair Display Italic'), local('PlayfairDisplay-Italic'), url(https://fonts.gstatic.com/s/playfairdisplay/v14/nuFkD-vYSZviVYUb_rj3ij__anPXDTnojEk72xU.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
@@ -676,17 +679,12 @@ footer .copyright{background-color:#ececec;padding:10px 5px;text-align:center;co
     @include('web.layouts.partials.seguinosnews')
     <br>
     @include('web.layouts.partials.contact')
-
-
-
         {{-- END CONTENT --}}
 		<div class="row qr-container">
 			<a href="https://qr.afip.gob.ar/?qr=4eudXoohi0uG3EyBb0rmHA,," target="_F960AFIPInfo">
 			<img src="https://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" style="max-width: 80px"></a>
 		</div>
         @include('web.layouts.partials.foot')
-        
-
 		<script type="text/javascript" src="{{asset('plugins/jquery/jquery-3.3.1.min.js')}}"></script>
         <script type="text/javascript" src="{{asset('plugins/bootstrap/js/bootstrap.min.js')}}"></script>
         <script type="text/javascript" src="{{ asset('js/web.js') }}"></script>
