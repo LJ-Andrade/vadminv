@@ -33,6 +33,7 @@
 		@yield('styles')
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/web.css') }}">
 		@include('web.layouts.partials.analyticstracking')		
+		{{-- Addsense Script --}}
 		<script data-ad-client="ca-pub-7540234395148040" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	</head>
 	<body>
