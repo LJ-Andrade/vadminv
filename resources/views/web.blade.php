@@ -469,7 +469,7 @@ footer .copyright{background-color:#ececec;padding:10px 5px;text-align:center;co
 @-webkit-keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 /*! CSS Used fontfaces */
-@font-face{font-family:"Ionicons";src:url("https://vdeverde.com.ar/plugins/fonts/ionicons.eot?v=2.0.0");src:url("https://vdeverde.com.ar/plugins/fonts/ionicons.eot?v=2.0.0#iefix") format("embedded-opentype"),url("https://vdeverde.com.ar/plugins/fonts/ionicons.ttf?v=2.0.0") format("truetype"),url("https://vdeverde.com.ar/plugins/fonts/ionicons.woff?v=2.0.0") format("woff"),url("https://vdeverde.com.ar/plugins/fonts/ionicons.svg?v=2.0.0#Ionicons") format("svg");font-weight:normal;font-style:normal;}
+@font-face{font-family:"Ionicons";src:url("plugins/fonts/ionicons.eot?v=2.0.0");src:url("plugins/fonts/ionicons.eot?v=2.0.0#iefix") format("embedded-opentype"),url("plugins/fonts/ionicons.ttf?v=2.0.0") format("truetype"),url("plugins/fonts/ionicons.woff?v=2.0.0") format("woff"),url("plugins/fonts/ionicons.svg?v=2.0.0#Ionicons") format("svg");font-weight:normal;font-style:normal;}
 @font-face{font-family:'Playfair Display';font-style:italic;font-weight:400;src:local('Playfair Display Italic'), local('PlayfairDisplay-Italic'), url(https://fonts.gstatic.com/s/playfairdisplay/v14/nuFkD-vYSZviVYUb_rj3ij__anPXDTnohkk72xU.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
 @font-face{font-family:'Playfair Display';font-style:italic;font-weight:400;src:local('Playfair Display Italic'), local('PlayfairDisplay-Italic'), url(https://fonts.gstatic.com/s/playfairdisplay/v14/nuFkD-vYSZviVYUb_rj3ij__anPXDTnojUk72xU.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;}
 @font-face{font-family:'Playfair Display';font-style:italic;font-weight:400;src:local('Playfair Display Italic'), local('PlayfairDisplay-Italic'), url(https://fonts.gstatic.com/s/playfairdisplay/v14/nuFkD-vYSZviVYUb_rj3ij__anPXDTnojEk72xU.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
@@ -687,7 +687,7 @@ footer .copyright{background-color:#ececec;padding:10px 5px;text-align:center;co
         @include('web.layouts.partials.foot')
 		<script type="text/javascript" src="{{asset('plugins/jquery/jquery-3.3.1.min.js')}}"></script>
         <script type="text/javascript" src="{{asset('plugins/bootstrap/js/bootstrap.min.js')}}"></script>
-        <script type="text/javascript" src="{{ asset('js/web.js') }}"></script>
+        {{-- <script type="text/javascript" src="{{ asset('js/web.js') }}"></script> --}}
 		<!--Start of Tawk.to Script-->
 		<script type="text/javascript">
 			var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
