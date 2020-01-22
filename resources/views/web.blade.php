@@ -5,9 +5,9 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>V de Verde</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="V de Verde" />
+		<meta name="description" content="Conectate con lo natural" />
 		<meta name="keywords" content="huerta, huerta urbana, natural, jardin" />
-		<meta name="author" content="Studio Vimana" />
+		<meta name="author" content="https://vimanastudio.com.ar" />
 
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="{{ asset('webimages/logos/favicon.png') }}">
@@ -21,7 +21,6 @@
 		<meta property="og:image"       content="{{ asset('webimages/logos/main-logo.png') }}" />
 		<meta name="twitter:title"      content="V de Verde" />
 		<meta name="twitter:image"      content="{{ asset('webimages/logos/main-logo.png') }}" />
-		<meta name="twitter:url"        content="http://studiovimana.com.ar" />
 		{{-- <meta name="twitter:card"       content="" /> --}}
 		{{-- <link rel="stylesheet" async  type="text/css" href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}"> --}}
 		{{-- <link rel="stylesheet" async  type="text/css" href="{{ asset('plugins/animate/animate.css') }}"> --}}
