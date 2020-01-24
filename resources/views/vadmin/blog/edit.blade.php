@@ -111,20 +111,13 @@
 @endsection
 
 @section('custom_js')
-	
 	<script>
 
-		// ---- Textarea Text Editor ----- //
-		// Path to icons
 		$.trumbowyg.svgPath = '{{ asset('plugins/texteditor/icons.svg') }}';
-		// Init
 		$('.Textarea-Editor').trumbowyg();
 
-		// -------------- Single Delete -------------- //
-		// --------------------------------------------//
 		$(document).on('click', '.Edit_Actual_Image', function(e){
 			e.preventDefault();
-			// var id    = $(this).data('id');
 			var id    = $(this).data('imgid');
 			var route = "{{ url('vadmin/deleteArticleImg') }}/"+id+"";
 			
@@ -132,16 +125,11 @@
 
 		});
 
-		// Loader
 		$("#EditForm").on("submit", function(){
 			$('.Main-Loader').removeClass('Hidden');
 		});
-
-
-
 		
 	</script>
-
 @endsection
 
 

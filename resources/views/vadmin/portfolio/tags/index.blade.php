@@ -79,8 +79,6 @@
 		<button id="BatchDeleteBtn" class="button buttonCancel batchDeleteBtn Hidden"><i class="ion-ios-trash-outline"></i> Eliminar seleccionados</button>
 	</div>  
 	<div id="Error"></div>
-
-	
 @endsection
 
 
@@ -93,12 +91,6 @@
 
 	<script type="text/javascript">
 
-	/////////////////////////////////////////////////
-    //                     DELETE                  //
-    /////////////////////////////////////////////////
-
-	// -------------- Single Delete -------------- //
-	// --------------------------------------------//
 	$(document).on('click', '.Delete', function(e){
 		e.preventDefault();
 		var id    = $(this).data('id');
@@ -109,10 +101,6 @@
 	});
 
 
-	// -------------- Batch Deletex -------------- //
-	// --------------------------------------------//
-
-	// ---- Batch Confirm Deletion ---- //
 	$(document).on('click', '#BatchDeleteBtn', function(e) { 
 
 		var rowsToDelete = [];  
@@ -125,7 +113,6 @@
 		
 	});
 
-	// ---- Delete ---- //
 	function batch_delete_item(id) {
 
 		var route = "{{ url('vadmin/ajax_batch_delete_tags') }}/"+id+"";
@@ -140,9 +127,7 @@
 					$('#Id'+id[i]).hide(200);
 				}
 				$('#BatchDeleteBtn').addClass('Hidden');
-				location.reload();
-				// $('#Error').html(data.responseText);
-				// console.log(data);
+				location.reload();;
 			},
 			error: function(data)
 			{

@@ -44,12 +44,6 @@
 
 	<script type="text/javascript">
 
-	/////////////////////////////////////////////////
-    //                     DELETE                  //
-    /////////////////////////////////////////////////
-
-	// -------------- Single Delete -------------- //
-
 	$(document).on('click', '.Delete', function(e){
 		e.preventDefault();
 		var id    = $(this).data('id');
@@ -59,9 +53,6 @@
 
 	});
 
-	// -------------- Batch Deletex -------------- //
-
-	// ---- Batch Confirm Deletion ---- //
 	$(document).on('click', '#BatchDeleteBtn', function(e) { 
 
 		var rowsToDelete = [];  
@@ -74,7 +65,6 @@
 		
 	});
 
-	// ---- Perform Delete ---- //
 	function batch_delete_item(id) {
 
 		var route = "{{ url('vadmin/ajax_batch_delete_articles') }}/"+id+"";
@@ -90,8 +80,6 @@
 				}
 				$('#BatchDeleteBtn').addClass('Hidden');
 				location.reload();
-				// $('#Error').html(data.responseText);
-				// console.log(data);
 			},
 			error: function(data)
 			{
@@ -101,7 +89,6 @@
 		});
 	}
 
-	// ------ Update Article Status ------ //
 	$(document).on('click', '.UpdateStatusBtn', function(e) { 
 
 		var id           = $(this).data('id');

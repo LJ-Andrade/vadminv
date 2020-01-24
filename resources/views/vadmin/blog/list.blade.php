@@ -19,14 +19,12 @@
 			</div>
 			{{-- Column --}}
 			<div class="col-xs-6 col-sm-3 col-md-4 mobile-hide inner-tags">
-				<span class="small-text">Tags:</span>
 				@foreach ($item->tags as $tag)
 					<span class="badge">{{ $tag->name }}</span>
 				@endforeach
 			</div>
 		</div>
 
-		
 		{{-- Batch Delete --}} 
 		{{-- <div class="batch-delete-checkbox">
 			<input type="checkbox" class="BatchDelete" data-id="{{ $item->id }}">
@@ -62,10 +60,6 @@
 	</div>
 
 	@endforeach
-
-
-
-
 
 	{{-- If there is no articles published shows this --}}
 	@if(! count($articles))

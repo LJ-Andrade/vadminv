@@ -45,13 +45,6 @@
 
 	<script type="text/javascript">
 
-
-	/////////////////////////////////////////////////
-    //                     DELETE                  //
-    /////////////////////////////////////////////////
-
-	// -------------- Single Delete -------------- //
-
 	$(document).on('click', '.Delete', function(e){
 		e.preventDefault();
 		var id    = $(this).data('id');
@@ -60,9 +53,6 @@
 		singleDelete(id, route, 'Cuidado!','Está seguro?');
 	});
 
-	// -------------- Batch Deletex -------------- //
-
-	// ---- Batch Confirm Deletion ---- //
 	$(document).on('click', '#BatchDeleteBtn', function(e) { 
 
 		var rowsToDelete = [];  
@@ -71,11 +61,9 @@
 		});
 
 		var id = rowsToDelete;
-		confirm_batch_delete(id,'Cuidado!','Está seguro que desea eliminar los artículos?');
-		
+		confirm_batch_delete(id,'Cuidado!','Está seguro que desea eliminar los artículos?');		
 	});
 
-	// ---- Perform Delete ---- //
 	function batch_delete_item(id) {
 
 		var route = "{{ url('vadmin/ajax_batch_delete_users') }}/"+id+"";
@@ -91,8 +79,6 @@
 				}
 				$('#BatchDeleteBtn').addClass('Hidden');
 				location.reload();
-				// $('#Error').html(data.responseText);
-				// console.log(data);
 			},
 			error: function(data)
 			{
@@ -102,8 +88,5 @@
 		});
 	}
 
-
-
 	</script>
-
 @endsection

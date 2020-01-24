@@ -538,7 +538,7 @@
     
         <div class="row mosaic-block">
             <div class="col-md-4 col-sm-4 col-xs-12 bgimg-link wow animated fadeIn" data-wow-delay="200ms">
-                <a href="{{ url('https://vdeverde.mercadoshops.com.ar/kit-para-regalos_qO27058343XtOcxSM') }}">
+                <a href="{{ url('https://vdeverde.mitiendanube.com/') }}">
                     <div class="inner maderas-img-link border">
                         <h1 class="white-txt">REGALOS <br>EMPRESARIALES</h1>
                     </div>
@@ -554,7 +554,7 @@
             </div>
 
             <div class="col-md-4 col-sm-4 col-xs-12 bgimg-link wow animated fadeIn" data-wow-delay="400ms">
-                <a href="{{ url('https://vdeverde.mercadoshops.com.ar/accesorios-jardin_qO27284169XtOcxSM') }}">
+                <a href="{{ url('https://vdeverde.mitiendanube.com/') }}">
                     <div class="inner accesorios-img-link">
                         <h1 class="white-txt bt-shadow">ACCESORIOS</h1>
                     </div>
@@ -563,14 +563,14 @@
         </div>
         <div class="row mosaic-block">
             <div class="col-md-6 col-sm-6 col-xs-12 bgimg-link wow animated fadeIn" data-wow-delay="500ms">
-                <a href="{{ url('https://vdeverde.mercadoshops.com.ar/decoracion_qO32059905XtOcxSM') }}">
+                <a href="{{ url('https://vdeverde.mitiendanube.com/') }}">
                     <div class="inner huerta-img-link">
                         <h1 class="white-txt bt-shadow">DECO</h1>
                     </div>
                 </a>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12 bgimg-link wow animated fadeIn" data-wow-delay="600ms">
-                <a href="{{ url('https://vdeverde.mercadoshops.com.ar/huertas_qO32547882XtOcxSM') }}">
+                <a href="{{ url('https://vdeverde.mitiendanube.com/') }}">
                     <div class="inner urbana-img-link">
                         <h1 class="white-txt bt-shadow">HUERTAS</h1>
                     </div>
@@ -621,7 +621,7 @@
             <div class="row shop-preview">
                 <div class="col-md-4 col-sm-4 col-xs-12 shop-item-preview">
                     <div class="inner">
-                        <a href="{{ url('https://vdeverde.mercadoshops.com.ar/huerta-organica-individual-ideal-aromaticas-en-distintas-variedad-de-maderas-551260335xJM') }}">
+                        <a href="{{ url('https://vdeverde.mitiendanube.com/') }}">
                             <div class="image">
                                 <img src="{{ asset('webimages/home/shop-pre-1.jpg') }}"  class="img-responsive" alt="Maceta de madera">
                             </div>
@@ -638,7 +638,7 @@
 
                 <div class="col-md-4 col-sm-4 col-xs-12 shop-item-preview">
                     <div class="inner">
-                        <a href="{{ url('https://vdeverde.mercadoshops.com.ar/huerta-organica-maceta-de-diseno-decoracion-ideal-esquinero-apto-aromaticas-opcion-en-diferente-variedad-de-maderas-551260347xJM') }}">
+                        <a href="{{ url('https://vdeverde.mitiendanube.com/') }}">
                             <div class="image">
                                 <img src="{{ asset('webimages/home/shop-pre-2.jpg') }}"  class="img-responsive" alt="Macetas de madera">
                             </div>
@@ -655,7 +655,7 @@
 
                 <div class="col-md-4 col-sm-4 col-xs-12 shop-item-preview wow animated fadeIn" data-wow-delay="300ms">
                     <div class="inner">
-                        <a href="{{ url('https://vdeverde.mercadoshops.com.ar/huerta-organica-verticalescalera-grande-ideal-balcon-terraza-apto-12-plantines-madera-quebracho-guayubira-780555788xJM') }}">
+                        <a href="{{ url('https://vdeverde.mitiendanube.com/') }}">
                             <div class="image">
                                 <img src="{{ asset('webimages/home/shop-pre-3.jpg') }}"  class="img-responsive" alt="Huerta vertical">
                             </div>

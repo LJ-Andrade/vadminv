@@ -16,9 +16,7 @@
 			src="https://www.facebook.com/tr?id=1949146635331041&ev=PageView
 			&noscript=1"/>
 		</noscript> 
-		<!-- //////////////// End Facebook Pixel Code //////////////// -->
 
-		<!-- /////// Google Code for VdeVerde Conversion Page /////// -->
 		<script type="text/javascript">
 			/* <![CDATA[ */
 			var google_conversion_id = 844812370;
@@ -40,9 +38,7 @@
 			src="//www.googleadservices.com/pagead/conversion/844812370/?value=1.00&amp;currency_code=ARS&amp;label=gufLCPqNx3MQ0qDrkgM&amp;guid=ON&amp;script=0"/>
 			</div>
 		</noscript>
-		<!-- /////// End Google Code for VdeVerde Conversion Page /////// -->
-
-		<!-- //////////////// Google Analytics ////////////// -->
+		
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -53,4 +49,3 @@
 			ga('send', 'pageview');
 
 		</script>
-		<!-- //////////////// End Google Analytics ////////////// -->

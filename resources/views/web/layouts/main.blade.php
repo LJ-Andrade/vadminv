@@ -61,13 +61,11 @@
 				s0.parentNode.insertBefore(s1,s0);
 			})();
 
-			// Check Broken Portfolio Images
 			$('.CheckImgPortfolio').on('error', function(){
 				var defaultImg = "{{ asset('webimages/gen/portfolio-gen.jpg') }}"
 				$(this).attr('src', defaultImg);
 			});
 
-			// Check Broken Blog Images
 			$('.CheckImgBlog').on('error', function(){
 				var defaultImg = "{{ asset('webimages/gen/blog-gen.jpg') }}"
 				$(this).attr('src', defaultImg);
@@ -75,6 +73,5 @@
 
 
 		</script>
-		<!--End of Tawk.to Script-->
 	</body>
 </html>

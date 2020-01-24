@@ -25,18 +25,15 @@
 		);
 	}
 
-    // Show Newsletter modal
-//    setTimeout(function(){
-//        $('#NewsletterPopup').modal('show'); 
-//    },15000) // 5 seconds.
 
     $(document).ready(function() {
     });
-    // NewSletter
+
+
     $('.NewsletterForm').on('submit', function(e){
         e.preventDefault();
         var url  =  "{{ url('addnewsletter') }}";
-        //var data = $(".NewsletterForm input[name=email]").val();
+    
         var data = $(this).serialize();
     
         $.ajax({

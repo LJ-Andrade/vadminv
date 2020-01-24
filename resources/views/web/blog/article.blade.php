@@ -95,12 +95,7 @@
 
 @section('custom_js')
     <script type="text/javascript">
-
-		// $('body').addClass('portfolio-body');      
-
-	 var swiper = new Swiper('.swiper-container');
-
-
+		var swiper = new Swiper('.swiper-container');
     </script>
 @endsection
 

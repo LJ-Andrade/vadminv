@@ -87,12 +87,12 @@
 					</div>
 				</div>
 				<div class="row text-center">
-					{!! Form::submit('Creando artículo', ['class' => 'button buttonOk']) !!}
+					{!! Form::submit('Crear artículo', ['class' => 'button buttonOk']) !!}
 				</div>
 			{!! Form::close() !!}
 	    </div>
 	</div>  
-
+	
 @endsection
 
 @section('scripts')
@@ -105,17 +105,8 @@
 
 @section('custom_js')
 	<script>
-
-		// ------------------- Textarea Text Editor --------------------------- //
-		// Path to icons
 		$.trumbowyg.svgPath = '{{ asset('plugins/texteditor/icons.svg') }}';
-		// Init
 		$('.Textarea-Editor').trumbowyg();
-
-		// Loader
-		//$("#NewItemForm").on("submit", function(){
-		//	$('.Main-Loader').removeClass('Hidden');
-		//});
 	</script>
 @endsection
 

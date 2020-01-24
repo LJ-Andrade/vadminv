@@ -46,7 +46,8 @@
 		@yield('scripts')
 		<script type="text/javascript" src="{{ asset('js/vadmin.js') }}" ></script>
 		@yield('custom_js')
-			<script type="text/javascript">
+		@yield('custom_scripts')
+		<script type="text/javascript">
 			// Check Broken Portfolio Images
 			$('.CheckImgPortfolio').on('error', function(){
 				var defaultImg = "{{ asset('webimages/gen/portfolio-gen.jpg') }}"
