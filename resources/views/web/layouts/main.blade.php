@@ -51,6 +51,17 @@
 		@yield('custom_js')
 		<!--Start of Tawk.to Script-->
 		<script type="text/javascript">
+		 	$('#BtnNavContainer').click(function(){
+                
+                const nav = $('#NavContainer');
+
+                if( nav.hasClass("collapse") ) {
+                    nav.removeClass("collapse");
+                } else {
+                    nav.addClass("collapse");
+                }
+            });
+
 			var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 			(function(){
 				var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
