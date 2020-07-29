@@ -51,6 +51,7 @@
 		@yield('custom_js')
 		<!--Start of Tawk.to Script-->
 		<script type="text/javascript">
+
 		 	$('#BtnNavContainer').click(function(){
                 
                 const nav = $('#NavContainer');
@@ -60,6 +61,7 @@
                 } else {
                     nav.addClass("collapse");
                 }
+				
             });
 
 			var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
