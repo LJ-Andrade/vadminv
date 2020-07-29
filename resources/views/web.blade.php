@@ -29,7 +29,7 @@
 		
 		@yield('styles')
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/web.css') }}">
-		@include('web.layouts.partials.analyticstracking')		
+		{{-- @include('web.layouts.partials.analyticstracking')		 --}}
         <style>
           /*! CSS Used from: http://localhost/vadminv/public/plugins/bootstrap/css/bootstrap.min.css */
             @font-face {
@@ -494,7 +494,7 @@
             @font-face{font-family:'Raleway';font-style:normal;font-weight:800;src:local('Raleway ExtraBold'), local('Raleway-ExtraBold'), url(https://fonts.gstatic.com/s/raleway/v13/1Ptrg8zYS_SKggPNwIouWqhPAMif.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
             @font-face{font-family:'Raleway';font-style:normal;font-weight:800;src:local('Raleway ExtraBold'), local('Raleway-ExtraBold'), url(https://fonts.gstatic.com/s/raleway/v13/1Ptrg8zYS_SKggPNwIouWqZPAA.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
             </style>
-    <script data-ad-client="ca-pub-7540234395148040" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        {{-- <script data-ad-client="ca-pub-7540234395148040" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> --}}
 	</head>
 	<body>
 		<header>
@@ -689,122 +689,130 @@
         <script type="text/javascript" src="{{asset('plugins/bootstrap/js/bootstrap.min.js')}}"></script>
         {{-- <script type="text/javascript" src="{{ asset('js/web.js') }}"></script> --}}
 		<!--Start of Tawk.to Script-->
-		<script type="text/javascript">
-			var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-			(function(){
-				var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-				s1.async=true;
-				s1.src='https://embed.tawk.to/5b283bd061a2e64e5fb595c7/default';
-				s1.charset='UTF-8';
-				s1.setAttribute('crossorigin','*');
-				s0.parentNode.insertBefore(s1,s0);
-			})();
-
-			// Check Broken Portfolio Images
-			// $('.CheckImgPortfolio').on('error', function(){
-			// 	var defaultImg = "{{ asset('webimages/gen/portfolio-gen.jpg') }}"
-			// 	$(this).attr('src', defaultImg);
-			// });
-
-			// // Check Broken Blog Images
-			// $('.CheckImgBlog').on('error', function(){
-			// 	var defaultImg = "{{ asset('webimages/gen/blog-gen.jpg') }}"
-			// 	$(this).attr('src', defaultImg);
-			// });
-
-
-		</script>
-		<!--End of Tawk.to Script-->
-    </body>
         <script type="text/javascript">
-        
-        $('#ContactFormMayorist').hide();
-        $('#OpenFormMayoristBtn').click(function(){
-            $('#ContactForm').hide(500);
-            $('#ContactFormMayorist').show(500);
-        });
 
-        $('.CloseFormMayorist').click(function(){
-            $('#ContactFormMayorist').hide(500);
-            $('#ContactForm').show(500);
-        });
-        
+            $('#BtnNavContainer').click(function(){
+                
+                const nav = $('#NavContainer');
 
-        $(document).on('submit','#ContactForm',function(e){
-            e.preventDefault();
-
-            var data   = $(this).serialize();
-            var route  = "{{ url('ajax_mail') }}";
-            var loader = '<br><img src="{{ asset("images/loaders/loader-sm.svg") }}"/>';
-
-            $.ajax({
-                type: "POST",
-                url: route,
-                dataType: 'json',
-                data: data,
-                beforeSend: function(){
-                    $('#ContactBtn').val('Enviando...');
-                    $('.FormLoader').html(loader);
-                },
-                success: function(data) {
-                    $('#ContactForm').hide();
-                    $('#ContactBtn').hide('Enviar');
-                    $('#FormSuccess').removeClass('Hidden');
-                    $('#FormResponse').hide();
-                    $('#Error').html(data.responseText);
-                    console.log(data);
-                },
-                error: function(data) {
-                    $('#FormResponse').hide();
-                    $('#ContactForm').hide();
-                    $('#FormError').removeClass('Hidden');
-                    $('#Error').html(data.responseText);
-                    console.log(data);
-                },
-                complete: function(data){
-                    $('#ContactBtn').html('Enviar');
-                    $('.FormLoader').html('');
+                if( nav.hasClass("collapse") ) {
+                    nav.removeClass("collapse");
+                } else {
+                    nav.addClass("collapse");
                 }
             });
 
-        });
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+                var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                s1.async=true;
+                s1.src='https://embed.tawk.to/5b283bd061a2e64e5fb595c7/default';
+                s1.charset='UTF-8';
+                s1.setAttribute('crossorigin','*');
+                s0.parentNode.insertBefore(s1,s0);
+            })();
 
-        $(document).on('submit','#ContactFormMayorist',function(e){
-            e.preventDefault();
+            // Check Broken Portfolio Images
+            // $('.CheckImgPortfolio').on('error', function(){
+            // 	var defaultImg = "{{ asset('webimages/gen/portfolio-gen.jpg') }}"
+            // 	$(this).attr('src', defaultImg);
+            // });
 
-            var data   = $(this).serialize();
-            var route  = "{{ url('ajax_mail_mayorist') }}";
-            var loader = '<br><img src="{{ asset("images/loaders/loader-sm.svg") }}"/>';
+            // // Check Broken Blog Images
+            // $('.CheckImgBlog').on('error', function(){
+            // 	var defaultImg = "{{ asset('webimages/gen/blog-gen.jpg') }}"
+            // 	$(this).attr('src', defaultImg);
+            // });
+        
 
-            $.ajax({
-                type: "POST",
-                url: route,
-                dataType: 'json',
-                data: data,
-                beforeSend: function(){
-                    $('#ContactMayoristBtn').val('Enviando...');
-                    $('.FormLoader').html(loader);
-                },
-                success: function(data) {
-                    $('#ContactFormMayorist').hide();
-                    $('#ContactMayoristBtn').hide('Enviar');
-                    $('#FormSuccess').removeClass('Hidden');
-                    $('#FormResponse').hide();
-                },
-                error: function(data) {
-                    $('#FormResponse').hide();
-                    $('#ContactFormMayorist').hide();
-                    $('#FormError').removeClass('Hidden');
-                    console.log(data);
-                },
-                complete: function(data){
-                    $('#ContactMayoristBtn').html('Enviar');
-                    $('.FormLoader').html('');
-                }
+            $('#ContactFormMayorist').hide();
+            $('#OpenFormMayoristBtn').click(function(){
+                $('#ContactForm').hide(500);
+                $('#ContactFormMayorist').show(500);
             });
 
-        })
+            $('.CloseFormMayorist').click(function(){
+                $('#ContactFormMayorist').hide(500);
+                $('#ContactForm').show(500);
+            });
+            
 
+            $(document).on('submit','#ContactForm',function(e){
+                e.preventDefault();
 
-    </script>
+                var data   = $(this).serialize();
+                var route  = "{{ url('ajax_mail') }}";
+                var loader = '<br><img src="{{ asset("images/loaders/loader-sm.svg") }}"/>';
+
+                $.ajax({
+                    type: "POST",
+                    url: route,
+                    dataType: 'json',
+                    data: data,
+                    beforeSend: function(){
+                        $('#ContactBtn').val('Enviando...');
+                        $('.FormLoader').html(loader);
+                    },
+                    success: function(data) {
+                        $('#ContactForm').hide();
+                        $('#ContactBtn').hide('Enviar');
+                        $('#FormSuccess').removeClass('Hidden');
+                        $('#FormResponse').hide();
+                        $('#Error').html(data.responseText);
+                        console.log(data);
+                    },
+                    error: function(data) {
+                        $('#FormResponse').hide();
+                        $('#ContactForm').hide();
+                        $('#FormError').removeClass('Hidden');
+                        $('#Error').html(data.responseText);
+                        console.log(data);
+                    },
+                    complete: function(data){
+                        $('#ContactBtn').html('Enviar');
+                        $('.FormLoader').html('');
+                    }
+                });
+
+            });
+
+            $(document).on('submit','#ContactFormMayorist',function(e){
+                e.preventDefault();
+
+                var data   = $(this).serialize();
+                var route  = "{{ url('ajax_mail_mayorist') }}";
+                var loader = '<br><img src="{{ asset("images/loaders/loader-sm.svg") }}"/>';
+
+                $.ajax({
+                    type: "POST",
+                    url: route,
+                    dataType: 'json',
+                    data: data,
+                    beforeSend: function(){
+                        $('#ContactMayoristBtn').val('Enviando...');
+                        $('.FormLoader').html(loader);
+                    },
+                    success: function(data) {
+                        $('#ContactFormMayorist').hide();
+                        $('#ContactMayoristBtn').hide('Enviar');
+                        $('#FormSuccess').removeClass('Hidden');
+                        $('#FormResponse').hide();
+                    },
+                    error: function(data) {
+                        $('#FormResponse').hide();
+                        $('#ContactFormMayorist').hide();
+                        $('#FormError').removeClass('Hidden');
+                        console.log(data);
+                    },
+                    complete: function(data){
+                        $('#ContactMayoristBtn').html('Enviar');
+                        $('.FormLoader').html('');
+                    }
+                });
+
+            });
+
+        </script>
+    </body>
+    
 </html>
