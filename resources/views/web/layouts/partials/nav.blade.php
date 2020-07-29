@@ -15,7 +15,7 @@
 				<li><a {{ (Request::is('esencia') ? 'class=nav-active' : '') }} href="{{ url('esencia') }}">Nuestra Esencia</a></li>
 				<li><a {{ (Request::is('blog') ? 'class=nav-active' : '') }} href="{{ url('blog') }}">Blog</a></li>
 				<li><a {{ (Request::is('portfolio') ? 'class=nav-active' : '') }} href="{{ url('portfolio') }}">Portfolio</a></li>
-				<li><a {{ (Request::is('contacto') ? 'class=nav-active' : '') }} href="{{ url('contacto#contact') }}">Contacto</a></li>	
+				<li><a {{ (Request::is('#contacto') ? 'class=nav-active' : '') }} href="{{ url('contacto#contact') }}">Contacto</a></li>	
 				<li><a href="https://vdeverde.mitiendanube.com/">Tienda</a></li>
 				<li class="nav-icon"><a href="https://vdeverde.mitiendanube.com/"><i class="ion-ios-cart-outline"></i></a></li>
 		{{-- 	<li class="dropdown">
