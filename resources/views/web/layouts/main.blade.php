@@ -74,15 +74,15 @@
 				s0.parentNode.insertBefore(s1,s0);
 			})();
 
-			$('.CheckImgPortfolio').on('error', function(){
-				var defaultImg = "{{ asset('webimages/gen/portfolio-gen.jpg') }}"
-				$(this).attr('src', defaultImg);
-			});
-
-			$('.CheckImgBlog').on('error', function(){
-				var defaultImg = "{{ asset('webimages/gen/blog-gen.jpg') }}"
-				$(this).attr('src', defaultImg);
-			});
+			//$('.CheckImgPortfolio').on('error', function(){
+			//	var defaultImg = "{{ asset('webimages/gen/portfolio-gen.jpg') }}"
+			//	$(this).attr('src', defaultImg);
+			//});
+//
+			//$('.CheckImgBlog').on('error', function(){
+			//	var defaultImg = "{{ asset('webimages/gen/blog-gen.jpg') }}"
+			//	$(this).attr('src', defaultImg);
+			//});
 
 
 		</script>
