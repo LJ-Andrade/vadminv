@@ -10,7 +10,7 @@
   "devDependencies": {
     "axios": "^0.15.3",
     "bootstrap-sass": "^3.3.7",
-    "browser-sync": "^2.24.4",
+    "browser-sync": "^2.27.11",
     "jquery": "^3.1.1",
     "laravel-elixir-minify-html": "^1.0.5",
     "laravel-mix": "^0.8.1",
